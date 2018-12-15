@@ -1,6 +1,6 @@
 # Charities
 
-Every month the Fody project will dontate to a charity.
+Every month the Fody project will dontate a portion of funding raised to a charity.
 
 
 ## History
