@@ -16,7 +16,7 @@ Every month the Fody project will dontate a portion of funding raised to a chari
  * [Trans Code](https://twitter.com/trans_code)
 
 
-## MotivationS
+## Motivations
 
 Attempt to help organisations that are addressing the diversity problem in the technology industry. Further reading:
 
