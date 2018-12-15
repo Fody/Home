@@ -16,9 +16,9 @@ Every month the Fody project will dontate to a charity.
  * [Trans Code](https://twitter.com/trans_code)
 
 
-## Motivation
+## MotivationS
 
-One of the motivations of the choice of charities is to attemp help organisations that are addressing the diversity problem in the technology industry. Further reading:
+Attempt to help organisations that are addressing the diversity problem in the technology industry. Further reading:
 
  * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
  * [Deconstructing Privilege | Patricia Aas](https://vimeo.com/285097367)
