@@ -3,15 +3,23 @@
 Every month the Fody project will dontate to a charity.
 
 
-
 ## History
 
- * 2018 December: $50USD to [Planned Parenthood](https://www.plannedparenthood.org) as a thanks to [Brad Wilson](https://twitter.com/BradWilson) for the use of [xUnit](https://xunit.github.io/)
+ * 2018 December: $50USD to [Planned Parenthood](https://www.plannedparenthood.org) as nominated by [Brad Wilson](https://twitter.com/BradWilson) as a thanks for the use of [xUnit](https://xunit.github.io/)
 
 
-## Potential
+## Candidates
 
  * [BlackGirlsCode](http://www.blackgirlscode.com/)
  * [Girl Develop It](https://www.girldevelopit.com/)
  * [Teaching Kids Programming](http://teachingkidsprogramming.org/)
  * [Trans Code](https://twitter.com/trans_code)
+
+
+## Motivation
+
+One of the motivations of the choice of charities is to attemp help organisations that are addressing the diversity problem in the technology industry.
+
+ * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
+ * [Deconstructing Privilege | Patricia Aas](https://vimeo.com/285097367)
+ * [Developer Survey Results, 2018, Demographics](https://insights.stackoverflow.com/survey/2018/#demographics)
