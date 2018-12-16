@@ -24,4 +24,4 @@ Attempt to help organisations that are addressing the diversity problem in the t
 
  * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
  * [Deconstructing Privilege | Patricia Aas](https://vimeo.com/285097367)
- * [Developer Survey Results, 2018, Demographics](https://insights.stackoverflow.com/survey/2018/#demographics)
+ * [StackOverflow Developer Survey Results, 2018, Demographics](https://insights.stackoverflow.com/survey/2018/#demographics)
