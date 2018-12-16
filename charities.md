@@ -13,6 +13,7 @@ Every month the Fody project will dontate a portion of funding raised to a chari
  * [BlackGirlsCode](http://www.blackgirlscode.com/)
  * [Girl Develop It](https://www.girldevelopit.com/)
  * [Teaching Kids Programming](http://teachingkidsprogramming.org/)
+ * [Women Who Code](https://www.womenwhocode.com/)
  * [Trans Code](https://twitter.com/trans_code)
 
 
