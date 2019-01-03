@@ -5,12 +5,13 @@ Every month the Fody project will dontate a portion of funding raised to a chari
 
 ## History
 
+ * 2019 January: $50USD to [Black Girls Code](http://www.blackgirlscode.com) as nominated by [Weronika Łabaj](https://weronikalabaj.com/)
  * 2018 December: $50USD to [Planned Parenthood](https://www.plannedparenthood.org) as nominated by [Brad Wilson](https://twitter.com/BradWilson) as a thanks for the use of [xUnit](https://xunit.github.io/)
 
 
 ## Candidates
 
- * [BlackGirlsCode](http://www.blackgirlscode.com)
+ * [Black Girls Code](http://www.blackgirlscode.com)
  * [Girl Develop It](https://www.girldevelopit.com)
  * [Teaching Kids Programming](http://teachingkidsprogramming.org)
  * [Women in Tech Show](http://podcast.womenintechshow.com)
