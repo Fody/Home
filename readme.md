@@ -63,13 +63,11 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 
 ## Documentation and Further Learning
 
-* [Licensing/Patron FAQ](pages/licensing-patron-faq.md)
-
-  **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
-* [Donations](pages/donations.md)
-
-  Every month the Fody project will donate a portion of funding raised to a charity or other cause.
-* [List of Fody weavers/addins](pages/addins.md)
+ * [Licensing/Patron FAQ](pages/licensing-patron-faq.md)
+   **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
+ * [Donations](pages/donations.md)
+   Every month the Fody project will donate a portion of funding raised to a charity or other cause.
+ * [List of Fody weavers/addins](pages/addins.md)
 
 
 ## Naming
