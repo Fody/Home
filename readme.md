@@ -3,6 +3,9 @@
 
 The Home repository is the starting point for people to learn about Fody, the project.
 
+Fody is an extensible tool for weaving .net assemblies. It enables the manipulating the IL of an assembly as part of a build requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model.
+
+
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -50,8 +53,8 @@ Support this project by [becoming a Bronze Sponsor](https://opencollective.com/f
 Thanks to all the backers and sponsors! Support this project by [becoming a patron](https://opencollective.com/fody/order/3059).
 
 <a href="https://opencollective.com/fody#contributors">
-​	<img src="https://opencollective.com/fody/sponsor.svg?width=890&avatarHeight=50&button=false">
-​	<img src="https://opencollective.com/fody/backer.svg?width=890&avatarHeight=50&button=false">
+​  <img src="https://opencollective.com/fody/sponsor.svg?width=890&avatarHeight=50&button=false">
+​  <img src="https://opencollective.com/fody/backer.svg?width=890&avatarHeight=50&button=false">
 </a>
 
 
@@ -59,6 +62,10 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 <!--- EndOpenCollectiveBackers -->
 
 <a href="#" id="endofbacking"></a>
+
+## Main Fody code repository
+
+The main codebase of Fody is locate at https://github.com/Fody/Fody.
 
 
 ## Documentation and Further Learning
