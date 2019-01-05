@@ -65,7 +65,7 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 
 ## Main Fody code repository
 
-The main codebase of Fody is locate at https://github.com/Fody/Fody.
+The main codebase of Fody is located at https://github.com/Fody/Fody.
 
 
 ## Documentation and Further Learning
