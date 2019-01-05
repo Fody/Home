@@ -72,7 +72,7 @@ The codebase of core Fody engine located at https://github.com/Fody/Fody.
   * [BasicFodyAddin](https://github.com/Fody/BasicFodyAddin)<br>
     A simple project meant to illustrate how to build an addin.
   * [FodyAddinSamples](https://github.com/Fody/FodyAddinSamples)<br>
-    A GitHub repos that contains a working copy of every Fody addin.
+    A GitHub repo that contains a working sample of every Fody addin.
   * [List of Fody weavers/addins](pages/addins.md)
   * [Donations](pages/donations.md)<br>
     Every month the Fody project will donate a portion of funding raised to a charity or other cause.
