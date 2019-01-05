@@ -64,7 +64,7 @@ Yes. You must be a Patron to be a user of Fody. Contributing Pull Requests does 
 
 ## Do I need to be a Patron to raise an issue?
 
-Yes. You must be a Patron to be a user of Fody. As such if you are raising an issue (question, bug or feature request) and you are not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort in actively triaged.
+Yes. You must be a Patron to be a user of Fody. As such if you are raising an issue (question, bug or feature request) and you are not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort and be handled.
 
 
 ## Organization licensing
