@@ -1,21 +1,19 @@
-
-
-## Licensing/Patron FAQ
+# Licensing/Patron FAQ
 
 **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).**
 
 
-### Is this all versions?
+## Is this all versions?
 
 No, it will include version 3.3.3 and higher.
 
 
-### Honesty System / Enforcement
+## Honesty System / Enforcement
 
 It is an honesty system with no code or legal enforcement. When raising an issue or a pull request, the GitHub Id may be checked to ensure they are a patron, and that issue/PR may be closed without further examination. This process will depend on the issue quality, your circumstances, and the impact on the larger user base. If a individual or organization has no interest in the long term sustainability of the project, then they are legally free to ignore the honesty system.
 
 
-### Why charge for open source?
+## Why charge for open source?
 
  * [Open-Source Maintainers are Jerks! | Nick Randolph & Geoffrey Huntley](https://vimeo.com/296579853)
  * [FOSS is free as in toilet | Geoffroy Couprie](http://unhandledexpression.com/general/2018/11/27/foss-is-free-as-in-toilet.html)
@@ -27,22 +25,22 @@ It is an honesty system with no code or legal enforcement. When raising an issue
  * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
 
 
-### So what OSS license are projects using?
+## So what OSS license are projects using?
 
 Fody (all code, NuGets and binaries) are under the [MIT License](https://opensource.org/licenses/MIT).
 
 
-### Why not use a modified MIT license?
+## Why not use a modified MIT license?
 
 Using any OSS license in a modified form causes significant problems with adoption of tools. There is no simplified guidance on using modified licenses. For example they are not included in [choose a license](https://choosealicense.com/) or [tldr legal](https://tldrlegal.com/). It often forces an organization to obtain approval from a legal department. It means any consuming tools need to ensure that the modified license does not propagate in an undesirable way.
 
 
-### But shouldn't OSS be completely free and supported by the community through their contributions?
+## But shouldn't OSS be completely free and supported by the community through their contributions?
 
 Yes in theory this is true, however the long term reality has shown this not to be the case. The vast majority of consumers of open source projects do not contribute enough to ensure those project survive. This results in a small core team spending large amounts of their own free time maintaining projects.
 
 
-### Is support now included as part of the cost?
+## Is support now included as part of the cost?
 
 No. As per the MIT license:
 
@@ -54,20 +52,20 @@ PostSharp is a mature and supported product that is used by Fortune 500 companie
 They offer a free edition and their feature list includes: Aspect-Oriented Programming, Logging, INotifyPropertyChanged, Caching, Transactions, Security, Multithreading, Code Contracts, XAML plumbing, and Architecture Validation.
 
 
-### But it is MIT, can't I use it for free?
+## But it is MIT, can't I use it for free?
 
 Yes all projects are under [MIT](https://opensource.org/licenses/MIT) and you can ignore the community backing honesty system and use Fody for free.
 
 
-### Do I need to be a Patron to contribute a Pull Request?
+## Do I need to be a Patron to contribute a Pull Request?
 
 Yes. You must be a Patron to be a user of Fody. Contributing Pull Requests does not cancel this out. It may seem unfair to expect people both contribute PRs and also financially back this project. However it is important to remember the effort in reviewing and merging a PR is often similar to that of creating the PR. Also the project maintainers are committing to support that added code (feature or bug fix) for the life of the project.
 
 
-### Organization licensing
+## Organization licensing
 
 
-#### How to handle multiple developers
+### How to handle multiple developers
 
 There are two options for an organization.
 
@@ -77,26 +75,26 @@ There are two options for an organization.
     A organization can [Create an Open Collective organization](https://opencollective.com/become-a-sponsor) and then allow their developers to draw on the funds from that organization. See [FAQ for backers](https://opencollective.com/faq/backers). This is the recommended option as it also opens up the opportunity for developers to select other projects they feel need support.
 
 
-#### Do all developers in a organization need to become Patrons?
+### Do all developers in a organization need to become Patrons?
 
 No. Only those coding against projects that directly, or indirectly, consume the [Fody NuGet package](https://www.nuget.org/packages/Fody/).
 
 
-#### Can only one developer of an organization become a patron?
+### Can only one developer of an organization become a patron?
 
 Yes, since the only point of (optional) enforcement is when an issue or PR is raised, then legally an organization can ignore the honesty system and route all issues and PRs though a single GitHub user account. However if a single GitHub user account is drawing on significant time to support, they may be requested to purchase some [hourly support](https://opencollective.com/fody/order/7087).
 
 
-### What about open source projects consume or producing Fody weavers?
+## What about open source projects consume or producing Fody weavers?
 
 It is be expected that the core team of maintainers of any open source projects that consume or produce Fody weavers would become Patrons. Non core contributors do not need to become Patrons. For example, in the context of GitHub, this would be any people with push access to the the repository. The reasoning is that if a project is utilizing Fody, that should not be a blocker for the larger community from contributing to the project.
 
 
-### Can I fork, re-use code, or start competing (possibly commercial) projects?
+## Can I fork, re-use code, or start competing (possibly commercial) projects?
 
 Yes.
 
 
-### What happens if I produce a library using Fody?
+## What happens if I produce a library using Fody?
 
 Consumers of that produced library do not need to become Patrons.

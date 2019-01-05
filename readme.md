@@ -1,17 +1,7 @@
 
+# <img src="https://github.com/Fody/Home/raw/master/images/fody.png" height="40px"> Fody
 
-
-
-* [Licensing/Patron FAQ](pages/licensing-patron-faq.md)
-  **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
-* [Donations](donations.md)
-  Every month the Fody project will donate a portion of funding raised to a charity or other cause.
-* [List of Fody weavers/addins](pages/addins.md)
-
-
-## Naming
-
-The name "Fody" comes from the small birds that belong to the weaver family [Ploceidae](http://en.wikipedia.org/wiki/Fody).
+The Home repository is the starting point for people to learn about Fody, the project.
 
 
 <!--- StartOpenCollectiveBackers -->
@@ -21,7 +11,7 @@ The name "Fody" comes from the small birds that belong to the weaver family [Plo
 
 ## Community backed
 
-**It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059). [Go to licensing FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md)**
+Fody required significant effort to maintain. As such it relies on financial contributions from the community and sponsorship to ensure its long term viability. **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059). [Go to licensing FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md)**
 
 
 ### Platinum Sponsors
@@ -67,3 +57,15 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 <!--- EndOpenCollectiveBackers -->
 
 
+## Documentation and Further Learning
+
+* [Licensing/Patron FAQ](pages/licensing-patron-faq.md)
+  **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
+* [Donations](pages/donations.md)
+  Every month the Fody project will donate a portion of funding raised to a charity or other cause.
+* [List of Fody weavers/addins](pages/addins.md)
+
+
+## Naming
+
+The name "Fody" comes from the small birds that belong to the weaver family [Ploceidae](http://en.wikipedia.org/wiki/Fody).
