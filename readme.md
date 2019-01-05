@@ -11,9 +11,9 @@ The Home repository is the starting point for people to learn about Fody, the pr
 
 ## Community backed
 
-Fody required significant effort to maintain. As such it relies on financial contributions from the community and sponsorship to ensure its long term viability. **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).
+Fody required significant effort to maintain. As such it relies on financial contributions from the community and sponsorship to ensure its long term viability. **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).**
 
-[Go to licensing FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md)** for more information.
+[Go to licensing FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md) for more information.
 
 
 ### Platinum Sponsors
