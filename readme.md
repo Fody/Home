@@ -62,16 +62,20 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 
 ## Main Fody code repository
 
-The main codebase of Fody is located at https://github.com/Fody/Fody.
+The codebase of core Fody engine located at https://github.com/Fody/Fody.
 
 
 ## Documentation and Further Learning
 
   * [Licensing/Patron FAQ](pages/licensing-patron-faq.md)<br>
     **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
+  * [BasicFodyAddin](https://github.com/Fody/BasicFodyAddin)<br>
+    A simple project meant to illustrate how to build an addin.
+  * [FodyAddinSamples](https://github.com/Fody/FodyAddinSamples)<br>
+    A GitHub repos that contains a working copy of every Fody addin.
+  * [List of Fody weavers/addins](pages/addins.md)
   * [Donations](pages/donations.md)<br>
     Every month the Fody project will donate a portion of funding raised to a charity or other cause.
-  * [List of Fody weavers/addins](pages/addins.md)
 
 
 ## Naming
