@@ -1,6 +1,6 @@
 # Licensing/Patron FAQ
 
-**It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).**
+Fody requires significant effort to maintain. As such it relies on financial contributions from the community and sponsorship to ensure its long term viability. **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).**
 
 
 ## Is this all versions?
