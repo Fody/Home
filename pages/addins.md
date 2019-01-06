@@ -35,6 +35,7 @@
   * [Realm](https://github.com/realm/realm-dotnet/tree/master/Weaver/RealmWeaver.Fody) Mobile database: a replacement for SQLite & ORMs.
   * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](http://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
   * [Resourcer](https://github.com/Fody/Resourcer) Simplifies reading embedded resources from an Assembly.
+  * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Lets you design your WPF splash screen as a WPF Control instead of a static bitmap
   * [StampSvn](https://github.com/krk/Stamp) Stamps an assembly with SVN data.
   * [Substitute](https://github.com/tom-englert/Substitute.Fody) Substitute types with other types to e.g. intercept generated code
   * [SwallowExceptions](https://github.com/duaneedwards/SwallowExceptions) Swallow Exceptions in targeted methods.
@@ -57,7 +58,6 @@ The below addins are no longer maintained. Raise an issue in the specific projec
 
   * [ArraySlice](https://github.com/Codealike/arrayslice) ArraySlice allows to build shared memory array views without performance impact. It uses IL manipulation to achieve the fastest implementation.
   * [AssertMessage](https://github.com/Fody/AssertMessage) Generates 'message' from sourcecode and adds it to assertion.
-  * [AutoLazy](https://github.com/bcuff/AutoLazy) Automatically implements the double-checked locking pattern on specified properties and methods.
   * [AutoDependencyProperty](http://blog.angeloflogic.com/2014/12/no-more-dependencyproperty-with.html) Generates WPF DependencyProperty boilerplate from automatic C# properties.
   * [AutoLazy](https://github.com/bcuff/AutoLazy) Automatically implements the double-checked locking pattern on specified properties and methods.
   * [Cauldron](https://github.com/Capgemini/Cauldron) Provides method, property and field interception. It also provides weavers for Cauldron.Core and Cauldron.Activator.
