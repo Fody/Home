@@ -16,6 +16,7 @@ Every month the Fody project will dontate a portion of funding raised to a chari
  * [Teaching Kids Programming](http://teachingkidsprogramming.org)
  * [Women in Tech Show](http://podcast.womenintechshow.com)
  * [Women Who Code](https://www.womenwhocode.com/)
+ * [Diversify Tech](https://www.diversifytech.co) created by [Veni Kunche](https://www.patreon.com/venikunche)
 
 
 ## Motivations
