@@ -39,7 +39,7 @@ Support this project by [becoming a Gold Sponsor](https://opencollective.com/fod
 
 Support this project by [becoming a Silver Sponsor](https://opencollective.com/fody/order/7086). A medium company logo will be added here with a link to your website.
 
-<a href="https://particular.net/"><img alt="Particular Software" src="https://raw.githubusercontent.com/Fody/Home/master/images/particular.svg?sanitize=true"></a>
+<a href="https://particular.net/"><img alt="Particular Software" width="200px" src="https://raw.githubusercontent.com/Fody/Home/master/images/particular.svg?sanitize=true"></a>
 
 
 ### Bronze Sponsors
