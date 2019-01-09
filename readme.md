@@ -3,7 +3,7 @@
 
 The Home repository is the starting point for people to learn about Fody, the project.
 
-Fody is an extensible tool for weaving .net assemblies. It enables the manipulating the IL of an assembly as part of a build requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model.
+Fody is an extensible tool for weaving .net assemblies. It enables the manipulating the IL of an assembly as part of a build requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model. This technique is very powerful, for example you can turn simple properties into full [INotifyPropertyChanged implementations](https://github.com/Fody/PropertyChanged), add [checks for null arguments](https://github.com/Fody/NullGuard), add [Method Timings](https://github.com/Fody/MethodTimer), even [make all your string comparisons case insensitive](https://github.com/Fody/Caseless).
 
 
 
@@ -76,6 +76,8 @@ The codebase of core Fody engine located at https://github.com/Fody/Fody.
   * [List of Fody weavers/addins](pages/addins.md)
   * [Donations](pages/donations.md)<br>
     Every month the Fody project will donate a portion of funding raised to a charity or other cause.
+  * [Fody Project Configuration Manager](https://github.com/tom-englert/ProjectConfigurationManager/wiki/6.-Fody)<br>
+    Provides an interactive tool that can support configuring weavers, which is especially helpful in solutions with many projects.
 
 
 ## Naming
@@ -89,6 +91,7 @@ Thanks to the following
 
  * [Jb Evain](https://github.com/jbevain) for the use of [Mono Cecil](https://github.com/jbevain/cecil)
  * [GitHub](https://github.com/) for project hosting
+ * [JetBrains](https://www.jetbrains.com/resharper/) for the generous donation of [ReSharper](https://www.jetbrains.com/resharper/) licenses.
  * [xUnit](https://xunit.github.io/)
  * [AppVeyor](https://www.appveyor.com/) and [Travis CI](https://travis-ci.org/) for build and CI infrastructure
  * [NuGet](https://www.nuget.org/) for package delivery
