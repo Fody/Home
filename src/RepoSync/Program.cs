@@ -12,10 +12,10 @@ class Program
         var credentials = new Credentials(githubToken);
         var sync = new RepoSync(credentials, "Fody", "Home", "master", Console.WriteLine);
         //sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/appveyor.yml", "appveyor.yml");
-        sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/Source/.editorconfig", ".editorconfig");
-        sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/Source/bug_report.md", ".github/ISSUE_TEMPLATE/bug_report.md");
-        sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/Source/feature_proposal.md", ".github/ISSUE_TEMPLATE/feature_proposal.md");
-        sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/Source/pull_request_template.md", ".github/pull_request_template.md");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/.editorconfig", ".editorconfig");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/bug_report.md", ".github/ISSUE_TEMPLATE/bug_report.md");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/feature_proposal.md", ".github/ISSUE_TEMPLATE/feature_proposal.md");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/pull_request_template.md", ".github/pull_request_template.md");
         sync.AddTarget("Fody", "Fody", "master");
         sync.AddTarget("Fody", "Anotar", "master");
         sync.AddTarget("Fody", "AsyncErrorHandler", "master");
