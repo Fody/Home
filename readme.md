@@ -32,12 +32,14 @@ Support this project by [becoming a Platinum Sponsor](https://opencollective.com
 
 Support this project by [becoming a Gold Sponsor](https://opencollective.com/fody/order/7088). A large company logo will be added here with a link to your website.
 
-<a href="https://www.postsharp.net?utm_source=fody&utm_medium=referral"><img src="https://raw.githubusercontent.com/Fody/Home/master/images/postsharp.png"></a>
+<a href="https://www.postsharp.net?utm_source=fody&utm_medium=referral"><img alt="PostSharp" src="https://raw.githubusercontent.com/Fody/Home/master/images/postsharp.png"></a>
 
 
 ### Silver Sponsors
 
 Support this project by [becoming a Silver Sponsor](https://opencollective.com/fody/order/7086). A medium company logo will be added here with a link to your website.
+
+<a href="https://particular.net/"><img alt="Particular Software" src="https://raw.githubusercontent.com/Fody/Home/master/images/particular.svg"></a>
 
 
 ### Bronze Sponsors
