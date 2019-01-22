@@ -19,8 +19,6 @@ Create a solution with two projects, a `Directory.Build.props` file and an `appv
 
 ![sample-solution.png](sample-solution.png)
 
- * In this sample the '.props' have been split into two files, to have the project specific settings in their own file.
-
 
 ### Lib/Reference project
 

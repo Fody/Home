@@ -1,6 +1,6 @@
 # Assembly Strong Naming
 
-The WeavingTask looks for the two settings that indicate a project file has produced a [strong named](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies) assembly.
+Fody looks for the two settings that indicate a project file has produced a [strong named](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies) assembly.
 
 
 ## SignAssembly
