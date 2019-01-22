@@ -186,25 +186,7 @@ Add a public class named 'ModuleWeaver', which derives from the `BaseModuleWeave
 
 For example the minimum class would look like this
 
-<!-- snippet: ModuleWeaver -->
-```cs
-public class ModuleWeaver : BaseModuleWeaver
-{
-    public override void Execute()
-    {
-        var objectType = FindType("System.Object");
-        var objectImport = ModuleDefinition.ImportReference(objectType);
-        ModuleDefinition.Types.Add(new TypeDefinition("MyNamespace", "MyType", TypeAttributes.Public, objectImport));
-    }
-
-    public override IEnumerable<string> GetAssembliesForScanning()
-    {
-        return Enumerable.Empty<string>();
-    }
-}
-```
-<sup>[snippet source](/src/Docs/Snippets/ModuleWeaver.cs#L6-L23)</sup>
-<!-- endsnippet -->
+snippet: ModuleWeaver
 
 
 ### Throwing exceptions
