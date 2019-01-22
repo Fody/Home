@@ -1,6 +1,6 @@
 # Donations
 
-Every month the Fody project will dontate a portion of funding raised to a charity or other cause.
+Every month the Fody project will donate a portion of funding raised to a charity or other cause.
 
 
 ## History
@@ -21,7 +21,7 @@ Every month the Fody project will dontate a portion of funding raised to a chari
 
 ## Motivations
 
-Attempt to help organisations that are addressing the diversity problem in the technology industry. Further reading:
+Attempt to help organizations that are addressing the diversity problem in the technology industry. Further reading:
 
  * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
  * [Deconstructing Privilege | Patricia Aas](https://vimeo.com/285097367)

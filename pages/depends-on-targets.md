@@ -1,6 +1,6 @@
 ## Fody support for defining dependencies in the build order
 
-You do this by defining a property group in your project named `FodyDependsOnTargets`. The content of this property will then be passed to the `DependsOnTargets` of the Fody weaving task. 
+You do this by defining a property group in your project named `FodyDependsOnTargets`. The content of this property will then be passed to the `DependsOnTargets` of the Fody weaving task.
 
 http://msdn.microsoft.com/en-us/library/t50z2hka.aspx
 

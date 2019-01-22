@@ -164,17 +164,17 @@ artifacts:
 
 ---
 
-Now the scaffold has been set up. This solution creates a nuget package including all necessary files.
+Now the scaffold has been set up. This solution creates a NuGet package including all necessary files.
 
 
 ## The weaver assembly
 
- * The weaver assembly is the assemly suffixed with ".Fody". 
- * It should not have any runtime dependencies (excluding Mono Cecil); runtime dependencies should be combined using e.g. [ILMerge](http://research.microsoft.com/en-us/people/mbarnett/ilmerge.aspx) and the `/Internalize` flag.
+ * The weaver assembly is the assemly suffixed with ".Fody".
+ * It should not have any runtime dependencies (excluding Mono Cecil); runtime dependencies should be combined using e.g. [ILMerge](https://github.com/dotnet/ILMerge) and the `/Internalize` flag.
  * The assembly must contain a public class named 'ModuleWeaver'. The namespace does not matter.
 
 
-### The ModuleWeaver Class 
+### The ModuleWeaver Class
 
 Add a public class named 'ModuleWeaver', which derives from the `BaseModuleWeaver` class provided by the `FodyHelpers` assembly, to the project . 
 
@@ -323,13 +323,13 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
 
 ## How to deploy Addins
 
-Add-ins can be deployed through [NuGet](http://nuget.org/) packages. 
+Add-ins can be deployed through [NuGet](http://nuget.org/) packages.
 
  * The package should contain two weaver assemblies in the folders `netclassicweaver` and `netstandardweaver` to support both .Net Classic and .Net Core.
  * The package should contain a runtime library, compiled for every supported framework, under the `lib` folder.
- * The package should contain an MSBbuild .props file in the `build` folder that registers the weaver at compile time. 
+ * The package should contain an MSBbuild .props file in the `build` folder that registers the weaver at compile time.
    The name of the file must be  the package id with the `.props` extension. See [Addin Search Strategies](AddinSearchPaths) for details.
- * The id of the package and the name of the weaver assembly should be the same and be suffixed with ".Fody". 
+ * The id of the package and the name of the weaver assembly should be the same and be suffixed with ".Fody".
    For example the [Virtuosity NuGet package](https://nuget.org/packages/Virtuosity.Fody/) is named `Virtuosity.Fody` and 
    contains the weaver assembly `Virtuosity.Fody.dll` and the run time assembly `Virtuosity.dll`.
  * The package should have a single dependency on **only** the [Fody NuGet package](https://nuget.org/packages/Fody/).  **Do not add any other NuGet dependencies as Fody does not currently support loading these files at compile time.**
