@@ -11,7 +11,7 @@ Sometimes it is necessary to have weaving code specific to a solution. In this c
 
 ## Weaving inside a solution
 
-Fody will [look for weavers by examining the `WeaverFiles` items](addin-search-paths.md) of the project. To use a custom weaver in a project, add an entry to the project file:
+Fody will [look for weavers by examining the `WeaverFiles` items](addin-discovery.md) of the project. To use a custom weaver in a project, add an entry to the project file:
 
 ```xml
 <ItemGroup>
