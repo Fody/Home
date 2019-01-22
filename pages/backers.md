@@ -2,12 +2,12 @@
 
 Below is a list of the people and organizations that have made significant contributions. Please consider joining them in supporting open source by [becoming a Patron of Fody](https://opencollective.com/fody/order/3059).
 
-https://opencollective.com/fody/members/all.json
-
 
 ## Patrons
 
 <!-- https://opencollective.com/fody/tiers/patron.svg -->
+
+All patrons: https://opencollective.com/fody/members/all.json
 
  * Adam Hill | [Open Collective](https://opencollective.com/adamhill)
  * Intreba | [Open Collective](https://github.com/Intreba)

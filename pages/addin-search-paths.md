@@ -1,4 +1,4 @@
-﻿## Addin Search Strategies ##
+﻿# Addin Search Strategies
 
 Every Weaver must publish the location of it's binary at compile time as an MSBuild item, so Fody is able to locate it.
 Usually this is achieved by providing a `.props` file with the NuGet package with the following default content:
