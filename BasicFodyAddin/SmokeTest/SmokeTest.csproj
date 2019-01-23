@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40;net452;net46;net472;netstandard1.4;netstandard1.0;netstandard1.6;netstandard2.0</TargetFrameworks>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="4.0.0-beta.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <WeaverTargetFolder Condition="$(MSBuildRuntimeType) != 'Core'">Net46</WeaverTargetFolder>
+    <WeaverTargetFolder Condition="$(MSBuildRuntimeType) == 'Core'">netstandard2.0</WeaverTargetFolder>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <WeaverFiles Include="$(SolutionDir)BasicFodyAddin.Fody\bin\$(Configuration)\$(WeaverTargetFolder)\BasicFodyAddin.Fody.dll" />
+  </ItemGroup>
+
+</Project>
