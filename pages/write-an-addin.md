@@ -57,7 +57,7 @@ BasicFodyAddin.Fody.csproj:
 
 This project contains the weaving code.
 
- *Has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
+ * Has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
  * Should not have any runtime dependencies (excluding Mono Cecil); runtime dependencies should be combined using e.g. [ILMerge](https://github.com/dotnet/ILMerge) and the `/Internalize` flag.
  * The assembly must contain a public class named 'ModuleWeaver'. The namespace does not matter.
 
