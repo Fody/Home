@@ -141,13 +141,13 @@ public class ModuleWeaver : BaseModuleWeaver
 
     string GetNamespaceFromConfig()
     {
-        var namespaceAttribute = Config.Attribute("Namespace");
-        if (namespaceAttribute == null)
+        var attribute = Config?.Attribute("Namespace");
+        if (attribute == null)
         {
             return null;
         }
 
-        var value = namespaceAttribute.Value;
+        var value = attribute.Value;
         ValidateNamespace(value);
         return value;
     }
@@ -342,7 +342,7 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
           <xs:complexType>
             <xs:attribute name="Namespace" type="xs:string">
               <xs:annotation>
-                <xs:documentation>A list of assembly names to exclude from the default action of "embed all Copy Local references", delimited with |</xs:documentation>
+                <xs:documentation>The namespace to use for the injected type</xs:documentation>
               </xs:annotation>
             </xs:attribute>
           </xs:complexType>
@@ -432,7 +432,7 @@ test:
   assemblies:
     - '**\*Tests.dll'
 artifacts:
-- path: nugets\**\*.nupkg
+- path: nugets\*.nupkg
 ```
 <sup>[snippet source](/BasicFodyAddin/appveyor.yml#L1-L8)</sup>
 <!-- endsnippet -->

@@ -52,13 +52,13 @@ public class ModuleWeaver : BaseModuleWeaver
 
     string GetNamespaceFromConfig()
     {
-        var namespaceAttribute = Config.Attribute("Namespace");
-        if (namespaceAttribute == null)
+        var attribute = Config?.Attribute("Namespace");
+        if (attribute == null)
         {
             return null;
         }
 
-        var value = namespaceAttribute.Value;
+        var value = attribute.Value;
         ValidateNamespace(value);
         return value;
     }

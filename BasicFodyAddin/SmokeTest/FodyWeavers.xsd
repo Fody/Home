@@ -8,7 +8,7 @@
           <xs:complexType>
             <xs:attribute name="Namespace" type="xs:string">
               <xs:annotation>
-                <xs:documentation>A list of assembly names to exclude from the default action of "embed all Copy Local references", delimited with |</xs:documentation>
+                <xs:documentation>The namespace to use for the injected type</xs:documentation>
               </xs:annotation>
             </xs:attribute>
           </xs:complexType>
