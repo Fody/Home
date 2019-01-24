@@ -1,100 +1,112 @@
 # Write an Addin
 
 
-## Naming conventions
-
-Fody provides a set of tools that simplify the building of a weaver addin. To benefit from of all this functionality, follow this naming conventions:
-
-|                  | |
-|------------------|-|
-| Repository Name: | `https://github.com/MyOrganization/MyAddin.Fody` |
-| Solution Name:   | MyAddin.Fody |
-| Weaver project Name: | MyAddin.Fody |
-| Weaver runtime project name: | MyAddin |
-
-
-## Building a weaver from the scratch
-
-Create a solution with two projects, a `Directory.Build.props` file and an `appveyor.yml` file:
-
-![sample-solution.png](sample-solution.png)
+## Moving parts of a Fody Addin
 
 
 ### Lib/Reference project
 
-MyAddin.csproj:
+BasicFodyAddin.csproj:
 
- * This project can host attributes that users apply to their code to control the addin.
- * This project also generates the NuGet package.
- * This project must references the `FodyPackaging` package.
+ * Contain all classes used for compile time to control the addin behavior at compile time. Often this is in the form of Attributes. 
+ * Generally any usage and reference to this project is removed at compile time so it is not needed as part of application deployment.
  * The target frameworks depend on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md))
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
+This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
-  <PropertyGroup>
-    <TargetFrameworks>net40;netstandard1.0;netstandard2.0</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0</Version>
-    <Copyright>Copyright Me $([System.DateTime]::UtcNow.ToString(yyyy)).</Copyright>
-    <Description>What my addin does.</Description>
-  </PropertyGroup>
+ * [Fody](https://www.nuget.org/packages/Fody/) with `PrivateAssets="None"`. This results in producing NuGet package having a dependency on Fody with all `include="All"` in the nuspec. Note that while this project consumes the Fody NuGet, weaving is not performed on this project. This is due to the FodyPackaging NuGet (see below) including `<DisableFody>true</DisableFody>` in the MSBuild pipeline.
+ * [FodyPackaging](https://www.nuget.org/packages/FodyPackaging/) with `PrivateAssets="All"`. This results in a NuGet package being produced by this project, but no dependency on FodyPackaging in the resulting NuGet package.
 
-  <ItemGroup>
-    <PackageReference Include="FodyPackaging"
-                      Version="3.2.17"
-                      PrivateAssets="All"/>
-    <PackageReference Include="Fody"
-                      Version="3.2.17"
-                      PrivateAssets="None"/>
-  </ItemGroup>
+The produced NuGet package will:
 
-</Project>
-```
+ * Be named with `.Fody` suffix. This project should also contain all appropriate [NuGet metadata properties](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties). Many of these properties have defaults in [FodyPackaging](https://github.com/Fody/Fody/blob/master/FodyPackaging/build/FodyPackaging.props), but can be overridden.
+ * Target, and hence support from a consumer perspective, the same frameworks that this project targets. 
+ * Be created in a directory named `nugets` at the root of the solution.
+
+snippet: BasicFodyAddin.csproj
 
 
-## Weaver Project
+### Weaver Project
 
-MyAddin.Fody.csproj:
+BasicFodyAddin.Fody.csproj:
 
- * This project contains the weaving code.
- * This project must references the `FodyHelpers` package.
- * Target frameworks must be `net46` and `netstandard2.0`.
- * The weaver assembly is the assembly suffixed with ".Fody".
- * It should not have any runtime dependencies (excluding Mono Cecil); runtime dependencies should be combined using e.g. [ILMerge](https://github.com/dotnet/ILMerge) and the `/Internalize` flag.
+This project contains the weaving code.
+
+ *Has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
+ * Should not have any runtime dependencies (excluding Mono Cecil); runtime dependencies should be combined using e.g. [ILMerge](https://github.com/dotnet/ILMerge) and the `/Internalize` flag.
  * The assembly must contain a public class named 'ModuleWeaver'. The namespace does not matter.
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FodyHelpers"
-                      Version="3.2.17" />
-  </ItemGroup>
-
-</Project>
-```
+snippet: BasicFodyAddin.Fody.csproj
 
 
-### The ModuleWeaver Class
+#### Target Frameworks
 
-Add a public class named 'ModuleWeaver', which derives from the `BaseModuleWeaver` class provided by the `FodyHelpers` assembly, to the project.
+This project must target `net46` for [msbuild.exe](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) support, and `netstandard2.0` for [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build) support.
+
+
+#### Output of the project
+
+It outputs a file named `BasicFodyAddin.Fody`. The '.Fody' suffix is necessary to be picked up by Fody at compile time.
+
+
+#### ModuleWeaver
+
+ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this type during its processing. Note that the class must be named as `ModuleWeaver`.
+
+`ModuleWeaver` must use the base class of `BaseModuleWeaver` which exists in the [FodyHelpers NuGet](https://www.nuget.org/packages/FodyHelpers/).
 
  * Inherit from `BaseModuleWeaver`.
  * The class must be public, non static, and not abstract.
  * Have an empty constructor.
 
-For example the minimum class would look like this
-
 snippet: ModuleWeaver
 
 
-### Throwing exceptions
+##### BaseModuleWeaver.Execute
+
+Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
+
+snippet: Execute
+
+
+##### BaseModuleWeaver.GetAssembliesForScanning
+
+Called by Fody when it is building up a type cache for lookups. This method should return all possible assemblies that the weaver may require while resolving types. In this case BasicFodyAddin requires `System.Object`, so `GetAssembliesForScanning` returns `netstandard` and `mscorlib`. It is safe to return assembly names that are not used by the current target assembly as these will be ignored.
+
+To use this type cache, a `ModuleWeaver` can call `BaseModuleWeaver.FindType` within `Execute` method.
+
+snippet: GetAssembliesForScanning
+
+
+##### BaseModuleWeaver.ShouldCleanReference
+
+When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
+
+snippet: ShouldCleanReference
+
+
+##### Other BaseModuleWeaver Members
+
+`BaseModuleWeaver` has a number of other members for logging and extensibility:
+https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
+
+
+#### Resultant injected code
+
+In this case a new type is being injected into the target assembly that looks like this.
+
+```csharp
+public class Hello
+{
+    public string World()
+    {
+        return "Hello World";
+    }
+}
+```
+
+
+#### Throwing exceptions
 
 When writing an addin there are a points to note when throwing an Exception.
 
@@ -104,6 +116,60 @@ When writing an addin there are a points to note when throwing an Exception.
  * If the exception type is *not* a `WeavingException` then it will be interpreted as an "unhandled exception". So something has gone seriously wrong with the addin. It most likely has a bug. In this case message logged be much bore verbose and will contain the full contents of the Exception. The code for getting the message can be found here in [ExceptionExtensions](https://github.com/Fody/Fody/blob/master/FodyCommon/ExceptionExtensions.cs).
 
 
+### Passing config via to FodyWeavers.xml
+
+This file exists at a project level in the users target project and is used to pass configuration to the 'ModuleWeaver'.
+
+So if the FodyWeavers.xml file contains the following:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Weavers>
+  <BasicFodyAddin Namespace="MyNamespace"/>
+</Weavers>
+```
+
+The property of the `ModuleWeaver.Config` will be an [XElement](https://docs.microsoft.com/en-us/dotnet/api/system.xml.linq.xelement) containing:
+
+```xml
+<BasicFodyAddin Namespace="MyNamespace"/>
+```
+
+
+#### Supporting intellisense for FodyWeavers.xml
+
+Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers.xml during compilation, adding all detected weavers. Every weaver now can provide a schema fragment describing it's individual properties and content that can be set. This file must be part of the weaver project and named `<project name>.xcf`. It contains the element describing the type of the configuration node. The file must be published side by side with the weaver file; however FodyPackaging will configure this correctly based on the convention `WeaverName.Fody.xcf`.
+
+Sample content of the `BasicFodyAddin.Fody.xcf`:
+
+snippet: BasicFodyAddin.Fody.Xcf
+
+Fody will then combine all `.xcf` fragments with the weavers information to the final `.xsd`:
+
+snippet: FodyWeavers.xsd
+
+
+### AssemblyToProcess Project
+
+A target assembly to process and then validate with unit tests.
+
+
+### Tests Project
+
+Contains all tests for the weaver.
+
+The project has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
+
+It has a reference to the `AssemblyToProcess` project, so that `AssemblyToProcess.dll` is copied to the bin directory of the test project.
+
+FodyHelpers contains a utility [WeaverTestHelper](https://github.com/Fody/Fody/blob/master/FodyHelpers/Testing/WeaverTestHelper.cs) for executing test runs on a target assembly using a ModuleWeaver.
+
+A test can then be run as follows:
+
+snippet: WeaverTests
+
+By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
+
 
 ## Build Server
 
@@ -112,109 +178,31 @@ When writing an addin there are a points to note when throwing an Exception.
 
 To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use the following `appveyor.yml`:
 
-```yml
-image: Visual Studio 2017
-build_script:
-- cmd: dotnet build --configuration Release
-test:
-  assemblies:
-    - '**\*Tests.dll'
-artifacts:
-- path: nugets\*.nupkg
+snippet: appveyor.yml
+
+
+## Usage
+
+
+### NuGet installation
+
+Install the [BasicFodyAddin.Fody NuGet package](https://nuget.org/packages/BasicFodyAddin.Fody/) and update the [Fody NuGet package](https://nuget.org/packages/Fody/):
+
+```powershell
+PM> Install-Package Fody
+PM> Install-Package BasicFodyAddin.Fody
 ```
 
+The `Install-Package Fody` is required since NuGet always defaults to the oldest, and most buggy, version of any dependency.
 
-## Configuration via FodyWeavers.xml
 
-This file exists at a project level in the users target project and is used to pass configuration to the 'ModuleWeaver'.
-
-So if the FodyWeavers.xml file contains the following
+### Add to FodyWeavers.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
-  <MyAddin MyProperty="PropertyValue"/>
+  <BasicFodyAddin />
 </Weavers>
-```
-
-The Config property of the ModuleWeaver will be an XElement containing
-
-```xml
-<MyAddin MyProperty="PropertyValue"/>
-```
-
-
-## Supporting intellisense for FodyWeavers.xml
-
-Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers.xml during compilation, adding all detected weavers. Every weaver now can provide a schema fragment describing it's individual properties and content that can be set. This file must be part of the weaver project and named `<project name>.xcf`. It contains the element describing the type of the configuration node. The file must be published side by side with the weaver file; however FodyPackaging will configure this correctly based on the convention `WeaverName.Fody.xcf`.
-
-Sample content of the `MyAddin.Fody.xcf`:
-
-```xml
-<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:all>
-    <xs:element name="Content" type="xs:string" minOccurs="0" maxOccurs="1">
-      <xs:annotation>
-        <xs:documentation>This is the documentation for the content</xs:documentation>
-      </xs:annotation>
-    </xs:element>
-  </xs:all>
-  <xs:attribute name="MyProperty" type="xs:string">
-    <xs:annotation>
-      <xs:documentation>This is the documentation for my property</xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-  <xs:attribute name="AnotherProperty" type="xs:string" >
-    <xs:annotation>
-      <xs:documentation>This is the documentation for another property</xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-</xs:complexType>
-```
-
-Fody will then combine all `.xcf` fragments with the weavers information to the final `.xsd`:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="Weavers">
-    <xs:complexType>
-      <xs:all>
-        <xs:element name="MyAddin" minOccurs="0" maxOccurs="1">
-          <xs:complexType>
-            <xs:all>
-              <xs:element name="Content" type="xs:string" minOccurs="0" maxOccurs="1">
-                <xs:annotation>
-                  <xs:documentation>This is the documentation for the content</xs:documentation>
-                </xs:annotation>
-              </xs:element>
-            </xs:all>
-            <xs:attribute name="MyProperty" type="xs:string">
-              <xs:annotation>
-                <xs:documentation>This is the documentation for my property</xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="AnotherProperty" type="xs:string">
-              <xs:annotation>
-                <xs:documentation>This is the documentation for another property</xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
-          </xs:complexType>
-        </xs:element>
-      </xs:all>
-      <xs:attribute name="VerifyAssembly" type="xs:boolean">
-        <xs:annotation>
-          <xs:documentation>'true' to run assembly verification on the target assembly after all weavers have been finished.</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="VerifyIgnoreCodes" type="xs:string">
-        <xs:annotation>
-          <xs:documentation>A comma separated list of error codes that can be safely ignored in assembly verification.</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
 ```
 
 

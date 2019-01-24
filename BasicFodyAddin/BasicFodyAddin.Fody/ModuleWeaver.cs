@@ -7,46 +7,93 @@ using Fody;
 
 #region ModuleWeaver
 
-public class ModuleWeaver: BaseModuleWeaver
+public class ModuleWeaver : BaseModuleWeaver
 {
     #region Execute
+
     public override void Execute()
     {
         var ns = GetNamespace();
-        var newType = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
+        var type = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
 
-        AddConstructor(newType);
+        AddConstructor(type);
 
-        AddHelloWorld(newType);
+        AddHelloWorld(type);
 
-        ModuleDefinition.Types.Add(newType);
+        ModuleDefinition.Types.Add(type);
         LogInfo("Added type 'Hello' with method 'World'.");
     }
+
     #endregion
 
     #region GetAssembliesForScanning
+
     public override IEnumerable<string> GetAssembliesForScanning()
     {
         yield return "netstandard";
         yield return "mscorlib";
     }
+
     #endregion
 
     string GetNamespace()
     {
-        var attributes = ModuleDefinition.Assembly.CustomAttributes;
-        var namespaceAttribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == "NamespaceAttribute");
+        var namespaceFromConfig = GetNamespaceFromConfig();
+        var namespaceFromAttribute = GetNamespaceFromAttribute();
+        if (namespaceFromConfig != null && namespaceFromAttribute != null)
+        {
+            throw new WeavingException("Configuring namespace from both Config and Attribute is not supported.");
+        }
+
+        if (namespaceFromAttribute != null)
+        {
+            return namespaceFromAttribute;
+        }
+
+        return namespaceFromConfig;
+    }
+
+    string GetNamespaceFromConfig()
+    {
+        var namespaceAttribute = Config.Attribute("Namespace");
         if (namespaceAttribute == null)
         {
             return null;
         }
+
+        var value = namespaceAttribute.Value;
+        ValidateNamespace(value);
+        return value;
+    }
+
+    string GetNamespaceFromAttribute()
+    {
+        var attributes = ModuleDefinition.Assembly.CustomAttributes;
+        var namespaceAttribute = attributes
+            .SingleOrDefault(x => x.AttributeType.FullName == "NamespaceAttribute");
+        if (namespaceAttribute == null)
+        {
+            return null;
+        }
+
         attributes.Remove(namespaceAttribute);
-        return (string) namespaceAttribute.ConstructorArguments.First().Value;
+        var value = (string)namespaceAttribute.ConstructorArguments.First().Value;
+        ValidateNamespace(value);
+        return value;
+    }
+
+    static void ValidateNamespace(string value)
+    {
+        if (value is null || string.IsNullOrWhiteSpace(value))
+        {
+            throw new WeavingException("Invalid namespace");
+        }
     }
 
     void AddConstructor(TypeDefinition newType)
     {
-        var method = new MethodDefinition(".ctor", MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName, TypeSystem.VoidReference);
+        var attributes = MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName;
+        var method = new MethodDefinition(".ctor", attributes, TypeSystem.VoidReference);
         var objectConstructor = ModuleDefinition.ImportReference(TypeSystem.ObjectDefinition.GetConstructors().First());
         var processor = method.Body.GetILProcessor();
         processor.Emit(OpCodes.Ldarg_0);
@@ -63,10 +110,12 @@ public class ModuleWeaver: BaseModuleWeaver
         processor.Emit(OpCodes.Ret);
         newType.Methods.Add(method);
     }
+
     #region ShouldCleanReference
 
     public override bool ShouldCleanReference => true;
 
     #endregion
 }
+
 #endregion

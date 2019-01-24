@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net40;netstandard1.0</TargetFrameworks>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Authors>Simon Cropp</Authors>
+    <Copyright>Copyright Simon Cropp $([System.DateTime]::UtcNow.ToString(yyyy)).</Copyright>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>Injects a new type that writes "Hello World".</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="4.0.0-beta.1" PrivateAssets="None" />
-    <PackageReference Include="FodyPackaging" Version="4.0.0-beta.1" PrivateAssets="All" />
+    <PackageReference Include="Fody"
+                      Version="4.0.0-beta.1"
+                      PrivateAssets="None" />
+    <PackageReference Include="FodyPackaging"
+                      Version="4.0.0-beta.1"
+                      PrivateAssets="All" />
   </ItemGroup>
 </Project>
