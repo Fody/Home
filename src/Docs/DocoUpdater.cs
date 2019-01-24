@@ -13,7 +13,7 @@ public class DocoUpdater
         var finder = new FileFinder();
         var addinPath = Path.Combine(root,"BasicFodyAddin");
         var snippetSourceFiles = finder.FindFiles(
-            Path.Combine(root, "src/Docs/Snippets"),
+            Path.Combine(root, "src/Docs"),
             addinPath);
         var snippets = FileSnippetExtractor.Read(snippetSourceFiles).ToList();
         snippets.AppendFilesAsSnippets(

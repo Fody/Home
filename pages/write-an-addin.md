@@ -102,23 +102,6 @@ ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this
 ```cs
 public class ModuleWeaver : BaseModuleWeaver
 {
-    public override void Execute()
-    {
-        var objectType = FindType("System.Object");
-        var objectImport = ModuleDefinition.ImportReference(objectType);
-        ModuleDefinition.Types.Add(new TypeDefinition("MyNamespace", "MyType", TypeAttributes.Public, objectImport));
-    }
-
-    public override IEnumerable<string> GetAssembliesForScanning()
-    {
-        return Enumerable.Empty<string>();
-    }
-}
-```
-<sup>[snippet source](/src/Docs/Snippets/ModuleWeaver.cs#L6-L23)</sup>
-```cs
-public class ModuleWeaver : BaseModuleWeaver
-{
 
     public override void Execute()
     {
