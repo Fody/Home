@@ -116,14 +116,11 @@ public class ModuleWeaver : BaseModuleWeaver
         LogInfo("Added type 'Hello' with method 'World'.");
     }
 
-
-
     public override IEnumerable<string> GetAssembliesForScanning()
     {
         yield return "netstandard";
         yield return "mscorlib";
     }
-
 
     string GetNamespace()
     {
@@ -200,12 +197,10 @@ public class ModuleWeaver : BaseModuleWeaver
         newType.Methods.Add(method);
     }
 
-
     public override bool ShouldCleanReference => true;
-
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L121)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L116)</sup>
 <!-- endsnippet -->
 
 
@@ -228,7 +223,7 @@ public override void Execute()
     LogInfo("Added type 'Hello' with method 'World'.");
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L12-L27)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L12-L26)</sup>
 <!-- endsnippet -->
 
 
@@ -246,7 +241,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
     yield return "mscorlib";
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L37)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L28-L34)</sup>
 <!-- endsnippet -->
 
 
@@ -258,7 +253,7 @@ When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for t
 ```cs
 public override bool ShouldCleanReference => true;
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L114-L118)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L111-L113)</sup>
 <!-- endsnippet -->
 
 
