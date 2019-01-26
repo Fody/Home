@@ -17,6 +17,7 @@ public class DocoUpdater
             addinPath);
         var snippets = FileSnippetExtractor.Read(snippetSourceFiles).ToList();
         snippets.AppendFilesAsSnippets(
+            Path.Combine(addinPath,"Tests/Tests.csproj"),
             Path.Combine(addinPath,"BasicFodyAddin/BasicFodyAddin.csproj"),
             Path.Combine(addinPath,"BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf"),
             Path.Combine(addinPath,"BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj"),

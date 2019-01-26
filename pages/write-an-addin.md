@@ -1,16 +1,18 @@
 # Write an Addin
 
+This page uses the a sample addin called BasicFodyAddin as to describe building an addin.
 
-## Moving parts of a Fody Addin
+ * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
+ * (Source)[../BasicFodyAddin/]
 
 
-### Lib/Reference project
+## Lib/Reference project
 
-BasicFodyAddin.csproj:
+(BasicFodyAddin.csproj)[../BasicFodyAddin/BasicFodyAddin/]
 
- * Contain all classes used for compile time to control the addin behavior at compile time. Often this is in the form of Attributes. 
+ * Contain all classes to control the addin behavior at compile time or provide intellisense to consumers. Often this is in the form of [Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/).
  * Generally any usage and reference to this project is removed at compile time so it is not needed as part of application deployment.
- * The target frameworks depend on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md))
+ * The target frameworks depends on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md))
 
 This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
@@ -51,9 +53,9 @@ The produced NuGet package will:
 <!-- endsnippet -->
 
 
-### Weaver Project
+## Weaver Project
 
-BasicFodyAddin.Fody.csproj:
+(BasicFodyAddin.Fody.csproj)[../BasicFodyAddin/BasicFodyAddin.Fody/]
 
 This project contains the weaving code.
 
@@ -78,17 +80,17 @@ This project contains the weaving code.
 <!-- endsnippet -->
 
 
-#### Target Frameworks
+### Target Frameworks
 
 This project must target `net46` for [msbuild.exe](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) support, and `netstandard2.0` for [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build) support.
 
 
-#### Output of the project
+### Output of the project
 
 It outputs a file named `BasicFodyAddin.Fody`. The '.Fody' suffix is necessary to be picked up by Fody at compile time.
 
 
-#### ModuleWeaver
+### ModuleWeaver
 
 ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this type during its processing. Note that the class must be named as `ModuleWeaver`.
 
@@ -204,7 +206,7 @@ public class ModuleWeaver : BaseModuleWeaver
 <!-- endsnippet -->
 
 
-##### BaseModuleWeaver.Execute
+#### BaseModuleWeaver.Execute
 
 Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
 
@@ -227,7 +229,7 @@ public override void Execute()
 <!-- endsnippet -->
 
 
-##### BaseModuleWeaver.GetAssembliesForScanning
+#### BaseModuleWeaver.GetAssembliesForScanning
 
 Called by Fody when it is building up a type cache for lookups. This method should return all possible assemblies that the weaver may require while resolving types. In this case BasicFodyAddin requires `System.Object`, so `GetAssembliesForScanning` returns `netstandard` and `mscorlib`. It is safe to return assembly names that are not used by the current target assembly as these will be ignored.
 
@@ -245,7 +247,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
 <!-- endsnippet -->
 
 
-##### BaseModuleWeaver.ShouldCleanReference
+#### BaseModuleWeaver.ShouldCleanReference
 
 When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
 
@@ -257,13 +259,13 @@ public override bool ShouldCleanReference => true;
 <!-- endsnippet -->
 
 
-##### Other BaseModuleWeaver Members
+#### Other BaseModuleWeaver Members
 
 `BaseModuleWeaver` has a number of other members for logging and extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
 
 
-#### Resultant injected code
+### Resultant injected code
 
 In this case a new type is being injected into the target assembly that looks like this.
 
@@ -278,7 +280,7 @@ public class Hello
 ```
 
 
-#### Throwing exceptions
+### Throwing exceptions
 
 When writing an addin there are a points to note when throwing an Exception.
 
@@ -288,7 +290,7 @@ When writing an addin there are a points to note when throwing an Exception.
  * If the exception type is *not* a `WeavingException` then it will be interpreted as an "unhandled exception". So something has gone seriously wrong with the addin. It most likely has a bug. In this case message logged be much bore verbose and will contain the full contents of the Exception. The code for getting the message can be found here in [ExceptionExtensions](https://github.com/Fody/Fody/blob/master/FodyCommon/ExceptionExtensions.cs).
 
 
-### Passing config via to FodyWeavers.xml
+## Passing config via to FodyWeavers.xml
 
 This file exists at a project level in the users target project and is used to pass configuration to the 'ModuleWeaver'.
 
@@ -308,7 +310,7 @@ The property of the `ModuleWeaver.Config` will be an [XElement](https://docs.mic
 ```
 
 
-#### Supporting intellisense for FodyWeavers.xml
+### Supporting intellisense for FodyWeavers.xml
 
 Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers.xml during compilation, adding all detected weavers. Every weaver now can provide a schema fragment describing it's individual properties and content that can be set. This file must be part of the weaver project and named `<project name>.xcf`. It contains the element describing the type of the configuration node. The file must be published side by side with the weaver file; however FodyPackaging will configure this correctly based on the convention `WeaverName.Fody.xcf`.
 
@@ -371,12 +373,16 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
 <!-- endsnippet -->
 
 
-### AssemblyToProcess Project
+## AssemblyToProcess Project
+
+(AssemblyToProcess.csproj)[../BasicFodyAddin/AssemblyToProcess/]
 
 A target assembly to process and then validate with unit tests.
 
 
-### Tests Project
+## Tests Project
+
+(Tests.csproj)[../BasicFodyAddin/Tests/]
 
 Contains all tests for the weaver.
 
@@ -414,6 +420,32 @@ public class WeaverTests
 <!-- endsnippet -->
 
 By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
+
+<!-- snippet: Tests.csproj -->
+```csproj
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;netcoreapp2.2</TargetFrameworks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <DisableFody>true</DisableFody>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="FodyHelpers" Version="4.0.0-beta.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
+    <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
+    <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+</Project>
+```
+<sup>[snippet source](/BasicFodyAddin/Tests/Tests.csproj#L1-L20)</sup>
+<!-- endsnippet -->
 
 
 ## Build Server
@@ -470,7 +502,7 @@ Addins are deployed through [NuGet](https://nuget.org/) packages. The package mu
  * Contain two weaver assemblies, one in each of the folders `netclassicweaver` and `netstandardweaver`, to support both .Net Classic and .Net Core.
  * Contain a runtime library, compiled for every supported framework, under the `lib` folder.
  * Contain an MSBbuild .props file in the `build` folder that registers the weaver at compile time. The name of the file must be  the package id with the `.props` extension. See [Addin Discover](addin-discovery.md) for details.
- * Haven an id with the same name of the weaver assembly should be the same and be suffixed with ".Fody". For example the [Virtuosity NuGet package](https://nuget.org/packages/Virtuosity.Fody/) is named `Virtuosity.Fody` and contains the weaver assembly `Virtuosity.Fody.dll` and the run time assembly `Virtuosity.dll`.
+ * Have an id with the same name of the weaver assembly should be the same and be suffixed with ".Fody". So in this case the [BasicFodyAddin.Fody NuGet]((https://www.nuget.org/packages/BasicFodyAddin.Fody/)) contains the weaver assembly `BasicFodyAddin.Fody.dll` and the reference assembly `BasicFodyAddin.dll`.
  * Have a single dependency on **only** the [Fody NuGet package](https://nuget.org/packages/Fody/). **Do not add any other NuGet dependencies as Fody does not support loading these files at compile time.**
 
 Note that the addins used via [in-solution-weaving](in-solution-weaving.md) are handled differently.
