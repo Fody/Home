@@ -1,0 +1,15 @@
+
+
+ * [Licensing and patron FAQ](licensing-patron-faq.md)
+ * [Usage](usage.md)
+ * [Configuration](configuration.md)
+ * [Addin discovery](addin-discovery.md)
+ * [Addin list](addins.md)
+ * [Common errors](common-errors.md)
+ * [In solution weaving](in-solution-weaving.md)
+ * [ProcessedByFody class](processedbyfody-class.md)
+ * [Strong naming](strong-naming.md)
+ * [Supported runtimes and IDE](supported-runtimes-and-ide.md)
+ * [Writing an addin](write-an-addin.md)
+ * [Backers tracking/info](backers.md)
+ * [Donations](donations.md)

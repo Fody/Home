@@ -56,3 +56,8 @@ G:\Code\@MyClassLibrary\
 ```
 
 There is nothing that can be done to fix this in Fody. If this error occurs the only option is to remove the symbols from the solution path.
+
+
+## Edit and continue
+
+Edit and continue is not supported. There is no extension point to re-weave an assembly after the edit part.

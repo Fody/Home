@@ -1,10 +1,8 @@
-
 # <img src="https://github.com/Fody/Home/raw/master/images/fody.png" height="40px"> Fody
 
 The Home repository is the starting point for people to learn about Fody, the project.
 
 Fody is an extensible tool for weaving .net assemblies. It enables the manipulating the IL of an assembly as part of a build requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model. This technique is very powerful, for example you can turn simple properties into full [INotifyPropertyChanged implementations](https://github.com/Fody/PropertyChanged), add [checks for null arguments](https://github.com/Fody/NullGuard), add [Method Timings](https://github.com/Fody/MethodTimer), even [make all your string comparisons case insensitive](https://github.com/Fody/Caseless).
-
 
 
 <!--- StartOpenCollectiveBackers -->
@@ -21,7 +19,7 @@ Fody requires significant effort to maintain. As such it relies on financial con
 
 ### Platinum Sponsors
 
-Support this project by [becoming a Platinum Sponsor](https://opencollective.com/fody/order/7089). A banner with your company logo will be added here with a link to your website. A "Sponsored by" text and link will be added to the description of the NuGet Package for the life of your sponsorship. You also get 1 hour of remote support per month.
+Support this project by [becoming a Platinum Sponsor](https://opencollective.com/fody/order/7089). A banner with your company logo will be added here with a link to your website. A "Sponsored by" text and link will be added to the description of the NuGet Package for the life of your sponsorship. One hour of remote support per month.
 
 <!--
 <a href="https://opencollective.com/fody/tiers/platinum/0/website"><img src="https://opencollective.com/fody/tiers/platinum/0/avatar.svg" height="100px"></a>
@@ -66,20 +64,47 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 
 The codebase of core Fody engine located at https://github.com/Fody/Fody.
 
+[![Chat on Gitter](https://img.shields.io/gitter/room/fody/fody.svg?style=flat&max-age=86400)](https://gitter.im/Fody/Fody)
+
+## The plumbing tasks Fody handles
+
+  * Injection of the MSBuild task into the build pipeline
+  * Resolving the location of the assembly and pdb
+  * Abstracts the complexities of logging to MSBuild
+  * Reads the assembly and pdb into the Mono.Cecil object model
+  * Re-applying the strong name if necessary
+  * Saving the assembly and pdb
+
+Fody Uses [Mono.Cecil](http://www.mono-project.com/Cecil/) and an add-in based approach to modifying the IL of .net assemblies at compile time.
+
+ * No install required to build
+ * No attributes required
+ * No references required
+
 
 ## Documentation and Further Learning
 
-  * [Licensing/Patron FAQ](pages/licensing-patron-faq.md)<br>
+  * [Licensing and patron FAQ](https://github.com/Fody/Home/tree/master/pages/licensing-patron-faq.md)<br>
     **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
-  * [BasicFodyAddin](https://github.com/Fody/BasicFodyAddin)<br>
-    A simple project meant to illustrate how to build an addin.
+  * [Usage](https://github.com/Fody/Home/tree/master/pages/usage.md)
+  * [Configuration](https://github.com/Fody/Home/tree/master/pages/configuration.md)
+  * [Addin discovery](https://github.com/Fody/Home/tree/master/pages/addin-discovery.md)
+  * [List of Fody weavers/addins](https://github.com/Fody/Home/tree/master/pages/pages/addins.md)
   * [FodyAddinSamples](https://github.com/Fody/FodyAddinSamples)<br>
     A GitHub repo that contains a working sample of every Fody addin.
-  * [List of Fody weavers/addins](pages/addins.md)
-  * [Donations](pages/donations.md)<br>
-    Every month the Fody project will donate a portion of funding raised to a charity or other cause.
+  * [Common errors](https://github.com/Fody/Home/tree/master/pages/common-errors.md)
+  * [In solution weaving](https://github.com/Fody/Home/tree/master/pages/in-solution-weaving.md)
+  * [ProcessedByFody class](https://github.com/Fody/Home/tree/master/pages/processedbyfody-class.md)
+  * [Strong naming](https://github.com/Fody/Home/tree/master/pages/strong-naming.md)
+  * [Supported runtimes and IDE](https://github.com/Fody/Home/tree/master/pages/supported-runtimes-and-ide.md)
+  * [Writing an addin](https://github.com/Fody/Home/tree/master/pages/write-an-addin.md)
+  * [BasicFodyAddin](BasicFodyAddin)<br>
+    A simple project meant to illustrate how to build an addin.
   * [Fody Project Configuration Manager](https://github.com/tom-englert/ProjectConfigurationManager/wiki/6.-Fody)<br>
     Provides an interactive tool that can support configuring weavers, which is especially helpful in solutions with many projects.
+  * [Backers tracking/info](https://github.com/Fody/Home/tree/master/pages/backers.md)
+  * [Donations](https://github.com/Fody/Home/tree/master/pages/pages/donations.md)<br>
+    Every month the Fody project will donate a portion of funding raised to a charity or other cause.
 
 
 ## Naming
