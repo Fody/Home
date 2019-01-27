@@ -16,7 +16,7 @@ Compatibility test builds:
 
 Fody targets (and requires) the following at build time
 
- * [.net 4.6](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx), or higher, to work with [MSBuild 15](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0).
+ * [.net 4.6](https://blogs.msdn.microsoft.com/dotnet/2015/07/20/announcing-net-framework-4-6/), or higher, to work with [MSBuild 15](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0).
  * [dotnet core SDK](https://dotnet.microsoft.com/download) to work with [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
 
 

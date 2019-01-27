@@ -7,7 +7,7 @@
   * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts your auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Caseless](https://github.com/Fody/Caseless) Change string comparisons to be case insensitive.
   * [Catel](https://github.com/Catel/Catel.Fody) For transforming automatic properties into [Catel](https://github.com/Catel/Catel) properties.
-  * [ConfigureAwait](https://github.com/distantcam/ConfigureAwait) Allows you to set the async ConfigureAwait at a global level for all your await calls.
+  * [ConfigureAwait](https://github.com/Fody/ConfigureAwait) Allows you to set the async ConfigureAwait at a global level for all your await calls.
   * [Costura](https://github.com/Fody/Costura/) For embedding references as resources.
   * [EmptyConstructor](https://github.com/Fody/EmptyConstructor) Adds an empty constructor to classes even if a non empty one is defined.
   * [Equals](https://github.com/Fody/Equals) Generate Equals, GetHashCode and operators methods from properties.
@@ -18,7 +18,7 @@
   * [InfoOf](https://github.com/Fody/InfoOf) Provides `methodof`, `propertyof` and `fieldof` equivalents of [`typeof`](https://msdn.microsoft.com/en-us/library/58918ffs.aspx).
   * [InlineIL](https://github.com/ltrzesniewski/InlineIL.Fody) Provides a way to embed arbitrary IL instructions in existing code.
   * [Ionad](https://github.com/Fody/Ionad) Replaces static method calls.
-  * [Janitor](https://github.com/Fody/Janitor) Simplifies the implementation of [IDisposable](https://msdn.microsoft.com/en-us/library/system.idisposable.aspx).
+  * [Janitor](https://github.com/Fody/Janitor) Simplifies the implementation of [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable).
   * [JetBrainsAnnotations](https://github.com/tom-englert/JetBrainsAnnotations.Fody) Converts all JetBrains ReSharper code annotation attributes to External Annotations.
   * [Lazy](https://github.com/tom-englert/Lazy.Fody) Automates the plumbing around System.Lazy.
   * [LoadAssembliesOnStartup](https://github.com/Fody/LoadAssembliesOnStartup) Loads references on startup by using the types in the module initializer
@@ -33,7 +33,7 @@
   * [PropertyChanging](https://github.com/Fody/PropertyChanging) Injects INotifyPropertyChanging code into properties.
   * [Publicize](https://github.com/Fody/Publicize) Converts non-public members to public hidden members.
   * [Realm](https://github.com/realm/realm-dotnet/tree/master/Weaver/RealmWeaver.Fody) Mobile database: a replacement for SQLite & ORMs.
-  * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](http://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
+  * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](https://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
   * [Resourcer](https://github.com/Fody/Resourcer) Simplifies reading embedded resources from an Assembly.
   * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Lets you design your WPF splash screen as a WPF Control instead of a static bitmap
   * [StampSvn](https://github.com/krk/Stamp) Stamps an assembly with SVN data.
@@ -43,8 +43,8 @@
   * [ToString](https://github.com/Fody/ToString) Generate `ToString` method from public properties.
   * [Tracer](https://github.com/csnemes/tracer) Adds trace-enter and trace-leave log entries for selected methods.
   * [Undisposed](https://github.com/ermshiperete/undisposed-fody) Debugging tool to track down undisposed objects.
-  * [Usable](https://github.com/Fody/Usable) Adds using statements for local variables that have been created, and implement [IDisposable](https://msdn.microsoft.com/en-au/library/system.idisposable.aspx).
-  * [Validar](https://github.com/Fody/Validar) Injects [IDataErrorInfo](https://msdn.microsoft.com/en-us/library/system.componentmodel.IDataErrorInfo.aspx) or [INotifyDataErrorInfo](https://msdn.microsoft.com/en-us/library/system.componentmodel.INotifyDataErrorInfo.aspx ) code into a class at compile time.
+  * [Usable](https://github.com/Fody/Usable) Adds using statements for local variables that have been created, and implement [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable).
+  * [Validar](https://github.com/Fody/Validar) Injects [IDataErrorInfo](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.idataerrorinfo) or [INotifyDataErrorInfo](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifydataerrorinfo) code into a class at compile time.
   * [Vandelay](https://github.com/jasonwoods-7/Vandelay) Simplifies MEF importing\exporting.
   * [Visualize](https://github.com/Fody/Visualize) Adds debugger attributes to help visualize objects.
   * [Virtuosity](https://github.com/Fody/Virtuosity) Change all members to virtual.

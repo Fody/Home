@@ -18,8 +18,8 @@ The file format is:
 
 The `<Weavers>` element supports the following attributes:
 
- * `VerifyAssembly`: Set to `true` to run PEVerify on the build result. See [Assembly verification](Assembly-Verification).
- * `VerifyIgnoreCodes`: A comma-separated list of error codes which should be ignored during assembly verification. See [Assembly verification](Assembly-Verification).
+ * `VerifyAssembly`: Set to `true` to run PEVerify on the build result. See [Assembly verification](#assembly-verification).
+ * `VerifyIgnoreCodes`: A comma-separated list of error codes which should be ignored during assembly verification. See [Assembly verification](#assembly-verification).
  * `GenerateXsd`: Set to `false` to disable generation of the `FodyWeavers.xsd` file which provides [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for `FodyWeavers.xml`. This overrides the `FodyGenerateXsd` MSBuild property.
 
 

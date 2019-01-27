@@ -475,7 +475,7 @@ artifacts:
 
 ### NuGet installation
 
-Install the [BasicFodyAddin.Fody NuGet package](https://nuget.org/packages/BasicFodyAddin.Fody/) and update the [Fody NuGet package](https://nuget.org/packages/Fody/):
+Install the [BasicFodyAddin.Fody NuGet package](https://www.nuget.org/packages/BasicFodyAddin.Fody/) and update the [Fody NuGet package](https://www.nuget.org/packages/Fody/):
 
 ```powershell
 PM> Install-Package Fody
@@ -497,12 +497,12 @@ The `Install-Package Fody` is required since NuGet always defaults to the oldest
 
 ## Deployment
 
-Addins are deployed through [NuGet](https://nuget.org/) packages. The package must:
+Addins are deployed through [NuGet](https://www.nuget.org/) packages. The package must:
 
  * Contain two weaver assemblies, one in each of the folders `netclassicweaver` and `netstandardweaver`, to support both .Net Classic and .Net Core.
  * Contain a runtime library, compiled for every supported framework, under the `lib` folder.
  * Contain an MSBbuild .props file in the `build` folder that registers the weaver at compile time. The name of the file must be  the package id with the `.props` extension. See [Addin Discover](addin-discovery.md) for details.
- * Have an id with the same name of the weaver assembly should be the same and be suffixed with ".Fody". So in this case the [BasicFodyAddin.Fody NuGet]((https://www.nuget.org/packages/BasicFodyAddin.Fody/)) contains the weaver assembly `BasicFodyAddin.Fody.dll` and the reference assembly `BasicFodyAddin.dll`.
- * Have a single dependency on **only** the [Fody NuGet package](https://nuget.org/packages/Fody/). **Do not add any other NuGet dependencies as Fody does not support loading these files at compile time.**
+ * Have an id with the same name of the weaver assembly should be the same and be suffixed with ".Fody". So in this case the [BasicFodyAddin.Fody NuGet](https://www.nuget.org/packages/BasicFodyAddin.Fody/) contains the weaver assembly `BasicFodyAddin.Fody.dll` and the reference assembly `BasicFodyAddin.dll`.
+ * Have a single dependency on **only** the [Fody NuGet package](https://www.nuget.org/packages/Fody/). **Do not add any other NuGet dependencies as Fody does not support loading these files at compile time.**
 
 Note that the addins used via [in-solution-weaving](in-solution-weaving.md) are handled differently.

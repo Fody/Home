@@ -34,5 +34,5 @@ All patrons: https://opencollective.com/fody/members/all.json
  * Anonymous1147 | [Open Collective](https://opencollective.com/anonymous1147)
  * Euug3576 | [OpenCollective](https://opencollective.com/euug3576)
  * Jakub Suchy | [OpenCollective](https://opencollective.com/jakub-suchy) | [GitHub](https://github.com/jakubsuchybio)
- * Miha Markic | [OpenCollective](https://opencollective.com/mihamarkic) | [GitHub](https://twitter.com/mihamarkic)
+ * Miha Markic | [OpenCollective](https://opencollective.com/mihamarkic) | [GitHub](https://github.com/MihaMarkic)
  * Peter Major | [OpenCollective](https://opencollective.com/peter-major) | [GitHub](https://github.com/petermajor)
