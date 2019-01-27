@@ -3,12 +3,12 @@
 This page uses the a sample addin called BasicFodyAddin as to describe building an addin.
 
  * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
- * (Source)[../BasicFodyAddin/]
+ * [Source](/BasicFodyAddin/)
 
 
 ## Lib/Reference project
 
-(BasicFodyAddin.csproj)[../BasicFodyAddin/BasicFodyAddin/]
+[BasicFodyAddin.csproj](/BasicFodyAddin/BasicFodyAddin/)
 
  * Contain all classes to control the addin behavior at compile time or provide intellisense to consumers. Often this is in the form of [Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/).
  * Generally any usage and reference to this project is removed at compile time so it is not needed as part of application deployment.
@@ -55,7 +55,7 @@ The produced NuGet package will:
 
 ## Weaver Project
 
-(BasicFodyAddin.Fody.csproj)[../BasicFodyAddin/BasicFodyAddin.Fody/]
+[BasicFodyAddin.Fody.csproj](/BasicFodyAddin/BasicFodyAddin.Fody/)
 
 This project contains the weaving code.
 
@@ -375,14 +375,14 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
 
 ## AssemblyToProcess Project
 
-(AssemblyToProcess.csproj)[../BasicFodyAddin/AssemblyToProcess/]
+[AssemblyToProcess.csproj](/BasicFodyAddin/AssemblyToProcess/)
 
 A target assembly to process and then validate with unit tests.
 
 
 ## Tests Project
 
-(Tests.csproj)[../BasicFodyAddin/Tests/]
+[Tests.csproj](/BasicFodyAddin/Tests/)
 
 Contains all tests for the weaver.
 
