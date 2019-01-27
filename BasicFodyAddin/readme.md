@@ -12,7 +12,7 @@ See also [Fody usage](/pages/usage.md).
 
 ### NuGet installation
 
-Install the [BasicFodyAddin.Fody NuGet package](https://nuget.org/packages/BasicFodyAddin.Fody/) and update the [Fody NuGet package](https://nuget.org/packages/Fody/):
+Install the [BasicFodyAddin.Fody NuGet package](https://www.nuget.org/packages/BasicFodyAddin.Fody/) and update the [Fody NuGet package](https://www.nuget.org/packages/Fody/):
 
 ```powershell
 PM> Install-Package Fody
@@ -41,4 +41,4 @@ See [writing an addin](/pages/write-an-addin.md)
 
 ## Icon
 
-<a href="http://thenounproject.com/noun/lego/#icon-No16919" target="_blank">Lego</a> designed by <a href="http://thenounproject.com/timur.zima" target="_blank">Timur Zima</a> from The Noun Project
+<a href="https://thenounproject.com/term/lego/16919/" target="_blank">Lego</a> designed by <a href="https://thenounproject.com/timur.zima/" target="_blank">Timur Zima</a> from The Noun Project
