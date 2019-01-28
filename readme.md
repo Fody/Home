@@ -44,7 +44,6 @@ Support this project by [becoming a Silver Sponsor](https://opencollective.com/f
 
 Support this project by [becoming a Bronze Sponsor](https://opencollective.com/fody/order/7085). The company avatar will show up here with a link to your OpenCollective Profile.
 
-
 <a href="https://opencollective.com/fody/tiers/bronze/0/website"><img src="https://opencollective.com/fody/tiers/bronze/0/avatar.svg?avatarHeight=100"></a>
 
 
@@ -53,7 +52,6 @@ Support this project by [becoming a Bronze Sponsor](https://opencollective.com/f
 Thanks to all the backers and sponsors! Support this project by [becoming a patron](https://opencollective.com/fody/order/3059).
 
 <a href="https://opencollective.com/fody#contributors"><img src="https://opencollective.com/fody/sponsor.svg?width=890&avatarHeight=50&button=false"><img src="https://opencollective.com/fody/backer.svg?width=890&avatarHeight=50&button=false"></a>
-
 
 
 <!--- EndOpenCollectiveBackers -->
@@ -77,9 +75,9 @@ The codebase of core Fody engine located at https://github.com/Fody/Fody.
 
 Fody Uses [Mono.Cecil](http://www.mono-project.com/Cecil/) and an add-in based approach to modifying the IL of .net assemblies at compile time.
 
- * No install required to build
- * No attributes required
- * No references required
+ * No install required to build.
+ * Attributes are optional depending on the weavers used.
+ * No runtime dependencies need to be deployed.
 
 
 ## Documentation and Further Learning

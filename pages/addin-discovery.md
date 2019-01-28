@@ -2,25 +2,25 @@
 
 Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at compile time as an MSBuild item, so Fody is able to locate it. This is achieved by providing a `.props` file with the NuGet package with the following default content:
 
-```xml
-﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!-- snippet: Weaver.props -->
+```props
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <WeaverRuntimeToken
-      Condition="$(MSBuildRuntimeType) != 'Core'">netclassicweaver</WeaverRuntimeToken>
-    <WeaverRuntimeToken
-      Condition="$(MSBuildRuntimeType) == 'Core'">netstandardweaver</WeaverRuntimeToken>
+    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) != 'Core'">netclassicweaver</WeaverRuntimeToken>
+    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) == 'Core'">netstandardweaver</WeaverRuntimeToken>
   </PropertyGroup>
 
   <ItemGroup>
-    <WeaverFiles
-      Include="$(MsBuildThisFileDirectory)..\$(WeaverRuntimeToken)\$(MSBuildThisFileName).dll" />
+    <WeaverFiles Include="$(MsBuildThisFileDirectory)..\$(WeaverRuntimeToken)\$(MSBuildThisFileName).dll" />
   </ItemGroup>
 
 </Project>
-```
 
-If the `FodyPackaging` NuGet package is used to create the addin package, this file is automatically added.
+```
+<!-- endsnippet -->
+
+If the [FodyPackaging](fodypackaging.md) is used to create the addin package, this file is automatically added.
 
 However depending on requirements a custom file may be required. The important part is to provide an item named `WeaverFiles` that points to the location of the weaver assembly somewhere in the build chain.
 

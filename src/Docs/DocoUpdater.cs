@@ -1,12 +1,13 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using CaptureSnippets;
 using Xunit;
 
 public class DocoUpdater
 {
     [Fact]
-    public void Run()
+    public async Task Run()
     {
         var root = GitRepoDirectoryFinder.FindForFilePath();
 
@@ -23,6 +24,13 @@ public class DocoUpdater
             Path.Combine(addinPath,"BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj"),
             Path.Combine(addinPath,"SmokeTest/FodyWeavers.xsd"),
             Path.Combine(addinPath,"appveyor.yml"));
+
+        await snippets.AppendUrlsAsSnippets(
+            "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props",
+            "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.props",
+            "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.targets");
+
+
         var handling = new GitHubSnippetMarkdownHandling(root);
         var processor = new MarkdownProcessor(snippets, handling.AppendGroup);
         var sourceMdFiles = Directory.EnumerateFiles(Path.Combine(root, "pages/source"), "*.md");

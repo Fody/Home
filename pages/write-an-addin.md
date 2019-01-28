@@ -1,6 +1,6 @@
 # Write an Addin
 
-This page uses the a sample addin called BasicFodyAddin as to describe building an addin.
+This page uses the a sample addin called BasicFodyAddin to describe building an addin.
 
  * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
  * [Source](/BasicFodyAddin/)
@@ -17,7 +17,7 @@ This page uses the a sample addin called BasicFodyAddin as to describe building 
 This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
  * [Fody](https://www.nuget.org/packages/Fody/) with `PrivateAssets="None"`. This results in producing NuGet package having a dependency on Fody with all `include="All"` in the nuspec. Note that while this project consumes the Fody NuGet, weaving is not performed on this project. This is due to the FodyPackaging NuGet (see below) including `<DisableFody>true</DisableFody>` in the MSBuild pipeline.
- * [FodyPackaging](https://www.nuget.org/packages/FodyPackaging/) with `PrivateAssets="All"`. This results in a NuGet package being produced by this project, but no dependency on FodyPackaging in the resulting NuGet package.
+ * [FodyPackaging](fodypackaging.md) with `PrivateAssets="All"`. This results in a NuGet package being produced by this project, but no dependency on FodyPackaging in the resulting NuGet package.
 
 The produced NuGet package will:
 
@@ -312,7 +312,7 @@ The property of the `ModuleWeaver.Config` will be an [XElement](https://docs.mic
 
 ### Supporting intellisense for FodyWeavers.xml
 
-Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers.xml during compilation, adding all detected weavers. Every weaver now can provide a schema fragment describing it's individual properties and content that can be set. This file must be part of the weaver project and named `<project name>.xcf`. It contains the element describing the type of the configuration node. The file must be published side by side with the weaver file; however FodyPackaging will configure this correctly based on the convention `WeaverName.Fody.xcf`.
+Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers.xml during compilation, adding all detected weavers. Every weaver now can provide a schema fragment describing it's individual properties and content that can be set. This file must be part of the weaver project and named `<project name>.xcf`. It contains the element describing the type of the configuration node. The file must be published side by side with the weaver file; however [FodyPackaging](fodypackaging.md) will configure this correctly based on the convention `WeaverName.Fody.xcf`.
 
 Sample content of the `BasicFodyAddin.Fody.xcf`:
 
