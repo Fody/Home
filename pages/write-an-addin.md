@@ -34,10 +34,14 @@ The produced NuGet package will:
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Authors>Simon Cropp</Authors>
-    <Copyright>Copyright Simon Cropp $([System.DateTime]::UtcNow.ToString(yyyy)).</Copyright>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)).</Copyright>
     <Description>Injects a new type that writes "Hello World".</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <!-- PackageTags are optional. Defaults to 'ILWeaving, Fody, Cecil, AOP' -->
+    <PackageTags>Hello World, ILWeaving, Fody, Cecil, AOP</PackageTags>
+    <PackageOutputPath>$(SolutionDir)../nugets</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/Fody/Home/tree/master/BasicFodyAddin</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody"
@@ -49,7 +53,7 @@ The produced NuGet package will:
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L21)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L25)</sup>
 <!-- endsnippet -->
 
 

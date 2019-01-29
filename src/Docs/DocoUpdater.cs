@@ -12,18 +12,18 @@ public class DocoUpdater
         var root = GitRepoDirectoryFinder.FindForFilePath();
 
         var finder = new FileFinder();
-        var addinPath = Path.Combine(root,"BasicFodyAddin");
+        var addinPath = Path.Combine(root, "BasicFodyAddin");
         var snippetSourceFiles = finder.FindFiles(
             Path.Combine(root, "src/Docs"),
             addinPath);
         var snippets = FileSnippetExtractor.Read(snippetSourceFiles).ToList();
         snippets.AppendFilesAsSnippets(
-            Path.Combine(addinPath,"Tests/Tests.csproj"),
-            Path.Combine(addinPath,"BasicFodyAddin/BasicFodyAddin.csproj"),
-            Path.Combine(addinPath,"BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf"),
-            Path.Combine(addinPath,"BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj"),
-            Path.Combine(addinPath,"SmokeTest/FodyWeavers.xsd"),
-            Path.Combine(addinPath,"appveyor.yml"));
+            Path.Combine(addinPath, "Tests/Tests.csproj"),
+            Path.Combine(addinPath, "BasicFodyAddin/BasicFodyAddin.csproj"),
+            Path.Combine(addinPath, "BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf"),
+            Path.Combine(addinPath, "BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj"),
+            Path.Combine(addinPath, "SmokeTest/FodyWeavers.xsd"),
+            Path.Combine(addinPath, "appveyor.yml"));
 
         await snippets.AppendUrlsAsSnippets(
             "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props",

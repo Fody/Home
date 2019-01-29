@@ -16,7 +16,6 @@ Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at 
   </ItemGroup>
 
 </Project>
-
 ```
 <!-- endsnippet -->
 
