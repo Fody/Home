@@ -1,6 +1,6 @@
 
   * [Licensing and patron FAQ](https://github.com/Fody/Home/tree/master/pages/licensing-patron-faq.md)<br>
-    **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](pages/licensing-patron-faq.md) for more information.
+    **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).** See [Licensing/Patron FAQ](https://github.com/Fody/Home/tree/master/pages/licensing-patron-faq.md) for more information.
   * [Usage](https://github.com/Fody/Home/tree/master/pages/usage.md)
   * [Configuration](https://github.com/Fody/Home/tree/master/pages/configuration.md)
   * [Addin discovery](https://github.com/Fody/Home/tree/master/pages/addin-discovery.md)
