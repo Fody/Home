@@ -12,7 +12,8 @@
   * [ProcessedByFody class](https://github.com/Fody/Home/tree/master/pages/processedbyfody-class.md)
   * [Strong naming](https://github.com/Fody/Home/tree/master/pages/strong-naming.md)
   * [Supported runtimes and IDE](https://github.com/Fody/Home/tree/master/pages/supported-runtimes-and-ide.md)
-  * [Writing an addin](https://github.com/Fody/Home/tree/master/pages/write-an-addin.md)
+  * [Addin development](https://github.com/Fody/Home/tree/master/pages/addin-development.md)
+  * [Addin packaging](https://github.com/Fody/Home/tree/master/pages/addin-packaging.md)
   * [BasicFodyAddin](BasicFodyAddin)<br>
     A simple project meant to illustrate how to build an addin.
   * [Fody Project Configuration Manager](https://github.com/tom-englert/ProjectConfigurationManager/wiki/6.-Fody)<br>
