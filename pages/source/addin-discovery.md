@@ -4,7 +4,7 @@ Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at 
 
 snippet: Weaver.props
 
-If the [FodyPackaging](fodypackaging.md) is used to create the addin package, this file is automatically added.
+If the [FodyPackaging NuGet](addin-packaging.md#FodyPackaging-NuGet-Package) is used to create the addin package, this file is automatically added.
 
 However depending on requirements a custom file may be required. The important part is to provide an item named `WeaverFiles` that points to the location of the weaver assembly somewhere in the build chain.
 

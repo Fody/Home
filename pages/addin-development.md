@@ -1,4 +1,4 @@
-# Write an Addin
+# Addin development
 
 This page uses the a sample addin called BasicFodyAddin to describe building an addin.
 

@@ -5,13 +5,13 @@
 
 Sometimes it is necessary to have weaving code specific to a solution. In this case it is desirable to have that code exist in the same solution it is editing.
 
-- _Note: Starting with Fody 4.0 the implicit lookup of weavers by naming conventions is no longer supported. 
+- _Note: Starting with Fody 4.0 the implicit lookup of weavers by naming conventions is no longer supported.
   Follow the instructions below on to migrate projects._
 
 
 ## Weaving inside a solution
 
-Fody will [look for weavers by examining the `WeaverFiles` items](addin-discovery.md) of the project. 
+Fody will [look for weavers by examining the `WeaverFiles` items](addin-discovery.md) of the project.
 
 
 To enable in-solution weaving:
