@@ -17,7 +17,7 @@ Fody will [look for weavers by examining the `WeaverFiles` items](addin-discover
 To enable in-solution weaving:
 
   1. Add a project named e.g. 'Weavers' to the solution.
-  1. Add a class named `ModuleWeaver` to the project. See [ModuleWeaver](write-an-addin.md#the-moduleweaver-class).
+  1. Add a class named `ModuleWeaver` to the project. See [ModuleWeaver](addin-development.md#weaver-project).
      _Note: The `ModuleWeaver` is the default name for the weaver class. It is also possible to use multiple weavers with different class names by specifying their class names in the `WeaverClassNames` attribute._
   1. Change the [solution build order](https://docs.microsoft.com/en-au/visualstudio/ide/how-to-create-and-remove-project-dependencies) so the 'Weavers' project is built before the projects consuming it. _Note: Do not add a project reference to the weaver_
   1. If a weaver class is explicitly specified in the `WeaverClassNames` attribute, Fody expects the configuration entry in the `FodyWeavers.xml` file to be named like the class. For example, if the class name is `NamedWeaver`:

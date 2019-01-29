@@ -17,7 +17,7 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
 This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
  * [Fody](https://www.nuget.org/packages/Fody/) with `PrivateAssets="None"`. This results in producing NuGet package having a dependency on Fody with all `include="All"` in the nuspec. Note that while this project consumes the Fody NuGet, weaving is not performed on this project. This is due to the FodyPackaging NuGet (see below) including `<DisableFody>true</DisableFody>` in the MSBuild pipeline.
- * [FodyPackaging](fodypackaging.md) with `PrivateAssets="All"`. This results in a NuGet package being produced by this project, but no dependency on FodyPackaging in the resulting NuGet package.
+ * [FodyPackaging](addin-packaging.md#fodypackaging-nuget-package) with `PrivateAssets="All"`. This results in a NuGet package being produced by this project, but no dependency on FodyPackaging in the resulting NuGet package.
 
 The produced NuGet package will:
 
