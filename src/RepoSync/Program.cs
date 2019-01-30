@@ -26,7 +26,6 @@ class Program
         sync.AddTarget("Fody", "EmptyConstructor", "master");
         sync.AddTarget("Fody", "Equals", "master");
         sync.AddTarget("Fody", "ExtraConstraints", "master");
-        sync.AddTarget("Fody", "Fielder", "master");
         sync.AddTarget("Fody", "Freezable", "master");
         sync.AddTarget("Fody", "Immutable", "master");
         sync.AddTarget("Fody", "InfoOf", "master");
