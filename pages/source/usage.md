@@ -35,6 +35,23 @@ Install-Package Virtuosity.Fody
 ```
 
 
+## Adding Fody to a project that generates a NuGet package
+
+When Fody is added to a project that generates a NuGet package, the produced package will have a dependency on Fody. If this dependency needs to be removed from the generated .nupkg file, then, in the consuming .cproj project file, replace 
+
+```xml
+<PackageReference Include="Fody" Version="xxx" />
+```
+
+with
+
+```xml
+<PackageReference Include="Fody" Version="xxx" >
+  <PrivateAssets>all</PrivateAssets>
+</PackageReference>
+```
+
+
 ## Add FodyWeavers.xml
 
 To indicate what weavers run and in what order a `FodyWeavers.xml` file is used at the project level. It needs to be added manually. It takes the following form:
