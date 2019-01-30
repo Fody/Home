@@ -34,9 +34,9 @@ e.g.
 Install-Package Virtuosity.Fody
 ```
 
-## Adding Fody to a project that that generates a NuGet package
+## Adding Fody to a project that generates a NuGet package
 
-When Fody is added to a project that is built as a NuGet package, the produced package will have a dependency on Fody. If this dependency does not need to be retained in the generated .nupkg file, then, in the consuming .cproj project file, replace 
+When Fody is added to a project that generates a NuGet package, the produced package will have a dependency on Fody. If this dependency needs to be removed from the generated .nupkg file, then, in the consuming .cproj project file, replace 
 
 ```xml
     <PackageReference Include="Fody" Version="xxx" />
@@ -50,7 +50,7 @@ with
     </PackageReference>
 ```
 
-For generated packages that implement a weaver, such as NullGuard.Fody, consider applying the same pattern to the consumer of the weaver when installing its package.
+For generated packages that implement a weaver, such as NullGuard.Fody, consider applying the same pattern to the consumer of the weaver when installing its package instead.
 
 ## Add FodyWeavers.xml
 
