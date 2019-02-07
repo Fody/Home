@@ -29,7 +29,7 @@ The convention for Fody addin NuGet packages is as follows:
 
  * `build/AddinName.Fody.props`: Facilitates [addin discovery](addin-discovery.md) via an [props file included by NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package).
  * `lib`: Contains the [Lib/Reference project](addin-development.md#Lib/Reference-project) for all [supported target frameworks](https://docs.microsoft.com/en-us/nuget/create-packages/supporting-multiple-target-frameworks).
- * `netclassicweaver`/`netstandardweaver1: Contains the [Weaver Project](addin-development.md#Weaver-Project) assemblies. Also contains the XCF file to [Supporting intellisense for FodyWeavers.xml](addin-development.md#Supporting-intellisense-for-FodyWeavers.xml).
+ * `netclassicweaver`/`netstandardweaver`: Contains the [Weaver Project](addin-development.md#Weaver-Project) assemblies. Also contains the XCF file to [Supporting intellisense for FodyWeavers.xml](addin-development.md#Supporting-intellisense-for-FodyWeavers.xml).
 
 
 ## FodyPackaging NuGet Package

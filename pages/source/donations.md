@@ -5,6 +5,7 @@ Every month the Fody project will donate a portion of funding raised to a charit
 
 ## History
 
+ * 2019 February: $50USD to [Ada Developers Academy](https://www.adadevelopersacademy.org) as nominated by [Weronika Łabaj](https://weronikalabaj.com/)
  * 2019 January: $50USD to [Black Girls Code](http://www.blackgirlscode.com) as nominated by [Weronika Łabaj](https://weronikalabaj.com/)
  * 2018 December: $50USD to [Planned Parenthood](https://www.plannedparenthood.org) as nominated by [Brad Wilson](https://twitter.com/BradWilson) as a thanks for the use of [xUnit](https://xunit.github.io/)
 
@@ -17,6 +18,7 @@ Every month the Fody project will donate a portion of funding raised to a charit
  * [Women in Tech Show](http://podcast.womenintechshow.com)
  * [Women Who Code](https://www.womenwhocode.com/)
  * [Diversify Tech](https://www.diversifytech.co) created by [Veni Kunche](https://www.patreon.com/venikunche)
+ * [Ada Developers Academy](https://www.adadevelopersacademy.org)
 
 
 ## Motivations
