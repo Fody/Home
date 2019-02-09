@@ -17,13 +17,6 @@ public class DocoUpdater
             Path.Combine(root, "src/Docs"),
             addinPath);
         var snippets = FileSnippetExtractor.Read(snippetSourceFiles).ToList();
-        snippets.AppendFilesAsSnippets(
-            Path.Combine(addinPath, "Tests/Tests.csproj"),
-            Path.Combine(addinPath, "BasicFodyAddin/BasicFodyAddin.csproj"),
-            Path.Combine(addinPath, "BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf"),
-            Path.Combine(addinPath, "BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj"),
-            Path.Combine(addinPath, "SmokeTest/FodyWeavers.xsd"),
-            Path.Combine(addinPath, "appveyor.yml"));
 
         await snippets.AppendUrlsAsSnippets(
             "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props",
@@ -32,7 +25,7 @@ public class DocoUpdater
 
 
         var handling = new GitHubSnippetMarkdownHandling(root);
-        var processor = new MarkdownProcessor(snippets, handling.AppendGroup);
+        var processor = new MarkdownProcessor(snippets, handling.AppendGroup, snippetSourceFiles);
         var sourceMdFiles = Directory.EnumerateFiles(Path.Combine(root, "pages/source"), "*.md");
         var pagesDir = Path.Combine(root, "pages");
         PurgeDirectory(pagesDir);
