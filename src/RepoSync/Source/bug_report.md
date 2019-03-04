@@ -8,14 +8,14 @@ Where it is clear that the below content has not read, the issue is likely to be
 
 #### You should already be a Patron
 
-To be using Fody you should be a [Patron](https://opencollective.com/fody/order/3059). See [Licensing/Patron FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md). With that in mind, it is assumed anyone raising an issue is already a Patron. As such your GitHub Id may be verified against the [OpenCollective contributors](https://opencollective.com/fody#contributors). This process will depend on the issue quality, your circumstances, and the impact on the larger user base.
+To be using this project you should be a [Patron](https://opencollective.com/fody/order/3059). See [Licensing/Patron FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md). With that in mind, it is assumed anyone raising an issue is already a Patron. As such your GitHub Id may be verified against the [OpenCollective contributors](https://opencollective.com/fody#contributors). This process will depend on the issue quality, your circumstances, and the impact on the larger user base.
 
 
 #### Preamble
 
 Questions specific to IL manipulation should be placed on [Stack Overflow](https://stackoverflow.com/) or the [Cecil Forum](https://groups.google.com/forum/#!forum/mono-cecil).
 
-General questions about Fody or weavers should be placed on [Stack Overflow](https://stackoverflow.com/) or the [Fody Gitter room](https://gitter.im/Fody/Fody)
+General questions about usage should be placed on [Stack Overflow](https://stackoverflow.com/) or the [Gitter room](https://gitter.im/Fody/Fody)
 
 Where relevant, ensure you are using the current stable versions of the following:
 
@@ -39,4 +39,4 @@ Ensure you have replicated the bug in a minimal solution with the fewest moving 
 
 #### Submit a PR that fixes the bug
 
-Submit a [Pull Request (PR)](https://help.github.com/articles/about-pull-requests/) that fixes the bug. Include in this PR a test that verifies the fix. If you were not able to fix the bug, a PR that illustrates your partial progress will suffice. If you prefer someone else fix this bug for you, please donate to the [Fody OpenCollective](https://opencollective.com/fody/donate) and include a note to that effect in this issue.
+Submit a [Pull Request (PR)](https://help.github.com/articles/about-pull-requests/) that fixes the bug. Include in this PR a test that verifies the fix. If you were not able to fix the bug, a PR that illustrates your partial progress will suffice. If you prefer someone else fix this bug for you, please donate to the [OpenCollective](https://opencollective.com/fody/donate) and include a note to that effect in this issue.
