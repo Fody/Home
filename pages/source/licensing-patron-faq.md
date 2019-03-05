@@ -42,7 +42,7 @@ Yes in theory this is true, however the long term reality has shown this not to 
 
 ## Is support now included as part of the cost?
 
-No. As per the MIT license:
+No. As per the [MIT License](https://opensource.org/licenses/MIT):
 
 > the software is provided "as is", without warranty of any kind
 
