@@ -12,7 +12,7 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
 
  * Contain all classes to control the addin behavior at compile time or provide intellisense to consumers. Often this is in the form of [Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/).
  * Generally any usage and reference to this project is removed at compile time so it is not needed as part of application deployment.
- * The target frameworks depends on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md))
+ * The target frameworks depends on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md)).
 
 This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
@@ -45,16 +45,29 @@ The produced NuGet package will:
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody"
-                      Version="4.0.0-beta.1"
+                      Version="5.0.0-beta.2"
                       PrivateAssets="None" />
     <PackageReference Include="FodyPackaging"
-                      Version="4.0.0-beta.1"
+                      Version="5.0.0-beta.2"
                       PrivateAssets="All" />
   </ItemGroup>
 </Project>
 ```
 <sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L25)</sup>
 <!-- endsnippet -->
+
+
+### Build Order
+
+The Lib/Reference project must contain a [Project Dependency](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2019) on the [Weaver-Project](Weaver-Project) to ensure it is built after the Weaver Project produces its output.
+
+![project dependencies](project-dependencies.png)
+
+If a weaver file cannot be found, the build will fail with one of the following:
+
+> FodyPackaging: No NetClassic weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
+
+> FodyPackaging: No NetStandard weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
 
 
 ## Weaver Project
@@ -72,15 +85,14 @@ This project contains the weaving code.
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
-    <DebugType>portable</DebugType>
+    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="4.0.0-beta.1" />
+    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.2" />
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj#L1-L10)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj#L1-L9)</sup>
 <!-- endsnippet -->
 
 
@@ -106,7 +118,8 @@ ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this
 
 <!-- snippet: ModuleWeaver -->
 ```cs
-public class ModuleWeaver : BaseModuleWeaver
+public class ModuleWeaver :
+    BaseModuleWeaver
 {
 
     public override void Execute()
@@ -206,7 +219,7 @@ public class ModuleWeaver : BaseModuleWeaver
     public override bool ShouldCleanReference => true;
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L116)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117)</sup>
 <!-- endsnippet -->
 
 
@@ -229,7 +242,7 @@ public override void Execute()
     LogInfo("Added type 'Hello' with method 'World'.");
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L12-L26)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27)</sup>
 <!-- endsnippet -->
 
 
@@ -247,7 +260,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
     yield return "mscorlib";
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L28-L34)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35)</sup>
 <!-- endsnippet -->
 
 
@@ -259,7 +272,7 @@ When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for t
 ```cs
 public override bool ShouldCleanReference => true;
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L111-L113)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114)</sup>
 <!-- endsnippet -->
 
 
@@ -324,14 +337,15 @@ Sample content of the `BasicFodyAddin.Fody.xcf`:
 ```xcf
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:attribute name="Namespace" type="xs:string">
+  <xs:attribute name="Namespace"
+                type="xs:string">
     <xs:annotation>
-      <xs:documentation>The namespace to use for the injected type</xs:documentation>
+      <xs:documentation>Namespace to use for the injected type</xs:documentation>
     </xs:annotation>
   </xs:attribute>
 </xs:complexType>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf#L1-L8)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf#L1-L9)</sup>
 <!-- endsnippet -->
 
 Fody will then combine all `.xcf` fragments with the weavers information to the final `.xsd`:
@@ -436,7 +450,7 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="FodyHelpers" Version="4.0.0-beta.1" />
+    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.2" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
@@ -461,7 +475,7 @@ To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use 
 
 <!-- snippet: appveyor.yml -->
 ```yml
-image: Visual Studio 2017
+image: Visual Studio 2019 Preview
 build_script:
 - cmd: dotnet build --configuration Release
 test:

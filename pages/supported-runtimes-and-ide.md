@@ -3,19 +3,10 @@
 
 ## Visual Studio support
 
-Visual Studio 2017 and above are supported. Older versions of Visual Studio may still work, but are not actively supported.
+Fody requires one of the following at build time:
 
-Compatibility test builds:
-
- * Visual Studio 2015: ![Build status](https://tom-englert.visualstudio.com/Open%20Source/_apis/build/status/FodyIntegration2015)
- * Visual Studio 2013: ![Build status](https://tom-englert.visualstudio.com/Open%20Source/_apis/build/status/FodyIntegration2013)
- * Visual Studio 2012: ![Build status](https://tom-englert.visualstudio.com/Open%20Source/_apis/build/status/FodyIntegration2012)
-
-
-Fody requires the following at build time
-
- * [.net 4.6](https://blogs.msdn.microsoft.com/dotnet/2015/07/20/announcing-net-framework-4-6/), or higher, to work with [MSBuild 15](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0).
- * [dotnet core SDK](https://dotnet.microsoft.com/download) to work with [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
+ * [MSBuild 16](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019) which ships with Visual Studio 2019.
+ * [dotnet core SDK 2.2.105](https://dotnet.microsoft.com/download) (or higher) to work with [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
 
 
 ## Project formats
@@ -28,26 +19,25 @@ The following are not supported
 
 To tell the difference between the old and new csproj formats.
 
-The old format starts with
+The old format starts with:
 
 ```
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 ```
 
-The new format starts with
+The new format starts with:
 
 ```
 <Project Sdk="Microsoft.NET.Sdk">
 ```
 
-For all these scenarios is it instead recommended to move to the new VS 2017 SDK style projects.
+For all these scenarios is it instead recommended to move to the new SDK style projects.
 
 References
 
  * [Bye-Bye Project.json and .xproj and welcome back .csproj](http://www.talkingdotnet.com/bye-bye-project-json-xproj-welcome-back-csproj/)
  * [Project.json to MSBuild conversion guide](http://www.natemcmaster.com/blog/2017/01/19/project-json-to-csproj/)
- * [Migrate from project.json to new VS 2017 SDK style projects](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-migrate)
-
+ * [Migrate from project.json to new SDK style projects](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-migrate)
 
 
 ## Target framework

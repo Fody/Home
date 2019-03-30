@@ -7,7 +7,8 @@ using Fody;
 
 #region ModuleWeaver
 
-public class ModuleWeaver : BaseModuleWeaver
+public class ModuleWeaver :
+    BaseModuleWeaver
 {
     #region Execute
 

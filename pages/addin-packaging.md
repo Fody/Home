@@ -59,12 +59,6 @@ The below files are include as [MSBuild props and targets in a package](https://
     <WeaverDirPath Condition="'$(WeaverDirPath)' == ''">..\$(PackageId)\bin\$(Configuration)\</WeaverDirPath>
     <WeaverPropsFile Condition="'$(WeaverPropsFile)' == ''">$(MSBuildThisFileDirectory)..\Weaver.props</WeaverPropsFile>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- fake reference to the weaver project to work around https://github.com/Microsoft/msbuild/issues/2661 -->
-    <ProjectReference Include="..\$(PackageId)\$(PackageId).csproj"
-                      PrivateAssets="All"
-                      Condition="$(TargetFramework)=='fake'" />
-  </ItemGroup>
 </Project>
 ```
 <!-- endsnippet -->
@@ -81,9 +75,9 @@ The below files are include as [MSBuild props and targets in a package](https://
       <NetStandardFilesToInclude Include="$(WeaverDirPath)\netstandard2*\$(PackageId).dll" />
     </ItemGroup>
 
-    <Error Text="FodyPackaging: No NetClassic weavers found to include in package. Maybe the build order is wrong?"
+    <Error Text="FodyPackaging: No NetClassic weaver found. $(ProjectName) should have a Project Dependency on $(PackageId)."
            Condition="'@(NetClassicFilesToInclude)'==''" />
-    <Error Text="FodyPackaging: No NetStandard weavers found to include in package. Maybe the build order is wrong?"
+    <Error Text="FodyPackaging: No NetStandard weaver found. $(ProjectName) should have a Project Dependency on $(PackageId)."
            Condition="'@(NetStandardFilesToInclude)'==''" />
 
     <ItemGroup>

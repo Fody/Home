@@ -16,10 +16,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody"
-                      Version="4.0.0-beta.1"
+                      Version="5.0.0-beta.2"
                       PrivateAssets="None" />
     <PackageReference Include="FodyPackaging"
-                      Version="4.0.0-beta.1"
+                      Version="5.0.0-beta.2"
                       PrivateAssets="All" />
   </ItemGroup>
 </Project>

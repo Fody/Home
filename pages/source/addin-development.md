@@ -12,7 +12,7 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
 
  * Contain all classes to control the addin behavior at compile time or provide intellisense to consumers. Often this is in the form of [Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/).
  * Generally any usage and reference to this project is removed at compile time so it is not needed as part of application deployment.
- * The target frameworks depends on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md))
+ * The target frameworks depends on what targets the weaver can support (see [Supported Runtimes And Ide](supported-runtimes-and-ide.md)).
 
 This project is also used to produce the NuGet package. To achieve this the project consumes two NuGets:
 
@@ -26,6 +26,19 @@ The produced NuGet package will:
  * Be created in a directory named `nugets` at the root of the solution.
 
 snippet: BasicFodyAddin.csproj
+
+
+### Build Order
+
+The Lib/Reference project must contain a [Project Dependency](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2019) on the [Weaver-Project](Weaver-Project) to ensure it is built after the Weaver Project produces its output.
+
+![project dependencies](project-dependencies.png)
+
+If a weaver file cannot be found, the build will fail with one of the following:
+
+> FodyPackaging: No NetClassic weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
+
+> FodyPackaging: No NetStandard weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
 
 
 ## Weaver Project

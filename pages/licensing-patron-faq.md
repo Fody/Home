@@ -42,7 +42,7 @@ Yes in theory this is true, however the long term reality has shown this not to 
 
 ## Is support now included as part of the cost?
 
-No. As per the MIT license:
+No. As per the [MIT License](https://opensource.org/licenses/MIT):
 
 > the software is provided "as is", without warranty of any kind
 
@@ -74,9 +74,9 @@ Yes. You must be a Patron to be a user of Fody. As such if you are raising an is
 
 There are two options for an organization.
 
-   1. Apply a multiplier to the Patron cost.<br>
+   1. Apply a multiplier to the Patron cost.
    The [Patron tier](https://opencollective.com/fody/order/3059) has no upper bound on the monthly amount. This allows an organization with multiple developers to pay a single monthly price. For example: An organization with 5 developers would pay $15 per month, i.e. 5 x $3 per patron. An organization with 10 developers would pay $30 per month, i.e. 10 x $3 per patron and so on.
-   2. Create an Open Collective organization.<br>
+   2. Create an Open Collective organization
    A organization can [Create an Open Collective organization](https://opencollective.com/become-a-sponsor) and then allow their developers to draw on the funds from that organization. See [FAQ for backers](https://opencollective.com/faq/backers). This is the recommended option as it also opens up the opportunity for developers to select other projects they feel need support.
 
 
