@@ -27,7 +27,6 @@ The `Install-Package Fody` is required since NuGet always defaults to the oldest
 Add `<BasicFodyAddin/>` to [FodyWeavers.xml](/pages/configuration.md#fodyweaversxml)
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <BasicFodyAddin/>
 </Weavers>

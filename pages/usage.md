@@ -58,7 +58,6 @@ To indicate what weavers run and in what order a `FodyWeavers.xml` file is used 
 
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <WeaverName/>
 </Weavers>
@@ -67,7 +66,6 @@ To indicate what weavers run and in what order a `FodyWeavers.xml` file is used 
 e.g.
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <Virtuosity/>
 </Weavers>

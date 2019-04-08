@@ -138,7 +138,6 @@ This file exists at a project level in the users target project and is used to p
 So if the FodyWeavers.xml file contains the following:
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <BasicFodyAddin Namespace="MyNamespace"/>
 </Weavers>
@@ -220,7 +219,6 @@ The `Install-Package Fody` is required since NuGet always defaults to the oldest
 ### Add to FodyWeavers.xml
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <BasicFodyAddin />
 </Weavers>
