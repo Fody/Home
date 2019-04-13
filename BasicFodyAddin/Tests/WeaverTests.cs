@@ -1,7 +1,7 @@
 ﻿using System;
 using Fody;
 using Xunit;
-#pragma warning disable 618
+
 #region WeaverTests
 
 public class WeaverTests
