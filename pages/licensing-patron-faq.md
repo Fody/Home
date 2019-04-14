@@ -59,12 +59,12 @@ Yes all projects are under [MIT](https://opensource.org/licenses/MIT) and you ca
 
 ## Do I need to be a Patron to contribute a Pull Request?
 
-Yes. You must be a Patron to be a user of Fody. Contributing Pull Requests does not cancel this out. It may seem unfair to expect people both contribute PRs and also financially back this project. However it is important to remember the effort in reviewing and merging a PR is often similar to that of creating the PR. Also the project maintainers are committing to support that added code (feature or bug fix) for the life of the project. Pull Requests from non-Patrons, that are of significant value to the larger Fody user base, may justify the effort in reviewing and merging.
+Yes. You are expected to be a Patron to be a user of Fody. Contributing Pull Requests does not cancel this out. It may seem unfair to expect people both contribute PRs and also financially back this project. However it is important to remember the effort in reviewing and merging a PR is often similar to that of creating the PR. Also the project maintainers are committing to support that added code (feature or bug fix) for the life of the project. Pull Requests from non-Patrons, that are of significant value to the larger Fody user base, may justify the effort in reviewing and merging.
 
 
 ## Do I need to be a Patron to raise an issue?
 
-Yes. You must be a Patron to be a user of Fody. As such if you are raising an issue (question, bug or feature request) and you are not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort and be handled.
+Yes. You are expected to be a Patron to be a user of Fody. As such if you are raising an issue (question, bug or feature request) and you are not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort and be handled.
 
 
 ## Organization licensing
