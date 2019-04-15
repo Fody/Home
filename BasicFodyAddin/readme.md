@@ -2,7 +2,7 @@
 
 ![Icon](https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png)
 
-This is a simple solution used to illustrate how to [write a Fody addin](/pages/write-an-addin.md).
+This is a simple solution used to illustrate how to [write a Fody addin](/pages/addin-development.md).
 
 
 ## Usage
@@ -35,7 +35,7 @@ Add `<BasicFodyAddin/>` to [FodyWeavers.xml](/pages/configuration.md#fodyweavers
 
 ## The moving parts
 
-See [writing an addin](/pages/write-an-addin.md)
+See [writing an addin](/pages/addin-development.md)
 
 
 ## Icon
