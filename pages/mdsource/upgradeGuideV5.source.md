@@ -28,12 +28,12 @@ To use MSBuild install [Build Tools for Visual Studio 2019](https://visualstudio
 
 #### AppVeyor
 
-At this time AppVeyor does not support the RTM of Visual Studio 19. However the preview image can be used via `image: Visual Studio 2019 Preview` in `appveyor.yml`.
+At this time AppVeyor does not support the RTM of Visual Studio 2019. However the [Visual Studio 2019 preview image](https://www.appveyor.com/docs/build-environment/#visual-studio-preview-images) can be used via `image: Visual Studio 2019 Preview` in `appveyor.yml`.
 
 
 #### TravisCI
 
-MSBuild16 can be used on TravisCI using the `xenial` distro and dotnet 2.2.202. An example `.travis.yml` config:
+MSBuild16 can be used on TravisCI using the [xenial distro](https://docs.travis-ci.com/user/reference/xenial/) and [dotnet 2.2.202](https://docs.travis-ci.com/user/languages/csharp/#net-core). An example `.travis.yml` config:
 
 ```
 language: csharp
@@ -54,7 +54,7 @@ Move over to pdb symbols or embedded symbols.
 
 ### Update NuGet
 
-Update to version 5 the `Fody`.
+Update to Version 5 of the [Fody NuGet package](https://www.nuget.org/packages/Fody/).
 
 
 ## Weavers
@@ -88,4 +88,4 @@ MSBuild16 now properly supports project build order dependencies. See [Addin Dev
 
 ### Update NuGet packages
 
-Update to version 5 of the `Fody`, `FodyHelpers`, and `FodyPackaging` NuGet packages.
+Update to Version 5 of the `Fody`, `FodyHelpers`, and `FodyPackaging` NuGet packages.
