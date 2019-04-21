@@ -52,7 +52,6 @@ script:
 Move over to pdb symbols or embedded symbols.
 
 
-
 ### Update NuGet
 
 Update to version 5 the `Fody`.
