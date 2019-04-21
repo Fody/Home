@@ -87,4 +87,4 @@ MSBuild16 now properly supports project build order dependencies. See [Addin Dev
 
 ### Update NuGet packages
 
-Update to version 5 the `Fody`, `FodyHelpers`, and `FodyPackaging` NuGet packages.
+Update to version 5 of the `Fody`, `FodyHelpers`, and `FodyPackaging` NuGet packages.
