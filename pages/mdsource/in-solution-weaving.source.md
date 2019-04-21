@@ -39,7 +39,7 @@ To **optionally** use a custom named weaver file for in solution weaving, add an
 ```xml
 <ItemGroup>
   <WeaverFiles
-      Include="$(SolutionDir)Weavers\bin\$(Configuration)\Net46\Weavers.dll"
+      Include="$(SolutionDir)Weavers\bin\$(Configuration)\netstandard2.0\Weavers.dll"
       WeaverClassNames="MyWeaver1;MyWeaver2" />
 </ItemGroup>
 ```

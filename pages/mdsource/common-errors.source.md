@@ -28,7 +28,7 @@ error MSB4036: The "Fody.WeavingTask" task was not found...
 
 ### Visual Studio is being difficult
 
-For a small number of users Visual Studio refuses to pick up the build task. The only workaround is to restart restart Visual Studio.
+For a small number of users Visual Studio refuses to pick up the build task. The only workaround is to restart Visual Studio.
 
 Unfortunately there is nothing that can be done to fix this in Fody as it occurs before any interaction with the Fody implementation.
 

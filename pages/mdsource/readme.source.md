@@ -29,3 +29,4 @@
   * [Backers tracking/info](https://github.com/Fody/Home/tree/master/pages/backers.md)
   * [Donations](https://github.com/Fody/Home/tree/master/pages/donations.md)<br>
     Every month the Fody project will donate a portion of funding raised to a charity or other cause.
+  * [Version 5 upgrade guide](https://github.com/Fody/Home/tree/master/pages/upgradeGuideV5.md)

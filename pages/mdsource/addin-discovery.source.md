@@ -13,7 +13,7 @@ For example to replace the legacy `SolutionDir/Tool` or [in solution weaving](in
 ```xml
 <ItemGroup>
   <WeaverFiles
-    Include="$(SolutionDir)SampleWeaver.Fody\bin\$(Configuration)\Net46\SampleWeaver.Fody.dll" />
+    Include="$(SolutionDir)SampleWeaver.Fody\bin\$(Configuration)\netstandard2.0\SampleWeaver.Fody.dll" />
 </ItemGroup>
 ```
 

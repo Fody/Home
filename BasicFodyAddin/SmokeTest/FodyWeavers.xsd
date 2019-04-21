@@ -8,7 +8,7 @@
           <xs:complexType>
             <xs:attribute name="Namespace" type="xs:string">
               <xs:annotation>
-                <xs:documentation>The namespace to use for the injected type</xs:documentation>
+                <xs:documentation>Namespace to use for the injected type</xs:documentation>
               </xs:annotation>
             </xs:attribute>
           </xs:complexType>

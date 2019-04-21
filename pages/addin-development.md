@@ -49,16 +49,12 @@ The produced NuGet package will:
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody"
-                      Version="5.0.0-beta.2"
-                      PrivateAssets="None" />
-    <PackageReference Include="FodyPackaging"
-                      Version="5.0.0-beta.2"
-                      PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="5.0.0-beta.14" PrivateAssets="None" />
+    <PackageReference Include="FodyPackaging" Version="5.0.0-beta.14" PrivateAssets="All" />
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L25)</sup>
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L21)</sup>
 <!-- endsnippet -->
 
 
@@ -496,7 +492,7 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
           <xs:complexType>
             <xs:attribute name="Namespace" type="xs:string">
               <xs:annotation>
-                <xs:documentation>The namespace to use for the injected type</xs:documentation>
+                <xs:documentation>Namespace to use for the injected type</xs:documentation>
               </xs:annotation>
             </xs:attribute>
           </xs:complexType>
