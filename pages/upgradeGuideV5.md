@@ -57,7 +57,6 @@ script:
 Move over to pdb symbols or embedded symbols.
 
 
-
 ### Update NuGet
 
 Update to version 5 the `Fody`.
@@ -68,6 +67,8 @@ Update to version 5 the `Fody`.
 The following steps are only required for people creating Fody Weavers.
 
 This also applies to [in solution weaving](in-solution-weaving.md).
+
+**Weavers targeting Version 4 of Fody are compatible with Version 5.**
 
 
 ### Update to MSBuild16

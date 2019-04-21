@@ -1,13 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="GitHubSync" Version="0.5.0-beta.2" />
     <PackageReference Include="Octokit" Version="0.32.0" />
   </ItemGroup>
-
 </Project>
