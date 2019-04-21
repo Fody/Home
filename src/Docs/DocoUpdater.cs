@@ -3,8 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using MarkdownSnippets;
 using Xunit;
+using Xunit.Abstractions;
 
-public class DocoUpdater
+public class DocoUpdater :
+    XunitLoggingBase
 {
     [Fact]
     public async Task Run()
@@ -23,16 +25,12 @@ public class DocoUpdater
             "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.props",
             "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.targets");
 
-
-        var handling = new GitHubSnippetMarkdownHandling(root);
-        var processor = new MarkdownProcessor(snippets, handling.AppendGroup, snippetSourceFiles);
-        var sourceMdFiles = Directory.EnumerateFiles(Path.Combine(root, "pages/source"), "*.md");
         var pagesDir = Path.Combine(root, "pages");
         PurgeDirectory(pagesDir);
-        foreach (var sourceFile in sourceMdFiles)
-        {
-            ProcessFile(sourceFile, processor, pagesDir);
-        }
+
+        var markdownProcessor = new DirectoryMarkdownProcessor(root);
+        markdownProcessor.IncludeSnippets(snippets);
+        markdownProcessor.Run();
     }
 
     static void PurgeDirectory(string pagesDir)
@@ -43,18 +41,8 @@ public class DocoUpdater
         }
     }
 
-    static void ProcessFile(string sourceFile, MarkdownProcessor markdownProcessor, string pagesDir)
+    public DocoUpdater(ITestOutputHelper output) :
+        base(output)
     {
-        var target = Path.Combine(pagesDir, Path.GetFileName(sourceFile));
-        using (var reader = File.OpenText(sourceFile))
-        using (var writer = File.CreateText(target))
-        {
-            var processResult = markdownProcessor.Apply(reader, writer);
-            var missing = processResult.MissingSnippets;
-            if (missing.Any())
-            {
-                throw new MissingSnippetsException(missing);
-            }
-        }
     }
 }

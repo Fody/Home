@@ -1,3 +1,8 @@
+<!--
+This file was generate by MarkdownSnippets.
+Source File: /pages/mdsource/addin-discovery.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
 # Addin Discovery
 
 Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at compile time as an MSBuild item, so Fody is able to locate it. This is achieved by providing a `.props` file with the NuGet package with the following default content:
@@ -5,16 +10,9 @@ Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at 
 <!-- snippet: Weaver.props -->
 ```props
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <PropertyGroup>
-    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) != 'Core'">netclassicweaver</WeaverRuntimeToken>
-    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) == 'Core'">netstandardweaver</WeaverRuntimeToken>
-  </PropertyGroup>
-
   <ItemGroup>
-    <WeaverFiles Include="$(MsBuildThisFileDirectory)..\$(WeaverRuntimeToken)\$(MSBuildThisFileName).dll" />
+    <WeaverFiles Include="$(MsBuildThisFileDirectory)..\weaver\$(MSBuildThisFileName).dll" />
   </ItemGroup>
-
 </Project>
 ```
 <!-- endsnippet -->

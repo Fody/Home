@@ -1,3 +1,8 @@
+<!--
+This file was generate by MarkdownSnippets.
+Source File: /pages/mdsource/addin-development.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
 # Addin development
 
 This page uses the a sample addin called BasicFodyAddin to describe building an addin.
@@ -85,10 +90,10 @@ This project contains the weaving code.
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.2" />
+    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.14" />
   </ItemGroup>
 </Project>
 ```
@@ -220,6 +225,109 @@ public class ModuleWeaver :
 }
 ```
 <sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117)</sup>
+```cs
+public class ModuleWeaver :
+    BaseModuleWeaver
+{
+
+    public override void Execute()
+    {
+        var ns = GetNamespace();
+        var type = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
+
+        AddConstructor(type);
+
+        AddHelloWorld(type);
+
+        ModuleDefinition.Types.Add(type);
+        LogInfo("Added type 'Hello' with method 'World'.");
+    }
+
+    public override IEnumerable<string> GetAssembliesForScanning()
+    {
+        yield return "netstandard";
+        yield return "mscorlib";
+    }
+
+    string GetNamespace()
+    {
+        var namespaceFromConfig = GetNamespaceFromConfig();
+        var namespaceFromAttribute = GetNamespaceFromAttribute();
+        if (namespaceFromConfig != null && namespaceFromAttribute != null)
+        {
+            throw new WeavingException("Configuring namespace from both Config and Attribute is not supported.");
+        }
+
+        if (namespaceFromAttribute != null)
+        {
+            return namespaceFromAttribute;
+        }
+
+        return namespaceFromConfig;
+    }
+
+    string GetNamespaceFromConfig()
+    {
+        var attribute = Config?.Attribute("Namespace");
+        if (attribute == null)
+        {
+            return null;
+        }
+
+        var value = attribute.Value;
+        ValidateNamespace(value);
+        return value;
+    }
+
+    string GetNamespaceFromAttribute()
+    {
+        var attributes = ModuleDefinition.Assembly.CustomAttributes;
+        var namespaceAttribute = attributes
+            .SingleOrDefault(x => x.AttributeType.FullName == "NamespaceAttribute");
+        if (namespaceAttribute == null)
+        {
+            return null;
+        }
+
+        attributes.Remove(namespaceAttribute);
+        var value = (string)namespaceAttribute.ConstructorArguments.First().Value;
+        ValidateNamespace(value);
+        return value;
+    }
+
+    static void ValidateNamespace(string value)
+    {
+        if (value is null || string.IsNullOrWhiteSpace(value))
+        {
+            throw new WeavingException("Invalid namespace");
+        }
+    }
+
+    void AddConstructor(TypeDefinition newType)
+    {
+        var attributes = MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName;
+        var method = new MethodDefinition(".ctor", attributes, TypeSystem.VoidReference);
+        var objectConstructor = ModuleDefinition.ImportReference(TypeSystem.ObjectDefinition.GetConstructors().First());
+        var processor = method.Body.GetILProcessor();
+        processor.Emit(OpCodes.Ldarg_0);
+        processor.Emit(OpCodes.Call, objectConstructor);
+        processor.Emit(OpCodes.Ret);
+        newType.Methods.Add(method);
+    }
+
+    void AddHelloWorld(TypeDefinition newType)
+    {
+        var method = new MethodDefinition("World", MethodAttributes.Public, TypeSystem.StringReference);
+        var processor = method.Body.GetILProcessor();
+        processor.Emit(OpCodes.Ldstr, "Hello World");
+        processor.Emit(OpCodes.Ret);
+        newType.Methods.Add(method);
+    }
+
+    public override bool ShouldCleanReference => true;
+}
+```
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117)</sup>
 <!-- endsnippet -->
 
 
@@ -228,6 +336,21 @@ public class ModuleWeaver :
 Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
 
 <!-- snippet: Execute -->
+```cs
+public override void Execute()
+{
+    var ns = GetNamespace();
+    var type = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
+
+    AddConstructor(type);
+
+    AddHelloWorld(type);
+
+    ModuleDefinition.Types.Add(type);
+    LogInfo("Added type 'Hello' with method 'World'.");
+}
+```
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27)</sup>
 ```cs
 public override void Execute()
 {
@@ -261,6 +384,14 @@ public override IEnumerable<string> GetAssembliesForScanning()
 }
 ```
 <sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35)</sup>
+```cs
+public override IEnumerable<string> GetAssembliesForScanning()
+{
+    yield return "netstandard";
+    yield return "mscorlib";
+}
+```
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35)</sup>
 <!-- endsnippet -->
 
 
@@ -269,6 +400,10 @@ public override IEnumerable<string> GetAssembliesForScanning()
 When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
 
 <!-- snippet: ShouldCleanReference -->
+```cs
+public override bool ShouldCleanReference => true;
+```
+<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114)</sup>
 ```cs
 public override bool ShouldCleanReference => true;
 ```
@@ -434,6 +569,28 @@ public class WeaverTests
 }
 ```
 <sup>[snippet source](/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27)</sup>
+```cs
+public class WeaverTests
+{
+    static TestResult testResult;
+
+    static WeaverTests()
+    {
+        var weavingTask = new ModuleWeaver();
+        testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
+    }
+
+    [Fact]
+    public void ValidateHelloWorldIsInjected()
+    {
+        var type = testResult.Assembly.GetType("TheNamespace.Hello");
+        var instance = (dynamic)Activator.CreateInstance(type);
+
+        Assert.Equal("Hello World", instance.World());
+    }
+}
+```
+<sup>[snippet source](/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27)</sup>
 <!-- endsnippet -->
 
 By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
@@ -444,24 +601,20 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net472;netcoreapp2.2</TargetFrameworks>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.2" />
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="FodyHelpers" Version="5.0.0-beta.14" />
+    <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/Tests/Tests.csproj#L1-L20)</sup>
+<sup>[snippet source](/BasicFodyAddin/Tests/Tests.csproj#L1-L16)</sup>
 <!-- endsnippet -->
 
 
@@ -475,15 +628,18 @@ To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use 
 <!-- snippet: appveyor.yml -->
 ```yml
 image: Visual Studio 2019 Preview
+skip_commits:
+  message: /Merge pull request.*/
 build_script:
-- cmd: dotnet build --configuration Release
-test:
-  assemblies:
-    - '**\*Tests.dll'
+- ps: >-
+    dotnet build BasicFodyAddin --configuration Release
+
+    dotnet test BasicFodyAddin --configuration Release --no-build --no-restore
+test: off
 artifacts:
 - path: nugets\*.nupkg
 ```
-<sup>[snippet source](/BasicFodyAddin/appveyor.yml#L1-L8)</sup>
+<sup>[snippet source](/BasicFodyAddin/appveyor.yml#L1-L11)</sup>
 <!-- endsnippet -->
 
 

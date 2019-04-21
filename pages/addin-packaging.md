@@ -1,3 +1,8 @@
+<!--
+This file was generate by MarkdownSnippets.
+Source File: /pages/mdsource/addin-packaging.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
 # Addin packaging
 
 
@@ -70,26 +75,20 @@ The below files are include as [MSBuild props and targets in a package](https://
 ```targets
 <Project>
   <Target Name="IncludeFodyFiles">
-    <ItemGroup>
-      <NetClassicFilesToInclude Include="$(WeaverDirPath)\net4*\$(PackageId).dll" />
-      <NetStandardFilesToInclude Include="$(WeaverDirPath)\netstandard2*\$(PackageId).dll" />
-    </ItemGroup>
+    <PropertyGroup>
+      <WeaverFile>$(WeaverDirPath)\netstandard2.0\$(PackageId).dll</WeaverFile>
+      <XcfFile>$(WeaverDirPath)\netstandard2.0\$(PackageId).xcf</XcfFile>
+    </PropertyGroup>
 
-    <Error Text="FodyPackaging: No NetClassic weaver found. $(ProjectName) should have a Project Dependency on $(PackageId)."
-           Condition="'@(NetClassicFilesToInclude)'==''" />
-    <Error Text="FodyPackaging: No NetStandard weaver found. $(ProjectName) should have a Project Dependency on $(PackageId)."
-           Condition="'@(NetStandardFilesToInclude)'==''" />
+    <Error Text="FodyPackaging: No weaver found at $(WeaverFile). $(ProjectName) should have a Project Dependency on $(PackageId)."
+           Condition="!Exists($(WeaverFile))" />
 
     <ItemGroup>
-      <NetClassicFilesToInclude Include="$(WeaverDirPath)\net4*\$(PackageId).xcf" />
-      <NetStandardFilesToInclude Include="$(WeaverDirPath)\netstandard2*\$(PackageId).xcf" />
-      <NetClassicFilesToInclude Include="$(WeaverDirPath)\net4*\$(PackageId).pdb" />
-      <NetStandardFilesToInclude Include="$(WeaverDirPath)\netstandard2*\$(PackageId).pdb" />
-
-      <TfmSpecificPackageFile Include="@(NetClassicFilesToInclude)"
-                              PackagePath="netclassicweaver\%(Filename)%(Extension)" />
-      <TfmSpecificPackageFile Include="@(NetStandardFilesToInclude)"
-                              PackagePath="netstandardweaver\%(Filename)%(Extension)" />
+      <TfmSpecificPackageFile Include="$(XcfFile)"
+                              PackagePath="weaver\$(PackageId).xcf" 
+                              Condition="Exists($(XcfFile))" />
+      <TfmSpecificPackageFile Include="$(WeaverFile)"
+                              PackagePath="weaver\$(PackageId).dll" />
       <TfmSpecificPackageFile Include="$(WeaverPropsFile)"
                               PackagePath="build\$(PackageId).props" />
     </ItemGroup>
@@ -106,16 +105,9 @@ Included in the consuming package to facilitate [addin discovery](addin-discover
 <!-- snippet: Weaver.props -->
 ```props
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <PropertyGroup>
-    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) != 'Core'">netclassicweaver</WeaverRuntimeToken>
-    <WeaverRuntimeToken Condition="$(MSBuildRuntimeType) == 'Core'">netstandardweaver</WeaverRuntimeToken>
-  </PropertyGroup>
-
   <ItemGroup>
-    <WeaverFiles Include="$(MsBuildThisFileDirectory)..\$(WeaverRuntimeToken)\$(MSBuildThisFileName).dll" />
+    <WeaverFiles Include="$(MsBuildThisFileDirectory)..\weaver\$(MSBuildThisFileName).dll" />
   </ItemGroup>
-
 </Project>
 ```
 <!-- endsnippet -->

@@ -1,3 +1,8 @@
+<!--
+This file was generate by MarkdownSnippets.
+Source File: /pages/mdsource/backers.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
 # Backers
 
 Below is a list of the people and organizations that have made significant contributions. Please consider joining them in supporting open source by [becoming a Patron of Fody](https://opencollective.com/fody/order/3059).

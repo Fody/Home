@@ -1,3 +1,8 @@
+<!--
+This file was generate by MarkdownSnippets.
+Source File: /pages/mdsource/strong-naming.source.md
+To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
+-->
 # Assembly Strong Naming
 
 Fody looks for the two settings that indicate a project file has produced a [strong named](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies) assembly.
