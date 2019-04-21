@@ -80,6 +80,9 @@ Weavers projects (`Name.Fody.csproj`) now only need to target netstandard2.0. So
 Fody now requires net472 at build time, so the test project (usually `Name.Fody.Test.csproj` or `Test.csproj`) needs to be changed to compatible frameworks. Usually this means changing `<TargetFrameworks>net46;netcoreapp2.2</TargetFrameworks>` to `<TargetFrameworks>net472;netcoreapp2.2</TargetFrameworks>`.
 
 
+### Ensure correct build order
+
+MSBuild16 now properly supports project build order dependencies. See [Addin Development - Build Order](addin-development.md#build-order).
 
 
 ### Update NuGet packages

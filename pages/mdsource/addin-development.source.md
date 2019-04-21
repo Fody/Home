@@ -36,9 +36,7 @@ The Lib/Reference project must contain a [Project Dependency](https://docs.micro
 
 If a weaver file cannot be found, the build will fail with one of the following:
 
-> FodyPackaging: No NetClassic weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
-
-> FodyPackaging: No NetStandard weaver found. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
+> FodyPackaging: No weaver found at [PATH]. BasicFodyAddin should have a Project Dependency on BasicFodyAddin.Fody.
 
 
 ## Weaver Project
@@ -56,7 +54,7 @@ snippet: BasicFodyAddin.Fody.csproj
 
 ### Target Frameworks
 
-This project must target `net46` for [msbuild.exe](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) support, and `netstandard2.0` for [dotnet build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build) support.
+This project must target `netstandard2.0`.
 
 
 ### Output of the project
