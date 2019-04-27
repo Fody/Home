@@ -4,7 +4,7 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="5.0.0" />
+    <PackageReference Include="Fody" Version="5.0.1" />
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
   </ItemGroup>
   <ItemGroup>
