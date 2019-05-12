@@ -19,6 +19,7 @@ Every month the Fody project will donate a portion of funding raised to a charit
  * [Women Who Code](https://www.womenwhocode.com/)
  * [Diversify Tech](https://www.diversifytech.co) created by [Veni Kunche](https://www.patreon.com/venikunche)
  * [Ada Developers Academy](https://www.adadevelopersacademy.org)
+ * [CodeEveryday](https://codeeveryday.io) created by [Tae'lur Alexis](https://twitter.com/TaelurAlexis)
 
 
 ## Motivations
