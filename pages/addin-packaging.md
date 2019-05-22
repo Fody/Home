@@ -99,7 +99,7 @@ Included in the consuming package to facilitate [addin discovery](addin-discover
 
 <!-- snippet: Weaver.props -->
 ```props
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <WeaverFiles Include="$(MsBuildThisFileDirectory)..\weaver\$(MSBuildThisFileName).dll" />
   </ItemGroup>

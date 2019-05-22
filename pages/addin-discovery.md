@@ -9,7 +9,7 @@ Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at 
 
 <!-- snippet: Weaver.props -->
 ```props
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <WeaverFiles Include="$(MsBuildThisFileDirectory)..\weaver\$(MSBuildThisFileName).dll" />
   </ItemGroup>

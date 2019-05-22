@@ -20,7 +20,6 @@ The following are not supported
 
  * Projects using the [project.json](https://docs.microsoft.com/en-us/nuget/schema/project-json).
  * Projects using the xproj.
- * Projects mixing the old `.csproj` format with new [`<PackageReference>` nodes](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#adding-a-packagereference).
 
 To tell the difference between the old and new csproj formats.
 

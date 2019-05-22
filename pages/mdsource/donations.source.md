@@ -1,8 +1,3 @@
-<!--
-This file was generate by MarkdownSnippets.
-Source File: /pages/mdsource/donations.source.md
-To change this file edit the source file and then re-run the generation using either the dotnet global tool (https://github.com/SimonCropp/MarkdownSnippets#markdownsnippetstool) or using the api (https://github.com/SimonCropp/MarkdownSnippets#running-as-a-unit-test).
--->
 # Donations
 
 Every month the Fody project will donate a portion of funding raised to a charity or other cause.
