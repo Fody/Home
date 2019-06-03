@@ -26,6 +26,7 @@ To change this file edit the source file and then re-run the generation using ei
   * [JetBrainsAnnotations](https://github.com/tom-englert/JetBrainsAnnotations.Fody) Converts all JetBrains ReSharper code annotation attributes to External Annotations.
   * [Lazy](https://github.com/tom-englert/Lazy.Fody) Automates the plumbing around System.Lazy.
   * [LoadAssembliesOnStartup](https://github.com/Fody/LoadAssembliesOnStartup) Loads references on startup by using the types in the module initializer.
+  * [LocalsInit](https://github.com/ltrzesniewski/LocalsInit.Fody) Controls the value of the `localsinit` flag on methods, to improve the performance of `stackalloc` for instance.
   * [LoggerIsEnabled](https://github.com/wazowsk1/LoggerIsEnabled.Fody) Adds `ILogger.IsEnabled` check around the logging statement for the [Microsoft.Extensions.Logging](https://github.com/aspnet/Logging).
   * [MethodBoundaryAspect](https://github.com/vescon/MethodBoundaryAspect.Fody) Allows to decorate methods and hook into method start, method end and method exceptions (like PostSharp).
   * [MethodDecorator](https://github.com/Fody/MethodDecorator) Decorate arbitrary methods to run code before and after invocation.
