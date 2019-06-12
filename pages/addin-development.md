@@ -220,109 +220,6 @@ public class ModuleWeaver :
 }
 ```
 <sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117)</sup>
-```cs
-public class ModuleWeaver :
-    BaseModuleWeaver
-{
-
-    public override void Execute()
-    {
-        var ns = GetNamespace();
-        var type = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
-
-        AddConstructor(type);
-
-        AddHelloWorld(type);
-
-        ModuleDefinition.Types.Add(type);
-        LogInfo("Added type 'Hello' with method 'World'.");
-    }
-
-    public override IEnumerable<string> GetAssembliesForScanning()
-    {
-        yield return "netstandard";
-        yield return "mscorlib";
-    }
-
-    string GetNamespace()
-    {
-        var namespaceFromConfig = GetNamespaceFromConfig();
-        var namespaceFromAttribute = GetNamespaceFromAttribute();
-        if (namespaceFromConfig != null && namespaceFromAttribute != null)
-        {
-            throw new WeavingException("Configuring namespace from both Config and Attribute is not supported.");
-        }
-
-        if (namespaceFromAttribute != null)
-        {
-            return namespaceFromAttribute;
-        }
-
-        return namespaceFromConfig;
-    }
-
-    string GetNamespaceFromConfig()
-    {
-        var attribute = Config?.Attribute("Namespace");
-        if (attribute == null)
-        {
-            return null;
-        }
-
-        var value = attribute.Value;
-        ValidateNamespace(value);
-        return value;
-    }
-
-    string GetNamespaceFromAttribute()
-    {
-        var attributes = ModuleDefinition.Assembly.CustomAttributes;
-        var namespaceAttribute = attributes
-            .SingleOrDefault(x => x.AttributeType.FullName == "NamespaceAttribute");
-        if (namespaceAttribute == null)
-        {
-            return null;
-        }
-
-        attributes.Remove(namespaceAttribute);
-        var value = (string)namespaceAttribute.ConstructorArguments.First().Value;
-        ValidateNamespace(value);
-        return value;
-    }
-
-    static void ValidateNamespace(string value)
-    {
-        if (value is null || string.IsNullOrWhiteSpace(value))
-        {
-            throw new WeavingException("Invalid namespace");
-        }
-    }
-
-    void AddConstructor(TypeDefinition newType)
-    {
-        var attributes = MethodAttributes.Public | MethodAttributes.SpecialName | MethodAttributes.RTSpecialName;
-        var method = new MethodDefinition(".ctor", attributes, TypeSystem.VoidReference);
-        var objectConstructor = ModuleDefinition.ImportReference(TypeSystem.ObjectDefinition.GetConstructors().First());
-        var processor = method.Body.GetILProcessor();
-        processor.Emit(OpCodes.Ldarg_0);
-        processor.Emit(OpCodes.Call, objectConstructor);
-        processor.Emit(OpCodes.Ret);
-        newType.Methods.Add(method);
-    }
-
-    void AddHelloWorld(TypeDefinition newType)
-    {
-        var method = new MethodDefinition("World", MethodAttributes.Public, TypeSystem.StringReference);
-        var processor = method.Body.GetILProcessor();
-        processor.Emit(OpCodes.Ldstr, "Hello World");
-        processor.Emit(OpCodes.Ret);
-        newType.Methods.Add(method);
-    }
-
-    public override bool ShouldCleanReference => true;
-}
-```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117)</sup>
 <!-- endsnippet -->
 
 
@@ -331,21 +228,6 @@ public class ModuleWeaver :
 Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
 
 <!-- snippet: Execute -->
-```cs
-public override void Execute()
-{
-    var ns = GetNamespace();
-    var type = new TypeDefinition(ns, "Hello", TypeAttributes.Public, TypeSystem.ObjectReference);
-
-    AddConstructor(type);
-
-    AddHelloWorld(type);
-
-    ModuleDefinition.Types.Add(type);
-    LogInfo("Added type 'Hello' with method 'World'.");
-}
-```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27)</sup>
 ```cs
 public override void Execute()
 {
@@ -379,14 +261,6 @@ public override IEnumerable<string> GetAssembliesForScanning()
 }
 ```
 <sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35)</sup>
-```cs
-public override IEnumerable<string> GetAssembliesForScanning()
-{
-    yield return "netstandard";
-    yield return "mscorlib";
-}
-```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35)</sup>
 <!-- endsnippet -->
 
 
@@ -395,10 +269,6 @@ public override IEnumerable<string> GetAssembliesForScanning()
 When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
 
 <!-- snippet: ShouldCleanReference -->
-```cs
-public override bool ShouldCleanReference => true;
-```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114)</sup>
 ```cs
 public override bool ShouldCleanReference => true;
 ```
@@ -542,28 +412,6 @@ FodyHelpers contains a utility [WeaverTestHelper](https://github.com/Fody/Fody/b
 A test can then be run as follows:
 
 <!-- snippet: WeaverTests -->
-```cs
-public class WeaverTests
-{
-    static TestResult testResult;
-
-    static WeaverTests()
-    {
-        var weavingTask = new ModuleWeaver();
-        testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
-    }
-
-    [Fact]
-    public void ValidateHelloWorldIsInjected()
-    {
-        var type = testResult.Assembly.GetType("TheNamespace.Hello");
-        var instance = (dynamic)Activator.CreateInstance(type);
-
-        Assert.Equal("Hello World", instance.World());
-    }
-}
-```
-<sup>[snippet source](/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27)</sup>
 ```cs
 public class WeaverTests
 {

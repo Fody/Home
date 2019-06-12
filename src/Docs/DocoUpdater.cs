@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using MarkdownSnippets;
 using Xunit;
@@ -13,12 +13,7 @@ public class DocoUpdater :
     {
         var root = GitRepoDirectoryFinder.FindForFilePath();
 
-        var finder = new FileFinder();
-        var addinPath = Path.Combine(root, "BasicFodyAddin");
-        var snippetSourceFiles = finder.FindFiles(
-            Path.Combine(root, "src/Docs"),
-            addinPath);
-        var snippets = FileSnippetExtractor.Read(snippetSourceFiles).ToList();
+        List<Snippet> snippets = new List<Snippet>();
 
         await snippets.AppendUrlsAsSnippets(
             "https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props",
