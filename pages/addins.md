@@ -56,6 +56,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Virtuosity](https://github.com/Fody/Virtuosity) Change all members to virtual.
   * [WeakEventHandler](https://github.com/tom-englert/WeakEventHandler.Fody) Changes regular event handlers into weak event handlers by weaving a weak event adapter between source and subscriber.
   * [WeakEvents](https://github.com/adbancroft/WeakEvents.Fody) Automatic publishing of weak events via compile time code weaving and a supporting runtime library.
+  * [With](https://github.com/mikhailshilkov/With.Fody) Methods to return copies of immutable objects with one property modified.
 
 
 ## No longer maintained
@@ -96,5 +97,4 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [Stiletto](https://github.com/benjamin-bader/stiletto) Compile-time static analysis and optimization for the Stiletto IoC library.
   * [Tail](https://github.com/hazzik/Tail.Fody) Adds a postfixed method call instruction to recursive calls.
   * [TestFlask](https://github.com/FatihSahin/test-flask) Records your method args and responses to replay, assert and test.
-  * [With](https://github.com/mikhailshilkov/With.Fody) Methods to return copies of immutable objects with one property modified.
   * [YALF](https://github.com/sharpmonkey/YALF) Yet Another Logging Framework.
