@@ -10,41 +10,50 @@ class Program
         var githubToken = Environment.GetEnvironmentVariable("Octokit_OAuthToken");
 
         var credentials = new Credentials(githubToken);
-        var sync = new RepoSync(credentials, "Fody", "Home", "master", Console.WriteLine);
+
+        var sync = new RepoSync(
+            log: Console.WriteLine,
+            defaultCredentials: credentials);
+
+        sync.AddSourceRepository(
+            owner: "Fody",
+            repository: "Home",
+            branch: "master");
+
         //sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/appveyor.yml", "appveyor.yml");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/.editorconfig", ".editorconfig");
-        sync.AddTarget("Fody", "Fody", "master");
-        sync.AddTarget("Fody", "Anotar", "master");
-        sync.AddTarget("Fody", "AsyncErrorHandler", "master");
-        sync.AddTarget("Fody", "BasicFodyAddin", "master");
-        sync.AddTarget("Fody", "Caseless", "master");
-        sync.AddTarget("Fody", "ConfigureAwait", "master");
-        sync.AddTarget("Fody", "Costura", "master");
-        sync.AddTarget("Fody", "EmptyConstructor", "master");
-        sync.AddTarget("Fody", "Equals", "master");
-        sync.AddTarget("Fody", "ExtraConstraints", "master");
-        sync.AddTarget("Fody", "Freezable", "master");
-        sync.AddTarget("Fody", "Immutable", "master");
-        sync.AddTarget("Fody", "InfoOf", "master");
-        sync.AddTarget("Fody", "Ionad", "master");
-        sync.AddTarget("Fody", "Janitor", "master");
-        sync.AddTarget("Fody", "LoadAssembliesOnStartup", "master");
-        sync.AddTarget("Fody", "MethodDecorator", "master");
-        sync.AddTarget("Fody", "MethodTimer", "master");
-        sync.AddTarget("Fody", "ModuleInit", "master");
-        sync.AddTarget("Fody", "NullGuard", "master");
-        sync.AddTarget("Fody", "Obsolete", "master");
-        sync.AddTarget("Fody", "PropertyChanged", "master");
-        sync.AddTarget("Fody", "PropertyChanging", "master");
-        sync.AddTarget("Fody", "Publicize", "master");
-        sync.AddTarget("Fody", "Resourcer", "master");
-        sync.AddTarget("Fody", "Scalpel", "master");
-        sync.AddTarget("Fody", "ToString", "master");
-        sync.AddTarget("Fody", "Unsealed", "master");
-        sync.AddTarget("Fody", "Usable", "master");
-        sync.AddTarget("Fody", "Validar", "master");
-        sync.AddTarget("Fody", "Virtuosity", "master");
-        sync.AddTarget("Fody", "Visualize", "master");
+        sync.AddTargetRepository("Fody", "Fody", "master");
+        sync.AddTargetRepository("Fody", "Anotar", "master");
+        sync.AddTargetRepository("Fody", "AsyncErrorHandler", "master");
+        sync.AddTargetRepository("Fody", "BasicFodyAddin", "master");
+        sync.AddTargetRepository("Fody", "Caseless", "master");
+        sync.AddTargetRepository("Fody", "ConfigureAwait", "master");
+        sync.AddTargetRepository("Fody", "Costura", "master");
+        sync.AddTargetRepository("Fody", "EmptyConstructor", "master");
+        sync.AddTargetRepository("Fody", "Equals", "master");
+        sync.AddTargetRepository("Fody", "ExtraConstraints", "master");
+        sync.AddTargetRepository("Fody", "Freezable", "master");
+        sync.AddTargetRepository("Fody", "Immutable", "master");
+        sync.AddTargetRepository("Fody", "InfoOf", "master");
+        sync.AddTargetRepository("Fody", "Ionad", "master");
+        sync.AddTargetRepository("Fody", "Janitor", "master");
+        sync.AddTargetRepository("Fody", "LoadAssembliesOnStartup", "master");
+        sync.AddTargetRepository("Fody", "MethodDecorator", "master");
+        sync.AddTargetRepository("Fody", "MethodTimer", "master");
+        sync.AddTargetRepository("Fody", "ModuleInit", "master");
+        sync.AddTargetRepository("Fody", "NullGuard", "master");
+        sync.AddTargetRepository("Fody", "Obsolete", "master");
+        sync.AddTargetRepository("Fody", "PropertyChanged", "master");
+        sync.AddTargetRepository("Fody", "PropertyChanging", "master");
+        sync.AddTargetRepository("Fody", "Publicize", "master");
+        sync.AddTargetRepository("Fody", "Resourcer", "master");
+        sync.AddTargetRepository("Fody", "Scalpel", "master");
+        sync.AddTargetRepository("Fody", "ToString", "master");
+        sync.AddTargetRepository("Fody", "Unsealed", "master");
+        sync.AddTargetRepository("Fody", "Usable", "master");
+        sync.AddTargetRepository("Fody", "Validar", "master");
+        sync.AddTargetRepository("Fody", "Virtuosity", "master");
+        sync.AddTargetRepository("Fody", "Visualize", "master");
 
         return sync.Sync(SyncOutput.MergePullRequest);
     }
