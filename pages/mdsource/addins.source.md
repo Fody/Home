@@ -13,7 +13,6 @@
   * [Equals](https://github.com/Fody/Equals) Generate Equals, GetHashCode and operators methods from properties.
   * [Equatable](https://github.com/tom-englert/Equatable.Fody) Generate Equals, GetHashCode and operators methods from explicit annotated fields and properties.
   * [ExtraConstraints](https://github.com/Fody/ExtraConstraints) Facilitates adding constraints for Enum and Delegate to types and methods.
-  * [Freezable](https://github.com/Fody/Freezable) Implements the Freezable pattern.
   * [InfoOf](https://github.com/Fody/InfoOf) Provides `methodof`, `propertyof` and `fieldof` equivalents of [`typeof`](https://msdn.microsoft.com/en-us/library/58918ffs.aspx).
   * [InlineIL](https://github.com/ltrzesniewski/InlineIL.Fody) Provides a way to embed arbitrary IL instructions in existing code.
   * [Ionad](https://github.com/Fody/Ionad) Replaces static method calls.
@@ -43,13 +42,13 @@
   * [ToString](https://github.com/Fody/ToString) Generate `ToString` method from public properties.
   * [Tracer](https://github.com/csnemes/tracer) Adds trace-enter and trace-leave log entries for selected methods.
   * [Undisposed](https://github.com/ermshiperete/undisposed-fody) Debugging tool to track down undisposed objects.
-  * [Usable](https://github.com/Fody/Usable) Adds using statements for local variables that have been created, and implement [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable).
   * [Validar](https://github.com/Fody/Validar) Injects [IDataErrorInfo](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.idataerrorinfo) or [INotifyDataErrorInfo](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifydataerrorinfo) code into a class at compile time.
   * [Vandelay](https://github.com/jasonwoods-7/Vandelay) Simplifies MEF importing\exporting.
   * [Visualize](https://github.com/Fody/Visualize) Adds debugger attributes to help visualize objects.
   * [Virtuosity](https://github.com/Fody/Virtuosity) Change all members to virtual.
   * [WeakEventHandler](https://github.com/tom-englert/WeakEventHandler.Fody) Changes regular event handlers into weak event handlers by weaving a weak event adapter between source and subscriber.
   * [WeakEvents](https://github.com/adbancroft/WeakEvents.Fody) Automatic publishing of weak events via compile time code weaving and a supporting runtime library.
+  * [With](https://github.com/mikhailshilkov/With.Fody) Methods to return copies of immutable objects with one property modified.
 
 
 ## No longer maintained
@@ -69,7 +68,9 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [EnableFaking](https://github.com/philippdolder/EnableFaking.Fody) Allows faking your types without writing interfaces for testing purposes only.
   * [Expose](https://github.com/kedarvaidya/Expose.Fody) Exposes members and optionally implements interface of a field declared in class.
   * [FactoryId](https://github.com/ramoneeza/FactoryId.Fody) Simplifies the implementation of Factory Method Pattern.
-  * [Fielder](https://github.com/Fody/Fielder) Converts public fields to public properties.
+  * [Fielder](https://github.com/fodyarchived/Fielder) Converts public fields to public properties.
+  * [Freezable](https://github.com/fodyarchived/Freezable) Implements the Freezable pattern.
+  * [Immutable](https://github.com/fodyarchived/Immutable) Creates immutable types.
   * [MethodCache](https://github.com/Dresel/MethodCache) Caches return values of methods decorated with a `CacheAttribute`.
   * [Mixins](https://bitbucket.org/skwasiborski/mixins.fody/wiki/Home) A mixin is a class that provides a certain functionality to be inherited or just reused by a subclass.
   * [Mutable](https://github.com/ndamjan/Mutable.Fody) Make F# setters for union types and eliminate need for `CLIMutable` attribute for records.
@@ -90,5 +91,6 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [Stiletto](https://github.com/benjamin-bader/stiletto) Compile-time static analysis and optimization for the Stiletto IoC library.
   * [Tail](https://github.com/hazzik/Tail.Fody) Adds a postfixed method call instruction to recursive calls.
   * [TestFlask](https://github.com/FatihSahin/test-flask) Records your method args and responses to replay, assert and test.
-  * [With](https://github.com/mikhailshilkov/With.Fody) Methods to return copies of immutable objects with one property modified.
+  * [Unsealed](https://github.com/fodyarchived/Unsealed) A simple Fody weaver to unseal sealed types.
+  * [Usable](https://github.com/fodyarchived/Usable) Adds using statements for local variables that have been created, and implement [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable).
   * [YALF](https://github.com/sharpmonkey/YALF) Yet Another Logging Framework.
