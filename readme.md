@@ -120,4 +120,4 @@ Thanks to the following
  * [xUnit](https://xunit.github.io/)
  * [AppVeyor](https://www.appveyor.com/) and [Travis CI](https://travis-ci.org/) for build and CI infrastructure
  * [NuGet](https://www.nuget.org/) for package delivery
- * [The Noun Project](http://thenounproject.com) for the <a href="http://thenounproject.com/noun/bird/#icon-No6726">Bird</a> icon designed by <a href="http://thenounproject.com/MARCOHS">Marco Hernandez</a>
+ * [The Noun Project](https://thenounproject.com) for the <a href="https://thenounproject.com/noun/bird/#icon-No6726">Bird</a> icon designed by <a href="https://thenounproject.com/MARCOHS">Marco Hernandez</a>

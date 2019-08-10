@@ -40,4 +40,4 @@ See [writing an addin](/pages/addin-development.md)
 
 ## Icon
 
-<a href="https://thenounproject.com/term/lego/16919/" target="_blank">Lego</a> designed by <a href="https://thenounproject.com/timur.zima/" target="_blank">Timur Zima</a> from The Noun Project
+[Lego](https://thenounproject.com/term/lego/16919/) designed by [Timur Zima](https://thenounproject.com/timur.zima/) from [The Noun Project](https://thenounproject.com).
