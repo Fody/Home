@@ -1,4 +1,4 @@
-[![NuGet Status](http://img.shields.io/nuget/v/BasicFodyAddin.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
+[![NuGet Status](https://img.shields.io/nuget/v/BasicFodyAddin.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
 
 ![Icon](https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png)
 
