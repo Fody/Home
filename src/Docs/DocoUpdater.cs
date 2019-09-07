@@ -1,7 +1,7 @@
 ﻿using Xunit.Abstractions;
 
 public class DocoUpdater :
-    XunitLoggingBase
+    XunitApprovalBase
 {
     public DocoUpdater(ITestOutputHelper output) :
         base(output)
