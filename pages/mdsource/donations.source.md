@@ -5,7 +5,7 @@ Every month the Fody project will donate a portion of funding raised to a charit
 
 ## History
 
-
+ * 2019 July: $50AUD to [Yalari](https://www.yalari.org/)
  * 2019 June: $50USD to [Diversify Tech](https://www.diversifytech.co/) as nominated by [Indu Alagarsamy](https://indu.dev/)
  * 2019 May: $50USD to [Women in Tech Podcast](http://podcast.womenintechshow.com/) by [Espree Devora](https://twitter.com/EspreeDevora)
  * 2019 May: $50USD to [Girl Develop It](https://www.girldevelopit.com/)

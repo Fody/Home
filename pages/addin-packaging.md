@@ -80,12 +80,12 @@ The below files are include as [MSBuild props and targets in a package](https://
       <XcfFile>$(WeaverDirPath)\netstandard2.0\$(PackageId).xcf</XcfFile>
     </PropertyGroup>
 
-    <Error Text="FodyPackaging: No weaver found at $(WeaverFile). $(ProjectName) should have a Project Dependency on $(PackageId)."
+    <Error Text="FodyPackaging: No weaver found at $(WeaverFile). $(ProjectName) should have a Project Dependency on $(PackageId), and $(PackageId) should target 'netstandard2.0'."
            Condition="!Exists($(WeaverFile))" />
 
     <ItemGroup>
       <TfmSpecificPackageFile Include="$(XcfFile)"
-                              PackagePath="weaver\$(PackageId).xcf" 
+                              PackagePath="weaver\$(PackageId).xcf"
                               Condition="Exists($(XcfFile))" />
       <TfmSpecificPackageFile Include="$(WeaverFile)"
                               PackagePath="weaver\$(PackageId).dll" />

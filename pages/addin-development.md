@@ -52,8 +52,8 @@ The produced NuGet package will:
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="5.1.1" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="5.1.1" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.0.0" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
 ```
@@ -91,7 +91,7 @@ This project contains the weaving code.
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="5.1.1" />
+    <PackageReference Include="FodyHelpers" Version="6.0.0" />
   </ItemGroup>
 </Project>
 ```
@@ -458,14 +458,14 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="FodyHelpers" Version="5.1.1" />
+    <PackageReference Include="FodyHelpers" Version="6.0.0" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>
 ```
