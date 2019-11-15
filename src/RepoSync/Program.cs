@@ -22,6 +22,7 @@ class Program
 
         //sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/appveyor.yml", "appveyor.yml");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/.editorconfig", ".editorconfig");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/FUNDING.yml", ".github/FUNDING.yml");
         sync.AddTargetRepository("Fody", "Fody", "master");
         sync.AddTargetRepository("Fody", "Anotar", "master");
         sync.AddTargetRepository("Fody", "AsyncErrorHandler", "master");
@@ -32,8 +33,6 @@ class Program
         sync.AddTargetRepository("Fody", "EmptyConstructor", "master");
         sync.AddTargetRepository("Fody", "Equals", "master");
         sync.AddTargetRepository("Fody", "ExtraConstraints", "master");
-        sync.AddTargetRepository("Fody", "Freezable", "master");
-        sync.AddTargetRepository("Fody", "Immutable", "master");
         sync.AddTargetRepository("Fody", "InfoOf", "master");
         sync.AddTargetRepository("Fody", "Ionad", "master");
         sync.AddTargetRepository("Fody", "Janitor", "master");
@@ -49,8 +48,6 @@ class Program
         sync.AddTargetRepository("Fody", "Resourcer", "master");
         sync.AddTargetRepository("Fody", "Scalpel", "master");
         sync.AddTargetRepository("Fody", "ToString", "master");
-        sync.AddTargetRepository("Fody", "Unsealed", "master");
-        sync.AddTargetRepository("Fody", "Usable", "master");
         sync.AddTargetRepository("Fody", "Validar", "master");
         sync.AddTargetRepository("Fody", "Virtuosity", "master");
         sync.AddTargetRepository("Fody", "Visualize", "master");
