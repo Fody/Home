@@ -13,7 +13,8 @@ class Program
 
         var sync = new RepoSync(
             log: Console.WriteLine,
-            defaultCredentials: credentials);
+            defaultCredentials: credentials,
+            syncMode: SyncMode.ExcludeAllByDefault);
 
         sync.AddSourceRepository(
             owner: "Fody",
@@ -26,10 +27,9 @@ class Program
         sync.AddTargetRepository("Fody", "Fody", "master");
         sync.AddTargetRepository("Fody", "Anotar", "master");
         sync.AddTargetRepository("Fody", "AsyncErrorHandler", "master");
-        sync.AddTargetRepository("Fody", "BasicFodyAddin", "master");
         sync.AddTargetRepository("Fody", "Caseless", "master");
         sync.AddTargetRepository("Fody", "ConfigureAwait", "master");
-        sync.AddTargetRepository("Fody", "Costura", "master");
+        //sync.AddTargetRepository("Fody", "Costura", "master");
         sync.AddTargetRepository("Fody", "EmptyConstructor", "master");
         sync.AddTargetRepository("Fody", "Equals", "master");
         sync.AddTargetRepository("Fody", "ExtraConstraints", "master");
