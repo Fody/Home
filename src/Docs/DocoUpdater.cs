@@ -1,7 +1,8 @@
-﻿using Xunit.Abstractions;
+﻿using VerifyXunit;
+using Xunit.Abstractions;
 
 public class DocoUpdater :
-    XunitApprovalBase
+    VerifyBase
 {
     public DocoUpdater(ITestOutputHelper output) :
         base(output)
