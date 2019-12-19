@@ -53,7 +53,7 @@ Thanks to all the backers and sponsors! Support this project by [becoming a patr
 
 The codebase of core Fody engine located at https://github.com/Fody/Fody.
 
-[![Chat on Gitter](https://img.shields.io/gitter/room/fody/fody.svg?style=flat&max-age=86400)](https://gitter.im/Fody/Fody)
+[![Chat on Gitter](https://img.shields.io/gitter/room/fody/fody.svg)](https://gitter.im/Fody/Fody)
 
 ## The plumbing tasks Fody handles
 
