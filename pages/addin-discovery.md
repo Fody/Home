@@ -18,7 +18,7 @@ Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at 
   </ItemGroup>
 </Project>
 ```
-<sup>[anchor](#snippet-weaver.props)</sup>
+<sup><a href='#snippet-weaver.props' title='Navigate to start of snippet `weaver.props`'>anchor</a></sup>
 <!-- endsnippet -->
 
 If the [FodyPackaging NuGet](addin-packaging.md#FodyPackaging-NuGet-Package) is used to create the addin package, this file is automatically added.

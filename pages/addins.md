@@ -38,7 +38,6 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [PropertyChanged](https://github.com/Fody/PropertyChanged) Injects INotifyPropertyChanged code into properties.
   * [PropertyChanging](https://github.com/Fody/PropertyChanging) Injects INotifyPropertyChanging code into properties.
   * [Publicize](https://github.com/Fody/Publicize) Converts non-public members to public hidden members.
-  * [Realm](https://github.com/realm/realm-dotnet) Mobile database: a replacement for SQLite & ORMs.
   * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](https://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
   * [Resourcer](https://github.com/Fody/Resourcer) Simplifies reading embedded resources from an Assembly.
   * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Lets you design your WPF splash screen as a WPF Control instead of a static bitmap.

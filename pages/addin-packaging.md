@@ -64,7 +64,7 @@ The below files are include as [MSBuild props and targets in a package](https://
   </PropertyGroup>
 </Project>
 ```
-<sup>[anchor](#snippet-fodypackaging.props)</sup>
+<sup><a href='#snippet-fodypackaging.props' title='Navigate to start of snippet `fodypackaging.props`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -95,7 +95,7 @@ The below files are include as [MSBuild props and targets in a package](https://
   </Target>
 </Project>
 ```
-<sup>[anchor](#snippet-fodypackaging.targets)</sup>
+<sup><a href='#snippet-fodypackaging.targets' title='Navigate to start of snippet `fodypackaging.targets`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -112,5 +112,5 @@ Included in the consuming package to facilitate [addin discovery](addin-discover
   </ItemGroup>
 </Project>
 ```
-<sup>[anchor](#snippet-weaver.props)</sup>
+<sup><a href='#snippet-weaver.props' title='Navigate to start of snippet `weaver.props`'>anchor</a></sup>
 <!-- endsnippet -->

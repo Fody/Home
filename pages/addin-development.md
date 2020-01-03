@@ -57,7 +57,7 @@ The produced NuGet package will:
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L21) / [anchor](#snippet-BasicFodyAddin.csproj)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L21' title='File snippet `BasicFodyAddin.csproj` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.csproj' title='Navigate to start of snippet `BasicFodyAddin.csproj`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -95,7 +95,7 @@ This project contains the weaving code.
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj#L1-L9) / [anchor](#snippet-BasicFodyAddin.Fody.csproj)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj#L1-L9' title='File snippet `BasicFodyAddin.Fody.csproj` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.Fody.csproj' title='Navigate to start of snippet `BasicFodyAddin.Fody.csproj`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -223,7 +223,7 @@ public class ModuleWeaver :
     public override bool ShouldCleanReference => true;
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117) / [anchor](#snippet-moduleweaver)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117' title='File snippet `moduleweaver` was extracted from'>snippet source</a> | <a href='#snippet-moduleweaver' title='Navigate to start of snippet `moduleweaver`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -247,7 +247,7 @@ public override void Execute()
     LogInfo("Added type 'Hello' with method 'World'.");
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27) / [anchor](#snippet-execute)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27' title='File snippet `execute` was extracted from'>snippet source</a> | <a href='#snippet-execute' title='Navigate to start of snippet `execute`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -266,7 +266,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
     yield return "mscorlib";
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35) / [anchor](#snippet-getassembliesforscanning)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35' title='File snippet `getassembliesforscanning` was extracted from'>snippet source</a> | <a href='#snippet-getassembliesforscanning' title='Navigate to start of snippet `getassembliesforscanning`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -279,7 +279,7 @@ When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for t
 ```cs
 public override bool ShouldCleanReference => true;
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114) / [anchor](#snippet-shouldcleanreference)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114' title='File snippet `shouldcleanreference` was extracted from'>snippet source</a> | <a href='#snippet-shouldcleanreference' title='Navigate to start of snippet `shouldcleanreference`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -352,7 +352,7 @@ Sample content of the `BasicFodyAddin.Fody.xcf`:
   </xs:attribute>
 </xs:complexType>
 ```
-<sup>[snippet source](/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf#L1-L9) / [anchor](#snippet-BasicFodyAddin.Fody.Xcf)</sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf#L1-L9' title='File snippet `BasicFodyAddin.Fody.Xcf` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.Fody.Xcf' title='Navigate to start of snippet `BasicFodyAddin.Fody.Xcf`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Fody will then combine all `.xcf` fragments with the weavers information to the final `.xsd`:
@@ -395,7 +395,7 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
   </xs:element>
 </xs:schema>
 ```
-<sup>[snippet source](/BasicFodyAddin/SmokeTest/FodyWeavers.xsd#L1-L34) / [anchor](#snippet-FodyWeavers.xsd)</sup>
+<sup><a href='/BasicFodyAddin/SmokeTest/FodyWeavers.xsd#L1-L34' title='File snippet `FodyWeavers.xsd` was extracted from'>snippet source</a> | <a href='#snippet-FodyWeavers.xsd' title='Navigate to start of snippet `FodyWeavers.xsd`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -443,7 +443,7 @@ public class WeaverTests
     }
 }
 ```
-<sup>[snippet source](/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27) / [anchor](#snippet-weavertests)</sup>
+<sup><a href='/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27' title='File snippet `weavertests` was extracted from'>snippet source</a> | <a href='#snippet-weavertests' title='Navigate to start of snippet `weavertests`'>anchor</a></sup>
 <!-- endsnippet -->
 
 By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
@@ -469,7 +469,7 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
   </ItemGroup>
 </Project>
 ```
-<sup>[snippet source](/BasicFodyAddin/Tests/Tests.csproj#L1-L17) / [anchor](#snippet-Tests.csproj)</sup>
+<sup><a href='/BasicFodyAddin/Tests/Tests.csproj#L1-L17' title='File snippet `Tests.csproj` was extracted from'>snippet source</a> | <a href='#snippet-Tests.csproj' title='Navigate to start of snippet `Tests.csproj`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -495,7 +495,7 @@ test: off
 artifacts:
 - path: nugets\*.nupkg
 ```
-<sup>[snippet source](/BasicFodyAddin/appveyor.yml#L1-L11) / [anchor](#snippet-appveyor.yml)</sup>
+<sup><a href='/BasicFodyAddin/appveyor.yml#L1-L11' title='File snippet `appveyor.yml` was extracted from'>snippet source</a> | <a href='#snippet-appveyor.yml' title='Navigate to start of snippet `appveyor.yml`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
