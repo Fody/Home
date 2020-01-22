@@ -3,7 +3,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.0.7" />
+    <PackageReference Include="FodyHelpers" Version="6.0.8" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="17.7.2" PrivateAssets="all" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <PackageReference Include="Xunit" Version="2.4.1" />
