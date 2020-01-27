@@ -24,6 +24,8 @@ class Program
         //sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/appveyor.yml", "appveyor.yml");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/.editorconfig", ".editorconfig");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/FUNDING.yml", ".github/FUNDING.yml");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/workflows/on-push-do-doco.yml", ".github/workflows/on-push-do-doco.yml");
+        sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/workflows/on-tag-do-release.yml", ".github/workflows/on-tag-do-release.yml");
         sync.AddTargetRepository("Fody", "Fody", "master");
         sync.AddTargetRepository("Fody", "Anotar", "master");
         sync.AddTargetRepository("Fody", "AsyncErrorHandler", "master");
