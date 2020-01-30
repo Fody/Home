@@ -16,7 +16,7 @@ Fody requires significant effort to maintain. As such it relies on financial sup
 
 **It is expected that all developers using Fody either [become a Patron on OpenCollective](https://opencollective.com/fody/), or have a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-fody?utm_source=nuget-fody&utm_medium=referral&utm_campaign=enterprise).**
 
-[See Licensing FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md) for more information.
+[See Licensing/Patron FAQ](https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md) for more information.
 
 
 ### Gold Sponsors
