@@ -7,7 +7,9 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Licensing/Patron FAQ
 
-Fody requires significant effort to maintain. As such it relies on financial contributions from the community and sponsorship to ensure its long term viability. **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/order/3059).**
+Fody requires significant effort to maintain. As such it relies on financial contributions to ensure its long term viability.
+
+**It is expected that all developers using Fody either [become a Patron on OpenCollective](https://opencollective.com/fody/), or have a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-fody?utm_source=nuget-fody&utm_medium=referral&utm_campaign=enterprise).**
 
 
 ## Is this all versions?
