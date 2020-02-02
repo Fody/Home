@@ -4,7 +4,10 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.0.2" />
+    <PackageReference Include="Fody" Version="6.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
     <WeaverFiles Include="$(SolutionDir)BasicFodyAddin.Fody\bin\$(Configuration)\netstandard2.0\BasicFodyAddin.Fody.dll" />
   </ItemGroup>

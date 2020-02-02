@@ -52,8 +52,8 @@ The produced NuGet package will:
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.0.2" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="6.0.2" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.1.0" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.1.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
 ```
@@ -91,7 +91,7 @@ This project contains the weaving code.
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.0.2" />
+    <PackageReference Include="FodyHelpers" Version="6.1.0" />
   </ItemGroup>
 </Project>
 ```
@@ -136,7 +136,7 @@ public class ModuleWeaver :
         AddHelloWorld(type);
 
         ModuleDefinition.Types.Add(type);
-        LogInfo("Added type 'Hello' with method 'World'.");
+        WriteInfo("Added type 'Hello' with method 'World'.");
     }
 
     public override IEnumerable<string> GetAssembliesForScanning()
@@ -223,7 +223,7 @@ public class ModuleWeaver :
     public override bool ShouldCleanReference => true;
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L117' title='File snippet `moduleweaver` was extracted from'>snippet source</a> | <a href='#snippet-moduleweaver' title='Navigate to start of snippet `moduleweaver`'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L120' title='File snippet `moduleweaver` was extracted from'>snippet source</a> | <a href='#snippet-moduleweaver' title='Navigate to start of snippet `moduleweaver`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -244,10 +244,10 @@ public override void Execute()
     AddHelloWorld(type);
 
     ModuleDefinition.Types.Add(type);
-    LogInfo("Added type 'Hello' with method 'World'.");
+    WriteInfo("Added type 'Hello' with method 'World'.");
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L27' title='File snippet `execute` was extracted from'>snippet source</a> | <a href='#snippet-execute' title='Navigate to start of snippet `execute`'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L28' title='File snippet `execute` was extracted from'>snippet source</a> | <a href='#snippet-execute' title='Navigate to start of snippet `execute`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -266,7 +266,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
     yield return "mscorlib";
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L29-L35' title='File snippet `getassembliesforscanning` was extracted from'>snippet source</a> | <a href='#snippet-getassembliesforscanning' title='Navigate to start of snippet `getassembliesforscanning`'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L30-L38' title='File snippet `getassembliesforscanning` was extracted from'>snippet source</a> | <a href='#snippet-getassembliesforscanning' title='Navigate to start of snippet `getassembliesforscanning`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -279,7 +279,7 @@ When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for t
 ```cs
 public override bool ShouldCleanReference => true;
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L112-L114' title='File snippet `shouldcleanreference` was extracted from'>snippet source</a> | <a href='#snippet-shouldcleanreference' title='Navigate to start of snippet `shouldcleanreference`'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L115-L117' title='File snippet `shouldcleanreference` was extracted from'>snippet source</a> | <a href='#snippet-shouldcleanreference' title='Navigate to start of snippet `shouldcleanreference`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -458,10 +458,10 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.0.2" />
+    <PackageReference Include="FodyHelpers" Version="6.1.0" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
