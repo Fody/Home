@@ -12,6 +12,27 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
  * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
  * [Source](/BasicFodyAddin/)
 
+<!-- toc -->
+## Contents
+
+  * [Lib/Reference project](#libreference-project)
+    * [Build Order](#build-order)
+  * [Weaver Project](#weaver-project)
+    * [Target Frameworks](#target-frameworks)
+    * [Output of the project](#output-of-the-project)
+    * [ModuleWeaver](#moduleweaver)
+    * [Throwing exceptions](#throwing-exceptions)
+  * [Passing config via to FodyWeavers.xml](#passing-config-via-to-fodyweaversxml)
+    * [Supporting intellisense for FodyWeavers.xml](#supporting-intellisense-for-fodyweaversxml)
+  * [AssemblyToProcess Project](#assemblytoprocess-project)
+  * [Tests Project](#tests-project)
+  * [Build Server](#build-server)
+    * [AppVeyor](#appveyor)
+  * [Usage](#usage)
+    * [NuGet installation](#nuget-installation)
+    * [Add to FodyWeavers.xml](#add-to-fodyweaversxml)
+  * [Deployment](#deployment)<!-- endtoc -->
+
 
 ## Lib/Reference project
 
@@ -251,6 +272,21 @@ public override void Execute()
 <!-- endsnippet -->
 
 
+#### Resultant injected code
+
+In this case a new type is being injected into the target assembly that looks like this.
+
+```csharp
+public class Hello
+{
+    public string World()
+    {
+        return "Hello World";
+    }
+}
+```
+
+
 #### BaseModuleWeaver.GetAssembliesForScanning
 
 Called by Fody when it is building up a type cache for lookups. This method should return all possible assemblies that the weaver may require while resolving types. In this case BasicFodyAddin requires `System.Object`, so `GetAssembliesForScanning` returns `netstandard` and `mscorlib`. It is safe to return assembly names that are not used by the current target assembly as these will be ignored.
@@ -350,21 +386,6 @@ public class MyLoggingWeaver :
 
 `BaseModuleWeaver` has a number of other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
-
-
-### Resultant injected code
-
-In this case a new type is being injected into the target assembly that looks like this.
-
-```csharp
-public class Hello
-{
-    public string World()
-    {
-        return "Hello World";
-    }
-}
-```
 
 
 ### Throwing exceptions

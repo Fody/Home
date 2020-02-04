@@ -5,6 +5,8 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
  * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
  * [Source](/BasicFodyAddin/)
 
+toc
+
 
 ## Lib/Reference project
 
@@ -82,6 +84,21 @@ Called to perform the manipulation of the module. The current module can be acce
 snippet: Execute
 
 
+#### Resultant injected code
+
+In this case a new type is being injected into the target assembly that looks like this.
+
+```csharp
+public class Hello
+{
+    public string World()
+    {
+        return "Hello World";
+    }
+}
+```
+
+
 #### BaseModuleWeaver.GetAssembliesForScanning
 
 Called by Fody when it is building up a type cache for lookups. This method should return all possible assemblies that the weaver may require while resolving types. In this case BasicFodyAddin requires `System.Object`, so `GetAssembliesForScanning` returns `netstandard` and `mscorlib`. It is safe to return assembly names that are not used by the current target assembly as these will be ignored.
@@ -109,21 +126,6 @@ snippet: MyLoggingWeaver.cs
 
 `BaseModuleWeaver` has a number of other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
-
-
-### Resultant injected code
-
-In this case a new type is being injected into the target assembly that looks like this.
-
-```csharp
-public class Hello
-{
-    public string World()
-    {
-        return "Hello World";
-    }
-}
-```
 
 
 ### Throwing exceptions
