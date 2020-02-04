@@ -98,9 +98,16 @@ When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for t
 snippet: ShouldCleanReference
 
 
+#### Logging
+
+A number of helper exist for writing log entries to MSBuild:
+
+snippet: MyLoggingWeaver.cs
+
+
 #### Other BaseModuleWeaver Members
 
-`BaseModuleWeaver` has a number of other members for logging and extensibility:
+`BaseModuleWeaver` has a number of other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
 
 

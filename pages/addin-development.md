@@ -283,9 +283,72 @@ public override bool ShouldCleanReference => true;
 <!-- endsnippet -->
 
 
+#### Logging
+
+A number of helper exist for writing log entries to MSBuild:
+
+<!-- snippet: MyLoggingWeaver.cs -->
+<a id='snippet-MyLoggingWeaver.cs'/></a>
+```cs
+using System.Collections.Generic;
+using System.Linq;
+using Fody;
+
+public class MyLoggingWeaver : 
+    BaseModuleWeaver 
+{
+    public override void Execute()
+    {
+        // Write a log entry with a specific MessageImportance
+        base.WriteMessage("Message", MessageImportance.High);
+
+        // Write a log entry with the MessageImportance.Low level
+        base.WriteDebug("Message");
+
+        // Write a log entry with the MessageImportance.Normal level
+        base.WriteInfo("Message");
+
+        // Write a warning
+        base.WriteWarning("Message");
+
+        // Write an error
+        base.WriteError("Message");
+
+        var type = ModuleDefinition.GetType("MyType");
+        var method = type.Methods.First();
+        
+        // Write an error using the first SequencePoint
+        // of a method for the line information
+        base.WriteWarning("Message", method);
+
+        // Write an error using the first SequencePoint
+        // of a method for the line information
+        base.WriteError("Message", method);
+
+        var sequencePoint = method.DebugInformation.SequencePoints.First();
+
+        // Write an warning using a SequencePoint
+        // for the line information
+        base.WriteWarning("Message", sequencePoint);
+
+        // Write an error using a SequencePoint
+        // for the line information
+        base.WriteError("Message", sequencePoint);
+    }
+
+    public override IEnumerable<string> GetAssembliesForScanning()
+    {
+        return Enumerable.Empty<string>();
+    }
+}
+```
+<sup><a href='/src/Docs/MyLoggingWeaver.cs#L1-L51' title='File snippet `MyLoggingWeaver.cs` was extracted from'>snippet source</a> | <a href='#snippet-MyLoggingWeaver.cs' title='Navigate to start of snippet `MyLoggingWeaver.cs`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
 #### Other BaseModuleWeaver Members
 
-`BaseModuleWeaver` has a number of other members for logging and extensibility:
+`BaseModuleWeaver` has a number of other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
 
 
