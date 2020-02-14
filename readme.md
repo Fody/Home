@@ -32,6 +32,8 @@ Support this project by [becoming a Silver Sponsor](https://opencollective.com/f
 
 <a href="https://particular.net/"><img alt="Particular Software" width="200px" src="https://raw.githubusercontent.com/Fody/Home/master/images/particular.svg?sanitize=true"></a>
 
+<a href="https://www.gresearch.co.uk/"><img alt="G-Research" width="200px" src="https://raw.githubusercontent.com/Fody/Home/master/images/g-research.svg?sanitize=true"></a>
+
 
 ### Bronze Sponsors
 
