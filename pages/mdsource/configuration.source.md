@@ -1,13 +1,13 @@
 # Configuration
 
+## Configuring the weavers
+Fody requires an XML configuration that lists all weavers to be applied to the project.
 
-## FodyWeavers.xml
+- It specifies the list of weavers that should be applied to the project.
+- Weavers are applied in the order listed in the configuration. 
+- Weavers can also be configured here. See the documentation of each individual weaver to see what configuration options it has.
 
-Fody requires a `FodyWeavers.xml` file to be present in the project directory. If it is missing, a default file will be created the first time the project is built.
-
-This file specifies the list of weavers that should be applied to the project, and in what order. Weavers can also be configured here.
-
-The file format is:
+The format is:
 
 ```xml
 <Weavers>
@@ -16,14 +16,54 @@ The file format is:
 </Weavers>
 ```
 
-The `<Weavers>` element supports the following attributes:
+The `<Weavers>` element is mandatory and supports the following attributes:
 
  * `VerifyAssembly`: Set to `true` to run PEVerify on the build result. See [Assembly verification](#assembly-verification).
  * `VerifyIgnoreCodes`: A comma-separated list of error codes which should be ignored during assembly verification. See [Assembly verification](#assembly-verification).
  * `GenerateXsd`: Set to `false` to disable generation of the `FodyWeavers.xsd` file which provides [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for `FodyWeavers.xml`. This overrides the `FodyGenerateXsd` MSBuild property.
 
+The content of the `<Weavers>` element is a list of all weavers, where the name of the element corresponds to the weaver name.
 
-## MSBuild properties
+### Configuration options
+There are several ways to specify the configuration
+
+#### A file in each project directory
+
+The default is a file named `FodyWeavers.xml` in each projects directory. 
+- If this file exists, it has the highest precedence and overrides all other options.
+- If it is missing, and no other configuration can be found, a default file will be created the first time the project is built.
+- An XML schema will be created aside of this file, to provide [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for editing the `FodyWeavers.xml`
+
+#### An MSBuild property in the project file
+
+An alternate way is to add a property named `WeaverConfiguration` in your project file:
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    ...
+    <SomeProperty>Some Value</SomeProperty>
+    <WeaverConfiguration>
+      <Weavers>
+        <WeaverA />
+        <WeaverB ConfigForWeaverB="$(SomeProperty)" />
+      </Weavers>
+    </WeaverConfiguration>
+  </PropertyGroup>
+```
+The content of this property is the same as described above
+- You can use MSBuild logic to dynamically control the behavior
+- You can add the configuration e.g. just once in the `Directory.build.props` file to 
+  share the same configuration among several projects.
+- Intellisens for the configuration is not available here
+
+
+#### A file in the solution directory
+You can also share the configuration among all projects of the solution by adding one file named `FodyWeavers.xml`
+in the soulution directory.
+- Intellisens for the configuration is not available here
+- This option has the lowest precedence and will be overwritten by the other options
+
+## Controlling the behavior of Fody
 
 The following options can be set through MSBuild properties:
 
@@ -49,7 +89,7 @@ An example use case of this is to force Fody to run after [CodeContracts](https:
 ```
 
 
-## Assembly Verification
+## Assembly verification
 
 Post build verification via [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) is supported.
 
