@@ -20,7 +20,8 @@ The `<Weavers>` element is mandatory and supports the following attributes:
 
  * `VerifyAssembly`: Set to `true` to run PEVerify on the build result. See [Assembly verification](#assembly-verification).
  * `VerifyIgnoreCodes`: A comma-separated list of error codes which should be ignored during assembly verification. See [Assembly verification](#assembly-verification).
- * `GenerateXsd`: Set to `false` to disable generation of the `FodyWeavers.xsd` file which provides [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for `FodyWeavers.xml`. This overrides the `FodyGenerateXsd` MSBuild property.
+ * `GenerateXsd`: Set to `false` to disable generation of the `FodyWeavers.xsd` file which provides [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) 
+   support for `FodyWeavers.xml`. This overrides the `FodyGenerateXsd` MSBuild property.
 
 The content of the `<Weavers>` element is a list of all weavers, where the name of the element corresponds to the weaver name.
 
@@ -33,6 +34,7 @@ The default is a file named `FodyWeavers.xml` in each projects directory.
 - If this file exists, it has the highest precedence and overrides all other options.
 - If it is missing, and no other configuration can be found, a default file will be created the first time the project is built.
 - An XML schema will be created aside of this file, to provide [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for editing the `FodyWeavers.xml`
+- This file must not contain entries for weavers that are not installed. However you can omit entries if they are defined in one of the alternate configurations.
 
 #### An MSBuild property in the project file
 
@@ -54,14 +56,17 @@ The content of this property is the same as described above
 - You can use MSBuild logic to dynamically control the behavior
 - You can add the configuration e.g. just once in the `Directory.build.props` file to 
   share the same configuration among several projects.
-- Intellisens for the configuration is not available here
+- To support sharing the configuration among several projects, entries for weavers that are not installed for a particular project are ignored, so you can configure the superset of all weavers installed in all projects.
+- IntelliSens for the configuration is not available here
 
 
 #### A file in the solution directory
 You can also share the configuration among all projects of the solution by adding one file named `FodyWeavers.xml`
-in the soulution directory.
-- Intellisens for the configuration is not available here
+in the solution directory.
+- IntelliSens for the configuration is not available here
+- Entries for weavers that are not installed for a particular project are ignored, so you can configure the superset of all weavers installed in all projects.
 - This option has the lowest precedence and will be overwritten by the other options
+
 
 ## Controlling the behavior of Fody
 
