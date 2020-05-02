@@ -65,13 +65,13 @@ The content of this property is the same as described above
 - You can add the configuration e.g. just once in the `Directory.build.props` file to 
   share the same configuration among several projects.
 - To support sharing the configuration among several projects, entries for weavers that are not installed for a particular project are ignored, so you can configure the superset of all weavers installed in all projects.
-- IntelliSens for the configuration is not available here
+- [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) for the configuration is not available here
 
 
 #### A file in the solution directory
 You can also share the configuration among all projects of the solution by adding one file named `FodyWeavers.xml`
 in the solution directory.
-- IntelliSens for the configuration is not available here
+- [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) for the configuration is not available here
 - Entries for weavers that are not installed for a particular project are ignored, so you can configure the superset of all weavers installed in all projects.
 - This option has the lowest precedence and will be overwritten by the other options
 
