@@ -75,6 +75,59 @@ in the solution directory.
 - Entries for weavers that are not installed for a particular project are ignored, so you can configure the superset of all weavers installed in all projects.
 - This option has the lowest precedence and will be overwritten by the other options
 
+### Merging configurations
+When multiple configurations are provided, the one with the lowest precedence will control the execution order of the weaver,
+while the one with the higher precedence will override the content of the configuration node. 
+
+Consider this combination:
+
+`FodyWeavers.xml` in the solution directory:
+```xml
+<Weavers>
+  <WeaverA />
+  <WeaverB />
+</Weavers>
+```
+---
+`FodyWeavers.xml` in the project directory:
+```xml
+<Weavers>
+  <WeaverC />
+  <WeaverB Property1="B1" />
+  <WeaverA Property1="A1" Property2="A2" />
+</Weavers>
+```
+---
+`WeaverConfiguration` entry in the project:
+```xml
+<WeaverConfiguration Condition="'$(Configuration)' == 'Debug'">
+  <Weavers>
+    <WeaverC Property1="C1" />
+    <WeaverA Property3="A3" />
+  </Weavers>
+</WeaverConfiguration>
+```
+---
+This will result in an effective configuration of
+```xml
+<Weavers>
+  <WeaverA Property1="A1" Property2="A2" />
+  <WeaverB Property1="B1" />
+  <WeaverC />
+</Weavers>
+```
+for non-debug and 
+```xml
+<Weavers>
+  <WeaverA Property3="A3" />
+  <WeaverB Property1="B1" />
+  <WeaverC Property1="C1" />
+</Weavers>
+```
+for debug builds.
+
+To verify which configuration is active the configuration source can be found in the log when the output verbosity is set to detailed.
+
 
 ## Controlling the behavior of Fody
 
