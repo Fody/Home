@@ -38,10 +38,10 @@ There are several ways to specify the configuration
 #### A file in each project directory
 
 The default is a file named `FodyWeavers.xml` in each projects directory. 
-- If this file exists, it has the highest precedence and overrides all other options.
 - If it is missing, and no other configuration can be found, a default file will be created the first time the project is built.
 - An XML schema will be created aside of this file, to provide [IntelliSense](https://docs.microsoft.com/en-us/visualstudio/ide/using-intellisense) support for editing the `FodyWeavers.xml`
 - This file must not contain entries for weavers that are not installed. However you can omit entries if they are defined in one of the alternate configurations.
+
 
 #### An MSBuild property in the project file
 
@@ -60,6 +60,7 @@ An alternate way is to add a property named `WeaverConfiguration` in your projec
   </PropertyGroup>
 ```
 The content of this property is the same as described above
+- Overrides entries in the `FodyWeavers.xml`
 - You can use MSBuild logic to dynamically control the behavior
 - You can add the configuration e.g. just once in the `Directory.build.props` file to 
   share the same configuration among several projects.
