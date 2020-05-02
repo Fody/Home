@@ -60,7 +60,7 @@ An alternate way is to add a property named `WeaverConfiguration` in your projec
   </PropertyGroup>
 ```
 The content of this property is the same as described above
-- Overrides entries in the `FodyWeavers.xml`
+- This has highest precedence, it overrides any entries of the other configurations
 - You can use MSBuild logic to dynamically control the behavior
 - You can add the configuration e.g. just once in the `Directory.build.props` file to 
   share the same configuration among several projects.
