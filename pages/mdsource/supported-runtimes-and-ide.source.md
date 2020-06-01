@@ -44,7 +44,7 @@ References
  * Classic .NET: See *Support ended* in [NET Framework version history](https://en.wikipedia.org/wiki/.NET_Framework_version_history#Overview). i.e only 4.5.2 and above is supported.
  * .NET core: Follows [.NET Core Support Policy](https://www.microsoft.com/net/core/support).
 
-No explicit code is in place to check for non supported versions, and throw an error. As such earlier versions of .net may work as a side effect. It's all up to the individual weavers that you use and what version they are able to support.
+No explicit code is in place to check for non supported versions, and throw an error. As such earlier versions of .net may work as a side effect. It's all up to the individual weavers used and what version they are able to support.
 
 Any bugs found must be reproduced in a supported version.
 

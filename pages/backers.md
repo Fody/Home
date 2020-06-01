@@ -7,7 +7,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # Backers
 
-Below is a list of the people and organizations that have made significant contributions. Please consider joining them in supporting open source by [becoming a Patron of Fody](https://opencollective.com/fody/order/3059).
+Below is a list of the people and organizations that have made significant contributions. Consider joining them in supporting open source by [becoming a Patron of Fody](https://opencollective.com/fody/order/3059).
 
 
 ## Patrons

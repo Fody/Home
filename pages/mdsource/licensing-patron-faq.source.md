@@ -12,16 +12,16 @@ No, it will include version 3.3.3 and higher.
 
 ## Honesty System / Enforcement
 
-It is an honesty system with no code or legal enforcement. When raising an issue or a pull request, the GitHub Id may be checked to ensure they are a patron, and that issue/PR may be closed without further examination. This process will depend on the issue quality, your circumstances, and the impact on the larger user base. If a individual or organization has no interest in the long term sustainability of the project, then they are legally free to ignore the honesty system.
+It is an honesty system with no code or legal enforcement. When raising an issue or a pull request, the GitHub Id may be checked to ensure they are a patron, and that issue/PR may be closed without further examination. This process will depend on the issue quality, and the impact on the larger user base. If a individual or organization has no interest in the long term sustainability of the project, then they are legally free to ignore the honesty system.
 
 
 ## Why charge for open source?
 
- * [Open-Source Maintainers are Jerks! | Nick Randolph & Geoffrey Huntley](https://vimeo.com/296579853)
+ * [Open-Source Maintainers are Jerks | Nick Randolph & Geoffrey Huntley](https://vimeo.com/296579853)
  * [FOSS is free as in toilet | Geoffroy Couprie](http://unhandledexpression.com/general/2018/11/27/foss-is-free-as-in-toilet.html)
- * [How to Charge for your Open Source | Mike Perham](https://www.mikeperham.com/2015/11/23/how-to-charge-for-your-open-source/)
+ * [How to Charge for Open Source | Mike Perham](https://www.mikeperham.com/2015/11/23/how-to-charge-for-your-open-source/)
  * [Sustain OSS: The Report](https://sustainoss.org/assets/pdf/SustainOSS-west-2017-report.pdf)
- * [Open Source Maintainers Owe You Nothing | Mike McQuaid](https://mikemcquaid.com/2018/03/19/open-source-maintainers-owe-you-nothing/)
+ * [Open Source Maintainers Owe Nothing | Mike McQuaid](https://mikemcquaid.com/2018/03/19/open-source-maintainers-owe-you-nothing/)
  * [Who should fund open source projects? | Jane Elizabeth](https://jaxenter.com/who-funds-open-source-projects-133222.html)
  * [Apply at OSS Inc today| Ryan Chenkie](https://twitter.com/ryanchenkie/status/1067801413974032385)
  * [The Ethics of Unpaid Labor and the OSS Community | Ashe Dryden](https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community)
@@ -48,25 +48,24 @@ No. As per the [MIT License](https://opensource.org/licenses/MIT):
 
 > the software is provided "as is", without warranty of any kind
 
-For a supported product, you should instead consider [PostSharp](https://www.postsharp.net/?utm_source=fody&utm_medium=referral).
-PostSharp is a mature and supported product that is used by Fortune 500 companies as well as startups, and it doesn't require knowledge of IL.
+For a supported product, instead consider [PostSharp](https://www.postsharp.net/?utm_source=fody&utm_medium=referral). PostSharp is a mature and supported product that is used by Fortune 500 companies as well as startups, and it doesn't require knowledge of IL.
 
 They offer a free edition and their feature list includes: Aspect-Oriented Programming, Logging, INotifyPropertyChanged, Caching, Transactions, Security, Multithreading, Code Contracts, XAML plumbing, and Architecture Validation.
 
 
 ## But it is MIT, can't I use it for free?
 
-Yes all projects are under [MIT](https://opensource.org/licenses/MIT) and you can ignore the community backing honesty system and use Fody for free.
+Yes all projects are under [MIT](https://opensource.org/licenses/MIT) so the community backing honesty system can eb ignored and Fody used for free.
 
 
 ## Do I need to be a Patron to contribute a Pull Request?
 
-Yes. You must be a Patron to be a user of Fody. Contributing Pull Requests does not cancel this out. It may seem unfair to expect people both contribute PRs and also financially back this project. However it is important to remember the effort in reviewing and merging a PR is often similar to that of creating the PR. Also the project maintainers are committing to support that added code (feature or bug fix) for the life of the project. Pull Requests from non-Patrons, that are of significant value to the larger Fody user base, may justify the effort in reviewing and merging.
+Yes. Users must be a Patron to be a user of Fody. Contributing Pull Requests does not cancel this out. It may seem unfair to expect people both contribute PRs and also financially back this project. However it is important to remember the effort in reviewing and merging a PR is often similar to that of creating the PR. Also the project maintainers are committing to support that added code (feature or bug fix) for the life of the project. Pull Requests from non-Patrons, that are of significant value to the larger Fody user base, may justify the effort in reviewing and merging.
 
 
 ## Do I need to be a Patron to raise an issue?
 
-Yes. You must be a Patron to be a user of Fody. As such if you are raising an issue (question, bug or feature request) and you are not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort and be handled.
+Yes. Users must be a Patron to be a user of Fody. As such when raising an issue (question, bug or feature request) and not a Patron, the issue may not be actively triaged, and eventually closed as stale. Issues from non-Patrons, that are bugs and are highly likely to effect the larger Fody user base, may justify the effort and be handled.
 
 
 ## Organization licensing

@@ -39,7 +39,7 @@ For example to replace the legacy `SolutionDir/Tool` or [in solution weaving](in
 
 **Legacy strategies will no longer be supported in Fody version 4.0 and above**
 
-Legacy Weavers that are listed in the `FodyWeavers.xml` file, but don't expose the `WeaverFiles` MSBuild item, are located using a simple directory search.
+Legacy Weavers that are listed in the `FodyWeavers.xml` file, but don't expose the `WeaverFiles` MSBuild item, are located using a directory search.
 
 The following directories are searched for legacy Weavers
 

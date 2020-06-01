@@ -30,7 +30,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Addin packaging](https://github.com/Fody/Home/tree/master/pages/addin-packaging.md)<br>
     Packaging and deployment of Fody weavers.
   * [BasicFodyAddin](/BasicFodyAddin)<br>
-    A simple project meant to illustrate how to build an addin.
+    A project meant to illustrate how to build an addin.
   * [Fody Project Configuration Manager](https://github.com/tom-englert/ProjectConfigurationManager/wiki/6.-Fody)<br>
     Provides an interactive tool that can support configuring weavers, which is especially helpful in solutions with many projects.
   * [Backers tracking/info](https://github.com/Fody/Home/tree/master/pages/backers.md)

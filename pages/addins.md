@@ -9,12 +9,12 @@ To change this file edit the source file and then run MarkdownSnippets.
 
   * [Anotar](https://github.com/Fody/Anotar) Simplifies logging through a static class and some IL manipulation.
   * [AsyncErrorHandler](https://github.com/Fody/AsyncErrorHandler) Integrates error handling into async and TPL code.
-  * [AutoProperties](https://github.com/tom-englert/AutoProperties.Fody) Gives you extended control over auto-properties, like directly accessing the backing field or intercepting getters and setters.
-  * [BasicFodyAddin](/BasicFodyAddin) A simple project meant to illustrate how to build an addin.
-  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts your auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
+  * [AutoProperties](https://github.com/tom-englert/AutoProperties.Fody) Extends control over auto-properties, like directly accessing the backing field or intercepting getters and setters.
+  * [BasicFodyAddin](/BasicFodyAddin) Used to illustrate how to build an addin.
+  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Caseless](https://github.com/Fody/Caseless) Change string comparisons to be case insensitive.
   * [Catel](https://github.com/Catel/Catel.Fody) For transforming automatic properties into [Catel](https://github.com/Catel/Catel) properties.
-  * [ConfigureAwait](https://github.com/Fody/ConfigureAwait) Allows you to set the async ConfigureAwait at a global level for all your await calls.
+  * [ConfigureAwait](https://github.com/Fody/ConfigureAwait) Set the async ConfigureAwait at a global level for all await calls.
   * [Costura](https://github.com/Fody/Costura/) For embedding references as resources.
   * [EmptyConstructor](https://github.com/Fody/EmptyConstructor) Adds an empty constructor to classes even if a non empty one is defined.
   * [Equals](https://github.com/Fody/Equals) Generate Equals, GetHashCode and operators methods from properties.
@@ -40,7 +40,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [Publicize](https://github.com/Fody/Publicize) Converts non-public members to public hidden members.
   * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](https://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
   * [Resourcer](https://github.com/Fody/Resourcer) Simplifies reading embedded resources from an Assembly.
-  * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Lets you design your WPF splash screen as a WPF Control instead of a static bitmap.
+  * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Use WPF splash screen as a WPF Control instead of a static bitmap.
   * [StampSvn](https://github.com/krk/Stamp) Stamps an assembly with SVN data.
   * [Substitute](https://github.com/tom-englert/Substitute.Fody) Substitute types with other types to e.g. intercept generated code.
   * [SwallowExceptions](https://github.com/duaneedwards/SwallowExceptions) Swallow Exceptions in targeted methods.
@@ -59,33 +59,33 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 ## No longer maintained
 
-The below addins are no longer maintained. Raise an issue in the specific project if you would like to take ownership.
+The below addins are no longer maintained. Raise an issue in the specific project to take ownership.
 
   * [ArraySlice](https://github.com/Codealike/arrayslice) ArraySlice allows to build shared memory array views without performance impact. It uses IL manipulation to achieve the fastest implementation.
   * [AssertMessage](https://github.com/Fody/AssertMessage) Generates 'message' from sourcecode and adds it to assertion.
   * [AutoDependencyProperty](http://blog.angeloflogic.com/2014/12/no-more-dependencyproperty-with.html) Generates WPF DependencyProperty boilerplate from automatic C# properties.
   * [AutoLazy](https://github.com/bcuff/AutoLazy) Automatically implements the double-checked locking pattern on specified properties and methods.
   * [Cauldron](https://github.com/Capgemini/Cauldron) Provides method, property and field interception. It also provides weavers for Cauldron.Core and Cauldron.Activator.
-  * [Cilador](https://github.com/rileywhite/Cilador) Write your own [mixins](https://en.wikipedia.org/wiki/Mixin) in C# for code reuse without inheritance.
+  * [Cilador](https://github.com/rileywhite/Cilador) Write [mixins](https://en.wikipedia.org/wiki/Mixin) in C# for code reuse without inheritance.
   * [Commander](https://github.com/DamianReeves/Commander.Fody) Injects ICommand properties and implementations for use in MVVM applications.
-  * [CryptStr](https://cryptstr.codeplex.com/) Encrypts literal strings in your .NET assemblies.
+  * [CryptStr](https://cryptstr.codeplex.com/) Encrypts literal strings in .NET assemblies.
   * [DependencyInjection](https://github.com/jorgehmv/FodyDependencyInjection) automatic dependency injection for [Ninject](http://www.ninject.org/), [Autofac](http://autofac.org/) and [Spring](http://www.springframework.net/).
   * [EmptyStringGuard](https://github.com/thirkcircus/EmptyStringGuard) Adds empty string argument checks to an assembly.
-  * [EnableFaking](https://github.com/philippdolder/EnableFaking.Fody) Allows faking your types without writing interfaces for testing purposes only.
+  * [EnableFaking](https://github.com/philippdolder/EnableFaking.Fody) Allows faking types without writing interfaces for testing purposes only.
   * [Expose](https://github.com/kedarvaidya/Expose.Fody) Exposes members and optionally implements interface of a field declared in class.
   * [FactoryId](https://github.com/ramoneeza/FactoryId.Fody) Simplifies the implementation of Factory Method Pattern.
   * [Fielder](https://github.com/fodyarchived/Fielder) Converts public fields to public properties.
   * [Freezable](https://github.com/fodyarchived/Freezable) Implements the Freezable pattern.
   * [Immutable](https://github.com/fodyarchived/Immutable) Creates immutable types.
   * [MethodCache](https://github.com/Dresel/MethodCache) Caches return values of methods decorated with a `CacheAttribute`.
-  * [Mixins](https://bitbucket.org/skwasiborski/mixins.fody/wiki/Home) A mixin is a class that provides a certain functionality to be inherited or just reused by a subclass.
+  * [Mixins](https://bitbucket.org/skwasiborski/mixins.fody/wiki/Home) A mixin is a class that provides a certain functionality to be inherited or reused by a subclass.
   * [Mutable](https://github.com/ndamjan/Mutable.Fody) Make F# setters for union types and eliminate need for `CLIMutable` attribute for records.
   * [Mvid](https://github.com/hmemcpy/Mvid.Fody) Adds the ability to specify the assembly MVID (Module Version Id).
   * [NameOf](https://github.com/NickStrupat/NameOf) Provides strongly typed access to a compile-time string representing the name of a variable, field, property, method, event, enum value, or type.
   * [Nancy.ModelPostprocess](https://bitbucket.org/tpluscode/nancy.modelpostprocess) Modify Nancy models after route execution but before serialization
   * [NObservable](https://github.com/kekekeks/NObservable) MobX-like observable state management library with Blazor support.
   * [Padded](https://github.com/Scooletz/Padded) Adds padding to fight the false sharing problem.
-  * [QueryValidator](https://github.com/kamil-mrzyglod/QueryValidator.Fody) Validates your DB queries during a build.
+  * [QueryValidator](https://github.com/kamil-mrzyglod/QueryValidator.Fody) Validates DB queries during a build.
   * [RemoveReference](https://github.com/icnocop/RemoveReference.Fody) Facilitates removing references in a compiled assembly during a build.
   * [RomanticWeb](http://romanticweb.net/) Fody weaver plugin for RomanticWeb instrumentation.
   * [Scalpel](https://github.com/Fody/Scalpel) Strips tests from an assembly.
@@ -96,7 +96,7 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [StaticProxy](https://github.com/BrunoJuchli/StaticProxy.Fody) Proxy Generator, also for .net standard / .net core (.net standard 1.0+).
   * [Stiletto](https://github.com/benjamin-bader/stiletto) Compile-time static analysis and optimization for the Stiletto IoC library.
   * [Tail](https://github.com/hazzik/Tail.Fody) Adds a postfixed method call instruction to recursive calls.
-  * [TestFlask](https://github.com/FatihSahin/test-flask) Records your method args and responses to replay, assert and test.
-  * [Unsealed](https://github.com/fodyarchived/Unsealed) A simple Fody weaver to unseal sealed types.
+  * [TestFlask](https://github.com/FatihSahin/test-flask) Records method args and responses to replay, assert and test.
+  * [Unsealed](https://github.com/fodyarchived/Unsealed) A Fody weaver to unseal sealed types.
   * [Usable](https://github.com/fodyarchived/Usable) Adds using statements for local variables that have been created, and implement [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable).
   * [YALF](https://github.com/sharpmonkey/YALF) Yet Another Logging Framework.
