@@ -31,7 +31,7 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
   * [Usage](#usage)
     * [NuGet installation](#nuget-installation)
     * [Add to FodyWeavers.xml](#add-to-fodyweaversxml)
-  * [Deployment](#deployment)<!-- endtoc -->
+  * [Deployment](#deployment)<!-- endToc -->
 
 
 ## Lib/Reference project
@@ -54,7 +54,7 @@ The produced NuGet package will:
  * Be created in a directory named `nugets` at the root of the solution.
 
 <!-- snippet: BasicFodyAddin.csproj -->
-<a id='snippet-BasicFodyAddin.csproj'/></a>
+<a id='snippet-BasicFodyAddin.csproj'></a>
 ```csproj
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
@@ -79,7 +79,7 @@ The produced NuGet package will:
 </Project>
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin/BasicFodyAddin.csproj#L1-L21' title='File snippet `BasicFodyAddin.csproj` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.csproj' title='Navigate to start of snippet `BasicFodyAddin.csproj`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Build Order
@@ -104,7 +104,7 @@ This project contains the weaving code.
  * The assembly must contain a public class named 'ModuleWeaver'. The namespace does not matter.
 
 <!-- snippet: BasicFodyAddin.Fody.csproj -->
-<a id='snippet-BasicFodyAddin.Fody.csproj'/></a>
+<a id='snippet-BasicFodyAddin.Fody.csproj'></a>
 ```csproj
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
@@ -117,7 +117,7 @@ This project contains the weaving code.
 </Project>
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.csproj#L1-L9' title='File snippet `BasicFodyAddin.Fody.csproj` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.Fody.csproj' title='Navigate to start of snippet `BasicFodyAddin.Fody.csproj`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Target Frameworks
@@ -141,7 +141,7 @@ ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this
  * Have an empty constructor.
 
 <!-- snippet: ModuleWeaver -->
-<a id='snippet-moduleweaver'/></a>
+<a id='snippet-moduleweaver'></a>
 ```cs
 public class ModuleWeaver :
     BaseModuleWeaver
@@ -245,7 +245,7 @@ public class ModuleWeaver :
 }
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L120' title='File snippet `moduleweaver` was extracted from'>snippet source</a> | <a href='#snippet-moduleweaver' title='Navigate to start of snippet `moduleweaver`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 #### BaseModuleWeaver.Execute
@@ -253,7 +253,7 @@ public class ModuleWeaver :
 Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
 
 <!-- snippet: Execute -->
-<a id='snippet-execute'/></a>
+<a id='snippet-execute'></a>
 ```cs
 public override void Execute()
 {
@@ -269,7 +269,7 @@ public override void Execute()
 }
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L28' title='File snippet `execute` was extracted from'>snippet source</a> | <a href='#snippet-execute' title='Navigate to start of snippet `execute`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 #### Resultant injected code
@@ -294,7 +294,7 @@ Called by Fody when it is building up a type cache for lookups. This method shou
 To use this type cache, a `ModuleWeaver` can call `BaseModuleWeaver.FindType` within `Execute` method.
 
 <!-- snippet: GetAssembliesForScanning -->
-<a id='snippet-getassembliesforscanning'/></a>
+<a id='snippet-getassembliesforscanning'></a>
 ```cs
 public override IEnumerable<string> GetAssembliesForScanning()
 {
@@ -303,7 +303,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
 }
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L30-L38' title='File snippet `getassembliesforscanning` was extracted from'>snippet source</a> | <a href='#snippet-getassembliesforscanning' title='Navigate to start of snippet `getassembliesforscanning`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 #### BaseModuleWeaver.ShouldCleanReference
@@ -311,20 +311,20 @@ public override IEnumerable<string> GetAssembliesForScanning()
 When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
 
 <!-- snippet: ShouldCleanReference -->
-<a id='snippet-shouldcleanreference'/></a>
+<a id='snippet-shouldcleanreference'></a>
 ```cs
 public override bool ShouldCleanReference => true;
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L115-L117' title='File snippet `shouldcleanreference` was extracted from'>snippet source</a> | <a href='#snippet-shouldcleanreference' title='Navigate to start of snippet `shouldcleanreference`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 #### Logging
 
-A number of helper exist for writing log entries to MSBuild:
+Many helpers exist for writing log entries to MSBuild:
 
 <!-- snippet: MyLoggingWeaver.cs -->
-<a id='snippet-MyLoggingWeaver.cs'/></a>
+<a id='snippet-MyLoggingWeaver.cs'></a>
 ```cs
 using System.Collections.Generic;
 using System.Linq;
@@ -379,12 +379,12 @@ public class MyLoggingWeaver :
 }
 ```
 <sup><a href='/src/Docs/MyLoggingWeaver.cs#L1-L51' title='File snippet `MyLoggingWeaver.cs` was extracted from'>snippet source</a> | <a href='#snippet-MyLoggingWeaver.cs' title='Navigate to start of snippet `MyLoggingWeaver.cs`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 #### Other BaseModuleWeaver Members
 
-`BaseModuleWeaver` has a number of other members for extensibility:
+`BaseModuleWeaver` has other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
 
 
@@ -424,7 +424,7 @@ Fody will create or update a schema file (FodyWeavers.xsd) for every FodyWeavers
 Sample content of the `BasicFodyAddin.Fody.xcf`:
 
 <!-- snippet: BasicFodyAddin.Fody.Xcf -->
-<a id='snippet-BasicFodyAddin.Fody.Xcf'/></a>
+<a id='snippet-BasicFodyAddin.Fody.Xcf'></a>
 ```xcf
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -437,12 +437,12 @@ Sample content of the `BasicFodyAddin.Fody.xcf`:
 </xs:complexType>
 ```
 <sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/BasicFodyAddin.Fody.xcf#L1-L9' title='File snippet `BasicFodyAddin.Fody.Xcf` was extracted from'>snippet source</a> | <a href='#snippet-BasicFodyAddin.Fody.Xcf' title='Navigate to start of snippet `BasicFodyAddin.Fody.Xcf`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 Fody will then combine all `.xcf` fragments with the weavers information to the final `.xsd`:
 
 <!-- snippet: FodyWeavers.xsd -->
-<a id='snippet-FodyWeavers.xsd'/></a>
+<a id='snippet-FodyWeavers.xsd'></a>
 ```xsd
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -480,7 +480,7 @@ Fody will then combine all `.xcf` fragments with the weavers information to the 
 </xs:schema>
 ```
 <sup><a href='/BasicFodyAddin/SmokeTest/FodyWeavers.xsd#L1-L34' title='File snippet `FodyWeavers.xsd` was extracted from'>snippet source</a> | <a href='#snippet-FodyWeavers.xsd' title='Navigate to start of snippet `FodyWeavers.xsd`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## AssemblyToProcess Project
@@ -505,7 +505,7 @@ FodyHelpers contains a utility [WeaverTestHelper](https://github.com/Fody/Fody/b
 A test can then be run as follows:
 
 <!-- snippet: WeaverTests -->
-<a id='snippet-weavertests'/></a>
+<a id='snippet-weavertests'></a>
 ```cs
 public class WeaverTests
 {
@@ -528,12 +528,12 @@ public class WeaverTests
 }
 ```
 <sup><a href='/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27' title='File snippet `weavertests` was extracted from'>snippet source</a> | <a href='#snippet-weavertests' title='Navigate to start of snippet `weavertests`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
 
 <!-- snippet: Tests.csproj -->
-<a id='snippet-Tests.csproj'/></a>
+<a id='snippet-Tests.csproj'></a>
 ```csproj
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
@@ -554,7 +554,7 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
 </Project>
 ```
 <sup><a href='/BasicFodyAddin/Tests/Tests.csproj#L1-L17' title='File snippet `Tests.csproj` was extracted from'>snippet source</a> | <a href='#snippet-Tests.csproj' title='Navigate to start of snippet `Tests.csproj`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Build Server
@@ -565,11 +565,11 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
 To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use the following `appveyor.yml`:
 
 <!-- snippet: appveyor.yml -->
-<a id='snippet-appveyor.yml'/></a>
+<a id='snippet-appveyor.yml'></a>
 ```yml
 image: Visual Studio 2019
 skip_commits:
-  message: /doco|Merge pull request.*/
+  message: /docs|Merge pull request.*/
 build_script:
 - ps: >-
     dotnet build BasicFodyAddin --configuration Release
@@ -580,7 +580,7 @@ artifacts:
 - path: nugets\*.nupkg
 ```
 <sup><a href='/BasicFodyAddin/appveyor.yml#L1-L11' title='File snippet `appveyor.yml` was extracted from'>snippet source</a> | <a href='#snippet-appveyor.yml' title='Navigate to start of snippet `appveyor.yml`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Usage

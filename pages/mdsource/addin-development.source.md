@@ -117,14 +117,14 @@ snippet: ShouldCleanReference
 
 #### Logging
 
-A number of helper exist for writing log entries to MSBuild:
+Many helpers exist for writing log entries to MSBuild:
 
 snippet: MyLoggingWeaver.cs
 
 
 #### Other BaseModuleWeaver Members
 
-`BaseModuleWeaver` has a number of other members for extensibility:
+`BaseModuleWeaver` has other members for extensibility:
 https://github.com/Fody/Fody/blob/master/FodyHelpers/BaseModuleWeaver.cs
 
 
