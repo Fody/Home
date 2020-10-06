@@ -47,7 +47,7 @@ The below files are include as [MSBuild props and targets in a package](https://
 #### FodyPackaging.props
 
 <!-- snippet: FodyPackaging.props -->
-<a id='snippet-fodypackaging.props'></a>
+<a id='b32cbe26'></a>
 ```props
 <Project>
   <PropertyGroup>
@@ -64,14 +64,14 @@ The below files are include as [MSBuild props and targets in a package](https://
   </PropertyGroup>
 </Project>
 ```
-<sup><a href='#snippet-fodypackaging.props' title='Navigate to start of snippet `fodypackaging.props`'>anchor</a></sup>
+<sup><a href='#b32cbe26' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### FodyPackaging.targets
 
 <!-- snippet: FodyPackaging.targets -->
-<a id='snippet-fodypackaging.targets'></a>
+<a id='b53a6754'></a>
 ```targets
 <Project>
   <Target Name="IncludeFodyFiles">
@@ -95,7 +95,7 @@ The below files are include as [MSBuild props and targets in a package](https://
   </Target>
 </Project>
 ```
-<sup><a href='#snippet-fodypackaging.targets' title='Navigate to start of snippet `fodypackaging.targets`'>anchor</a></sup>
+<sup><a href='#b53a6754' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -104,7 +104,7 @@ The below files are include as [MSBuild props and targets in a package](https://
 Included in the consuming package to facilitate [addin discovery](addin-discovery.md).
 
 <!-- snippet: Weaver.props -->
-<a id='snippet-weaver.props'></a>
+<a id='56649f14'></a>
 ```props
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
@@ -112,5 +112,5 @@ Included in the consuming package to facilitate [addin discovery](addin-discover
   </ItemGroup>
 </Project>
 ```
-<sup><a href='#snippet-weaver.props' title='Navigate to start of snippet `weaver.props`'>anchor</a></sup>
+<sup><a href='#56649f14' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
