@@ -30,6 +30,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [LocalsInit](https://github.com/ltrzesniewski/LocalsInit.Fody) Controls the value of the `localsinit` flag on methods, to improve the performance of `stackalloc` for instance.
   * [LoggerIsEnabled](https://github.com/wazowsk1/LoggerIsEnabled.Fody) Adds `ILogger.IsEnabled` check around the logging statement for the [Microsoft.Extensions.Logging](https://github.com/aspnet/Logging).
   * [MethodBoundaryAspect](https://github.com/vescon/MethodBoundaryAspect.Fody) Allows to decorate methods and hook into method start, method end and method exceptions (like PostSharp).
+  * [MethodCache](https://github.com/SpatialFocus/MethodCache.Fody/) Caches return values of methods decorated with a [Cache] Attribute. Integrates with the .NET Extension IMemoryCache interface.
   * [MethodDecorator](https://github.com/Fody/MethodDecorator) Decorate arbitrary methods to run code before and after invocation.
   * [MethodTimer](https://github.com/Fody/MethodTimer) Injects method timing code.
   * [ModuleInit](https://github.com/Fody/ModuleInit) Adds a module initializer to an assembly.
@@ -78,7 +79,6 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [Fielder](https://github.com/fodyarchived/Fielder) Converts public fields to public properties.
   * [Freezable](https://github.com/fodyarchived/Freezable) Implements the Freezable pattern.
   * [Immutable](https://github.com/fodyarchived/Immutable) Creates immutable types.
-  * [MethodCache](https://github.com/Dresel/MethodCache) Caches return values of methods decorated with a `CacheAttribute`.
   * [Mixins](https://bitbucket.org/skwasiborski/mixins.fody/wiki/Home) A mixin is a class that provides a certain functionality to be inherited or reused by a subclass.
   * [Mutable](https://github.com/ndamjan/Mutable.Fody) Make F# setters for union types and eliminate need for `CLIMutable` attribute for records.
   * [Mvid](https://github.com/hmemcpy/Mvid.Fody) Adds the ability to specify the assembly MVID (Module Version Id).
