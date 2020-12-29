@@ -24,7 +24,7 @@ It is an honesty system with no code or legal enforcement. When raising an issue
 
 ## Why charge for open source?
 
- * [Open-Source Maintainers are Jerks | Nick Randolph & Geoffrey Huntley](https://vimeo.com/296579853)
+ * [Open-Source Maintainers are Jerks | Nick Randolph & Geoffrey Huntley](https://www.youtube.com/watch?v=Mm_RuObpeGo)
  * [FOSS is free as in toilet | Geoffroy Couprie](http://unhandledexpression.com/general/2018/11/27/foss-is-free-as-in-toilet.html)
  * [How to Charge for Open Source | Mike Perham](https://www.mikeperham.com/2015/11/23/how-to-charge-for-your-open-source/)
  * [Sustain OSS: The Report](https://sustainoss.org/assets/pdf/SustainOSS-west-2017-report.pdf)
