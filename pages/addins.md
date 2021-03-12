@@ -11,7 +11,6 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [AsyncErrorHandler](https://github.com/Fody/AsyncErrorHandler) Integrates error handling into async and TPL code.
   * [AutoProperties](https://github.com/tom-englert/AutoProperties.Fody) Extends control over auto-properties, like directly accessing the backing field or intercepting getters and setters.
   * [BasicFodyAddin](/BasicFodyAddin) Used to illustrate how to build an addin.
-  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Caseless](https://github.com/Fody/Caseless) Change string comparisons to be case insensitive.
   * [Catel](https://github.com/Catel/Catel.Fody) For transforming automatic properties into [Catel](https://github.com/Catel/Catel) properties.
   * [ConfigureAwait](https://github.com/Fody/ConfigureAwait) Set the async ConfigureAwait at a global level for all await calls.
@@ -67,6 +66,7 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [AssertMessage](https://github.com/Fody/AssertMessage) Generates 'message' from sourcecode and adds it to assertion.
   * [AutoDependencyProperty](http://blog.angeloflogic.com/2014/12/no-more-dependencyproperty-with.html) Generates WPF DependencyProperty boilerplate from automatic C# properties.
   * [AutoLazy](https://github.com/bcuff/AutoLazy) Automatically implements the double-checked locking pattern on specified properties and methods.
+  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Cauldron](https://github.com/Capgemini/Cauldron) Provides method, property and field interception. It also provides weavers for Cauldron.Core and Cauldron.Activator.
   * [Cilador](https://github.com/rileywhite/Cilador) Write [mixins](https://en.wikipedia.org/wiki/Mixin) in C# for code reuse without inheritance.
   * [Commander](https://github.com/DamianReeves/Commander.Fody) Injects ICommand properties and implementations for use in MVVM applications.
