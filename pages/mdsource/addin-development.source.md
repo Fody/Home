@@ -5,8 +5,6 @@ This page uses the a sample addin called BasicFodyAddin to describe building an 
  * [NuGet Package](https://www.nuget.org/packages/BasicFodyAddin.Fody/)
  * [Source](/BasicFodyAddin/)
 
-toc
-
 
 ## Lib/Reference project
 
