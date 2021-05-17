@@ -55,7 +55,7 @@ They offer a free edition and their feature list includes: Aspect-Oriented Progr
 
 ## But it is MIT, can't I use it for free?
 
-Yes all projects are under [MIT](https://opensource.org/licenses/MIT) so the community backing honesty system can be ignored and Fody used for free.
+All projects are under [MIT](https://opensource.org/licenses/MIT) so the community backing honesty system can be ignored. So legally it is free, morally it is paid.
 
 
 ## Do I need to be a Patron to contribute a Pull Request?
