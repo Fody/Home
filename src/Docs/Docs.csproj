@@ -4,11 +4,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FodyHelpers" Version="6.5.1" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.3" PrivateAssets="all" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.4" PrivateAssets="all" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="XunitContext" Version="3.0.0" />
-    <PackageReference Include="Verify.Xunit" Version="11.18.0" />
+    <PackageReference Include="Verify.Xunit" Version="11.18.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
   </ItemGroup>
 </Project>
