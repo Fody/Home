@@ -5,11 +5,6 @@ Fody requires significant effort to maintain. As such it relies on financial con
 **It is expected that all developers using Fody either [become a Patron on OpenCollective](https://opencollective.com/fody/contribute/patron-3059), or have a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-fody?utm_source=nuget-fody&utm_medium=referral&utm_campaign=enterprise).**
 
 
-## Is this all versions?
-
-No, it will include version 3.3.3 and higher.
-
-
 ## Honesty System / Enforcement
 
 It is an honesty system with no code or legal enforcement. When raising an issue or a pull request, the GitHub Id may be checked to ensure they are a patron, and that issue/PR may be closed without further examination. This process will depend on the issue quality, and the impact on the larger user base. If a individual or organization has no interest in the long term sustainability of the project, then they are legally free to ignore the honesty system.
