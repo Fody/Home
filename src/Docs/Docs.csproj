@@ -7,7 +7,7 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.2.2" PrivateAssets="all" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <PackageReference Include="Xunit" Version="2.4.1" />
-    <PackageReference Include="XunitContext" Version="3.1.1" />
+    <PackageReference Include="XunitContext" Version="3.1.2" />
     <PackageReference Include="Verify.Xunit" Version="14.13.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
   </ItemGroup>
