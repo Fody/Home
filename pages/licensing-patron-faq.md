@@ -9,7 +9,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 Fody requires significant effort to maintain. As such it relies on financial contributions to ensure its long term viability.
 
-**It is expected that all developers using Fody either [become a Patron on OpenCollective](https://opencollective.com/fody/contribute/patron-3059), or have a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-fody?utm_source=nuget-fody&utm_medium=referral&utm_campaign=enterprise).**
+**It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/contribute/patron-3059).**
 
 
 ## Is this all versions?
