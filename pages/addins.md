@@ -41,6 +41,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [ReactiveUI.Fody](https://github.com/reactiveui/ReactiveUI) Generates [ReactiveUI](https://reactiveui.net/) `RaisePropertyChanged` notifications for properties and `OAPH`s.
   * [Resourcer](https://github.com/Fody/Resourcer) Simplifies reading embedded resources from an Assembly.
   * [RuntimeNullables](https://github.com/Singulink/RuntimeNullables) Runtime C# 8+ Nullable Reference Type (NRT) contract validation.
+  * [Someta](https://github.com/kswoll/someta) Offers the ability to intercept methods, properties, and events; inject fields into classes; and inject code inside constructors.
   * [SplashScreen](https://github.com/tom-englert/SplashScreen.Fody) Use WPF splash screen as a WPF Control instead of a static bitmap.
   * [StampSvn](https://github.com/krk/Stamp) Stamps an assembly with SVN data.
   * [Substitute](https://github.com/tom-englert/Substitute.Fody) Substitute types with other types to e.g. intercept generated code.
