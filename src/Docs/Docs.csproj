@@ -5,7 +5,7 @@
   <ItemGroup>
     <PackageReference Include="FodyHelpers" Version="6.6.0" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.3.0" PrivateAssets="all" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.4" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="XunitContext" Version="3.2.2" />
     <PackageReference Include="Verify.Xunit" Version="16.7.0" />
