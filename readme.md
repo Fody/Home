@@ -2,7 +2,7 @@
 
 The Home repository is the starting point for people to learn about Fody, the project.
 
-Fody is an extensible tool for weaving .net assemblies. It enables the manipulating the IL of an assembly as part of a build requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model. This technique is very powerful, for example you can turn simple properties into full [INotifyPropertyChanged implementations](https://github.com/Fody/PropertyChanged), add [checks for null arguments](https://github.com/Fody/NullGuard), add [Method Timings](https://github.com/Fody/MethodTimer), even [make all your string comparisons case insensitive](https://github.com/Fody/Caseless).
+Fody is an extensible tool for weaving .net assemblies. It enables the manipulation of the IL of an assembly as part of a build, which requires a significant amount of plumbing code. This plumbing code involves knowledge of both the MSBuild and Visual Studio APIs. Fody attempts to eliminate that plumbing code through an extensible add-in model. This technique is very powerful, for example you can turn simple properties into full [INotifyPropertyChanged implementations](https://github.com/Fody/PropertyChanged), add [checks for null arguments](https://github.com/Fody/NullGuard), add [Method Timings](https://github.com/Fody/MethodTimer), even [make all your string comparisons case insensitive](https://github.com/Fody/Caseless).
 
 
 <!--- StartOpenCollectiveBackers -->
