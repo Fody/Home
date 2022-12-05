@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Octokit" Version="4.0.2" />
+    <PackageReference Include="Octokit" Version="4.0.3" />
     <PackageReference Include="GitHubSync" Version="1.1.0" />
   </ItemGroup>
 </Project>
