@@ -33,6 +33,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [MethodDecorator](https://github.com/Fody/MethodDecorator) Decorate arbitrary methods to run code before and after invocation.
   * [MethodTimer](https://github.com/Fody/MethodTimer) Injects method timing code.
   * [ModuleInit](https://github.com/Fody/ModuleInit) Adds a module initializer to an assembly.
+  * [Morris.MetaMerge](https://github.com/mrpmorris/morris.metamerge) Allows you to define patterns of .Net attributes in a single place and then apply them to multiple targets.
   * [NullGuard](https://github.com/Fody/NullGuard) Adds null argument checks to an assembly.
   * [Obsolete](https://github.com/Fody/Obsolete) Helps keep usages of [ObsoleteAttribute]([https://msdn.microsoft.com/en-us/library/fwz0y5c2 ) consistent.
   * [PropertyChanged](https://github.com/Fody/PropertyChanged) Injects INotifyPropertyChanged code into properties.
