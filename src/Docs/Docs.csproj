@@ -3,7 +3,7 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.6.4" />
+    <PackageReference Include="FodyHelpers" Version="6.7.0" />
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.1" Condition="$(TargetFramework) == 'net7.0'" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
     <PackageReference Include="Xunit" Version="2.4.2" />
