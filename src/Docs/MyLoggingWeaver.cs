@@ -44,8 +44,5 @@ public class MyLoggingWeaver :
         WriteError("Message", sequencePoint);
     }
 
-    public override IEnumerable<string> GetAssembliesForScanning()
-    {
-        return Enumerable.Empty<string>();
-    }
+    public override IEnumerable<string> GetAssembliesForScanning() => Enumerable.Empty<string>();
 }

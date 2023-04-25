@@ -12,11 +12,6 @@ Fody requires significant effort to maintain. As such it relies on financial con
 **It is expected that all developers using Fody [become a Patron on OpenCollective](https://opencollective.com/fody/contribute/patron-3059).**
 
 
-## Is this all versions?
-
-No, it will include version 3.3.3 and higher.
-
-
 ## Honesty System / Enforcement
 
 It is an honesty system with no code or legal enforcement. When raising an issue or a pull request, the GitHub Id may be checked to ensure they are a patron, and that issue/PR may be closed without further examination. This process will depend on the issue quality, and the impact on the larger user base. If a individual or organization has no interest in the long term sustainability of the project, then they are legally free to ignore the honesty system.
@@ -24,7 +19,7 @@ It is an honesty system with no code or legal enforcement. When raising an issue
 
 ## Why charge for open source?
 
- * [Open-Source Maintainers are Jerks | Nick Randolph & Geoffrey Huntley](https://www.youtube.com/watch?v=Mm_RuObpeGo)
+ * [Open-Source Maintainers are Jerks | Nick Randolph & Geoffrey Huntley](https://vimeo.com/296579853)
  * [FOSS is free as in toilet | Geoffroy Couprie](http://unhandledexpression.com/general/2018/11/27/foss-is-free-as-in-toilet.html)
  * [How to Charge for Open Source | Mike Perham](https://www.mikeperham.com/2015/11/23/how-to-charge-for-your-open-source/)
  * [Sustain OSS: The Report](https://sustainoss.org/assets/pdf/SustainOSS-west-2017-report.pdf)
@@ -62,7 +57,7 @@ They offer a free edition and their feature list includes: Aspect-Oriented Progr
 
 ## But it is MIT, can't I use it for free?
 
-Yes all projects are under [MIT](https://opensource.org/licenses/MIT) so the community backing honesty system can be ignored and Fody used for free.
+All projects are under [MIT](https://opensource.org/licenses/MIT) so the community backing honesty system can be ignored. So legally it is free, morally it is paid.
 
 
 ## Do I need to be a Patron to contribute a Pull Request?

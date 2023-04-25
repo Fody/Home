@@ -11,6 +11,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [AsyncErrorHandler](https://github.com/Fody/AsyncErrorHandler) Integrates error handling into async and TPL code.
   * [AutoProperties](https://github.com/tom-englert/AutoProperties.Fody) Extends control over auto-properties, like directly accessing the backing field or intercepting getters and setters.
   * [BasicFodyAddin](/BasicFodyAddin) Used to illustrate how to build an addin.
+  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Caseless](https://github.com/Fody/Caseless) Change string comparisons to be case insensitive.
   * [Catel](https://github.com/Catel/Catel.Fody) For transforming automatic properties into [Catel](https://github.com/Catel/Catel) properties.
   * [ConfigureAwait](https://github.com/Fody/ConfigureAwait) Set the async ConfigureAwait at a global level for all await calls.
@@ -29,11 +30,9 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [LocalsInit](https://github.com/ltrzesniewski/LocalsInit.Fody) Controls the value of the `localsinit` flag on methods, to improve the performance of `stackalloc` for instance.
   * [LoggerIsEnabled](https://github.com/wazowsk1/LoggerIsEnabled.Fody) Adds `ILogger.IsEnabled` check around the logging statement for the [Microsoft.Extensions.Logging](https://github.com/aspnet/Logging).
   * [MethodBoundaryAspect](https://github.com/vescon/MethodBoundaryAspect.Fody) Allows to decorate methods and hook into method start, method end and method exceptions (like PostSharp).
-  * [MethodCache](https://github.com/SpatialFocus/MethodCache.Fody/) Caches return values of methods decorated with a [Cache] Attribute. Integrates with the .NET Extension IMemoryCache interface.
   * [MethodDecorator](https://github.com/Fody/MethodDecorator) Decorate arbitrary methods to run code before and after invocation.
   * [MethodTimer](https://github.com/Fody/MethodTimer) Injects method timing code.
   * [ModuleInit](https://github.com/Fody/ModuleInit) Adds a module initializer to an assembly.
-  * [Morris.MetaMerge](https://github.com/mrpmorris/morris.metamerge) Allows you to define patterns of .Net attributes in a single place and then apply them to multiple targets.
   * [NullGuard](https://github.com/Fody/NullGuard) Adds null argument checks to an assembly.
   * [Obsolete](https://github.com/Fody/Obsolete) Helps keep usages of [ObsoleteAttribute]([https://msdn.microsoft.com/en-us/library/fwz0y5c2 ) consistent.
   * [PropertyChanged](https://github.com/Fody/PropertyChanged) Injects INotifyPropertyChanged code into properties.
@@ -68,7 +67,6 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [AssertMessage](https://github.com/Fody/AssertMessage) Generates 'message' from sourcecode and adds it to assertion.
   * [AutoDependencyProperty](http://blog.angeloflogic.com/2014/12/no-more-dependencyproperty-with.html) Generates WPF DependencyProperty boilerplate from automatic C# properties.
   * [AutoLazy](https://github.com/bcuff/AutoLazy) Automatically implements the double-checked locking pattern on specified properties and methods.
-  * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Cauldron](https://github.com/Capgemini/Cauldron) Provides method, property and field interception. It also provides weavers for Cauldron.Core and Cauldron.Activator.
   * [Cilador](https://github.com/rileywhite/Cilador) Write [mixins](https://en.wikipedia.org/wiki/Mixin) in C# for code reuse without inheritance.
   * [Commander](https://github.com/DamianReeves/Commander.Fody) Injects ICommand properties and implementations for use in MVVM applications.
@@ -81,6 +79,7 @@ The below addins are no longer maintained. Raise an issue in the specific projec
   * [Fielder](https://github.com/fodyarchived/Fielder) Converts public fields to public properties.
   * [Freezable](https://github.com/fodyarchived/Freezable) Implements the Freezable pattern.
   * [Immutable](https://github.com/fodyarchived/Immutable) Creates immutable types.
+  * [MethodCache](https://github.com/Dresel/MethodCache) Caches return values of methods decorated with a `CacheAttribute`.
   * [Mixins](https://bitbucket.org/skwasiborski/mixins.fody/wiki/Home) A mixin is a class that provides a certain functionality to be inherited or reused by a subclass.
   * [Mutable](https://github.com/ndamjan/Mutable.Fody) Make F# setters for union types and eliminate need for `CLIMutable` attribute for records.
   * [Mvid](https://github.com/hmemcpy/Mvid.Fody) Adds the ability to specify the assembly MVID (Module Version Id).

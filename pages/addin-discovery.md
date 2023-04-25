@@ -10,15 +10,16 @@ To change this file edit the source file and then run MarkdownSnippets.
 Every Weaver must publish the location of it's binary ('WaverName.Fody.dll') at compile time as an MSBuild item, so Fody is able to locate it. This is achieved by providing a `.props` file with the NuGet package with the following default content:
 
 <!-- snippet: Weaver.props -->
-<a id='56649f14'></a>
+<a id='snippet-weaver.props'></a>
 ```props
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project>
   <ItemGroup>
     <WeaverFiles Include="$(MsBuildThisFileDirectory)..\weaver\$(MSBuildThisFileName).dll" />
   </ItemGroup>
 </Project>
+
 ```
-<sup><a href='#56649f14' title='Start of snippet'>anchor</a></sup>
+<sup><a href='#snippet-weaver.props' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 If the [FodyPackaging NuGet](addin-packaging.md#FodyPackaging-NuGet-Package) is used to create the addin package, this file is automatically added.
