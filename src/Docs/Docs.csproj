@@ -9,6 +9,6 @@
     <PackageReference Include="Xunit" Version="2.4.2" />
     <PackageReference Include="XunitContext" Version="3.2.5" />
     <PackageReference Include="Verify.Xunit" Version="20.3.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
   </ItemGroup>
 </Project>
