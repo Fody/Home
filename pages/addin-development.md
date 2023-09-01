@@ -351,13 +351,10 @@ public class MyLoggingWeaver :
         WriteError("Message", sequencePoint);
     }
 
-    public override IEnumerable<string> GetAssembliesForScanning()
-    {
-        return Enumerable.Empty<string>();
-    }
+    public override IEnumerable<string> GetAssembliesForScanning() => Enumerable.Empty<string>();
 }
 ```
-<sup><a href='/src/Docs/MyLoggingWeaver.cs#L1-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-MyLoggingWeaver.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Docs/MyLoggingWeaver.cs#L1-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-MyLoggingWeaver.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
