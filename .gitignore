@@ -22,3 +22,5 @@ artifacts/
 *.DotSettings.user
 
 nugets/
+BasicFodyAddin/.idea/*
+.idea/*

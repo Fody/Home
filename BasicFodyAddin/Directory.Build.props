@@ -4,5 +4,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Version>1.2.0</Version>
     <LangVersion>latest</LangVersion>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <NoWarn>NU1903</NoWarn>
   </PropertyGroup>
 </Project>
