@@ -1,6 +1,5 @@
-﻿namespace AssemblyToProcess
+﻿namespace AssemblyToProcess;
+
+class Class1
 {
-    class Class1
-    {
-    }
 }
