@@ -6,5 +6,7 @@
     <LangVersion>latest</LangVersion>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <NoWarn>NU1903</NoWarn>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <NuGetAuditLevel>low</NuGetAuditLevel>
   </PropertyGroup>
 </Project>
