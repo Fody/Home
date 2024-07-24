@@ -57,7 +57,7 @@ To change this file edit the source file and then run MarkdownSnippets.
   * [WeakEventHandler](https://github.com/tom-englert/WeakEventHandler.Fody) Changes regular event handlers into weak event handlers by weaving a weak event adapter between source and subscriber.
   * [WeakEvents](https://github.com/adbancroft/WeakEvents.Fody) Automatic publishing of weak events via compile time code weaving and a supporting runtime library.
   * [With](https://github.com/mikhailshilkov/With.Fody) Methods to return copies of immutable objects with one property modified.
-
+  * [RecordEnumerableEquality](https://github.com/JKamsker/RecordEnumerableEquality.Fody) Add comparison to your Enumerables in records
 
 ## No longer maintained
 
