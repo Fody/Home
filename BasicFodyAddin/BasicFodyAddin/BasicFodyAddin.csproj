@@ -15,7 +15,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="6.8.0" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.9.2" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.9.2" PrivateAssets="All" />
   </ItemGroup>
 </Project>
