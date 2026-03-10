@@ -3,6 +3,8 @@
   * [Anotar](https://github.com/Fody/Anotar) Simplifies logging through a static class and some IL manipulation.
   * [AsyncErrorHandler](https://github.com/Fody/AsyncErrorHandler) Integrates error handling into async and TPL code.
   * [AutoProperties](https://github.com/tom-englert/AutoProperties.Fody) Extends control over auto-properties, like directly accessing the backing field or intercepting getters and setters.
+  * [AutoLocalize](https://github.com/mrpmorris/AutoLocalize) Sets `ErrorMessageResourceType` and `ErrorMessageResourceName` at project level for `ValidationAttribute` attributes.
+  * [AutoRegister](https://github.com/mrpmorris/AutoRegister) Convention-based dependency discovery for Dependency Injection.
   * [BasicFodyAddin](/BasicFodyAddin) Used to illustrate how to build an addin.
   * [Bindables](https://github.com/yusuf-gunaydin/Bindables) Converts auto properties into Wpf dependency or attached properties. Allows specifying options, defining readonly properties, and calling property changed methods.
   * [Caseless](https://github.com/Fody/Caseless) Change string comparisons to be case insensitive.
@@ -22,6 +24,7 @@
   * [LoadAssembliesOnStartup](https://github.com/Fody/LoadAssembliesOnStartup) Loads references on startup by using the types in the module initializer.
   * [LocalsInit](https://github.com/ltrzesniewski/LocalsInit.Fody) Controls the value of the `localsinit` flag on methods, to improve the performance of `stackalloc` for instance.
   * [LoggerIsEnabled](https://github.com/wazowsk1/LoggerIsEnabled.Fody) Adds `ILogger.IsEnabled` check around the logging statement for the [Microsoft.Extensions.Logging](https://github.com/aspnet/Logging).
+  * [MetaMerge](https://github.com/mrpmorris/MetaMerge) Declare collections of reusable .NET attributes and apply them as patterns to multiple targets.
   * [MethodBoundaryAspect](https://github.com/vescon/MethodBoundaryAspect.Fody) Allows to decorate methods and hook into method start, method end and method exceptions (like PostSharp).
   * [MethodDecorator](https://github.com/Fody/MethodDecorator) Decorate arbitrary methods to run code before and after invocation.
   * [MethodTimer](https://github.com/Fody/MethodTimer) Injects method timing code.
