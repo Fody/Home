@@ -47,7 +47,7 @@ The below files are include as [MSBuild props and targets in a package](https://
 #### FodyPackaging.props
 
 <!-- snippet: FodyPackaging.props -->
-<a id='snippet-fodypackaging.props'></a>
+<a id='snippet-https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.props%23FodyPackaging.props'></a>
 ```props
 <Project>
   <PropertyGroup>
@@ -65,14 +65,14 @@ The below files are include as [MSBuild props and targets in a package](https://
 </Project>
 
 ```
-<sup><a href='#snippet-fodypackaging.props' title='Start of snippet'>anchor</a></sup>
+<sup><a href='https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.props#FodyPackaging.props' title='Snippet source file'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### FodyPackaging.targets
 
 <!-- snippet: FodyPackaging.targets -->
-<a id='snippet-fodypackaging.targets'></a>
+<a id='snippet-https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.targets%23FodyPackaging.targets'></a>
 ```targets
 <Project>
   <Target Name="IncludeFodyFiles">
@@ -97,7 +97,7 @@ The below files are include as [MSBuild props and targets in a package](https://
 </Project>
 
 ```
-<sup><a href='#snippet-fodypackaging.targets' title='Start of snippet'>anchor</a></sup>
+<sup><a href='https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/build/FodyPackaging.targets#FodyPackaging.targets' title='Snippet source file'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -106,7 +106,7 @@ The below files are include as [MSBuild props and targets in a package](https://
 Included in the consuming package to facilitate [addin discovery](addin-discovery.md).
 
 <!-- snippet: Weaver.props -->
-<a id='snippet-weaver.props'></a>
+<a id='snippet-https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props%23Weaver.props'></a>
 ```props
 <Project>
   <ItemGroup>
@@ -115,5 +115,5 @@ Included in the consuming package to facilitate [addin discovery](addin-discover
 </Project>
 
 ```
-<sup><a href='#snippet-weaver.props' title='Start of snippet'>anchor</a></sup>
+<sup><a href='https://raw.githubusercontent.com/Fody/Fody/master/FodyPackaging/Weaver.props#Weaver.props' title='Snippet source file'>anchor</a></sup>
 <!-- endSnippet -->

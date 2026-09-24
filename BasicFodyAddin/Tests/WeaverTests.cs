@@ -1,9 +1,11 @@
-﻿using System;
+using System;
 using Fody;
-using Xunit;
+using TestResult = Fody.TestResult;
 
 #region WeaverTests
 
+// tests that weave into a shared folder must not run in parallel
+[NotInParallel]
 public class WeaverTests
 {
     static TestResult testResult;
@@ -14,13 +16,13 @@ public class WeaverTests
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
     }
 
-    [Fact]
-    public void ValidateHelloWorldIsInjected()
+    [Test]
+    public async Task ValidateHelloWorldIsInjected()
     {
         var type = testResult.Assembly.GetType("TheNamespace.Hello");
         var instance = (dynamic)Activator.CreateInstance(type);
 
-        Assert.Equal("Hello World", instance.World());
+        await Assert.That((string)instance.World()).IsEqualTo("Hello World");
     }
 }
 

@@ -181,7 +181,15 @@ A target assembly to process and then validate with unit tests.
 
 Contains all tests for the weaver.
 
-The project has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
+The project uses [TUnit](https://tunit.dev/) and has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/). Package versions are managed centrally in [Directory.Packages.props](/BasicFodyAddin/Directory.Packages.props).
+
+Notes on the TUnit setup:
+
+ * Test projects must be `OutputType` `Exe`. Run them with `dotnet run` (once per target framework) since `dotnet test` does not discover TUnit tests in this configuration.
+ * Reference `TUnit.Core`, `TUnit.Assertions` and `TUnit.Engine` rather than the `TUnit` metapackage. The metapackage brings in a code-coverage dependency that bundles a conflicting `Mono.Cecil`.
+ * TUnit runs tests in parallel by default. Mark tests that weave into a shared folder with `[NotInParallel]`.
+ * `Fody.TestResult` can be ambiguous with a TUnit type, so alias it with `using TestResult = Fody.TestResult;`.
+ * When targeting .NET Framework, add an internal polyfill for `System.Runtime.CompilerServices.ModuleInitializerAttribute` to the test project (see [ModuleInitializerAttribute.cs](/BasicFodyAddin/Tests/ModuleInitializerAttribute.cs)).
 
 It has a reference to the `AssemblyToProcess` project, so that `AssemblyToProcess.dll` is copied to the bin directory of the test project.
 

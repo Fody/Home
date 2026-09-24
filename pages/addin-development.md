@@ -52,8 +52,8 @@ The produced NuGet package will:
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/Home/master/BasicFodyAddin/package_icon.png</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.6.4" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="6.6.4" PrivateAssets="All" />
+    <PackageReference Include="Fody" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" PrivateAssets="All" />
   </ItemGroup>
 </Project>
 ```
@@ -91,7 +91,7 @@ This project contains the weaving code.
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.6.4" />
+    <PackageReference Include="FodyHelpers" />
   </ItemGroup>
 </Project>
 ```
@@ -120,7 +120,7 @@ ModuleWeaver.cs is where the target assembly is modified. Fody will pick up this
  * Have an empty constructor.
 
 <!-- snippet: ModuleWeaver -->
-<a id='snippet-moduleweaver'></a>
+<a id='snippet-ModuleWeaver'></a>
 ```cs
 public class ModuleWeaver :
     BaseModuleWeaver
@@ -223,7 +223,7 @@ public class ModuleWeaver :
     public override bool ShouldCleanReference => true;
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L120' title='Snippet source file'>snippet source</a> | <a href='#snippet-moduleweaver' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L8-L120' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleWeaver' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -232,7 +232,7 @@ public class ModuleWeaver :
 Called to perform the manipulation of the module. The current module can be accessed and manipulated via `BaseModuleWeaver.ModuleDefinition`.
 
 <!-- snippet: Execute -->
-<a id='snippet-execute'></a>
+<a id='snippet-Execute'></a>
 ```cs
 public override void Execute()
 {
@@ -247,7 +247,7 @@ public override void Execute()
     WriteInfo("Added type 'Hello' with method 'World'.");
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-execute' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L13-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-Execute' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -273,7 +273,7 @@ Called by Fody when it is building up a type cache for lookups. This method shou
 To use this type cache, a `ModuleWeaver` can call `BaseModuleWeaver.FindType` within `Execute` method.
 
 <!-- snippet: GetAssembliesForScanning -->
-<a id='snippet-getassembliesforscanning'></a>
+<a id='snippet-GetAssembliesForScanning'></a>
 ```cs
 public override IEnumerable<string> GetAssembliesForScanning()
 {
@@ -281,7 +281,7 @@ public override IEnumerable<string> GetAssembliesForScanning()
     yield return "mscorlib";
 }
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L30-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-getassembliesforscanning' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L30-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-GetAssembliesForScanning' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -290,11 +290,11 @@ public override IEnumerable<string> GetAssembliesForScanning()
 When `BasicFodyAddin.dll` is referenced by a consuming project, it is only for the purposes configuring the weaving via attributes. As such, it is not required at runtime. With this in mind `BaseModuleWeaver` has an opt in feature to remove the reference, meaning the target weaved application does not need `BasicFodyAddin.dll` at runtime. This feature can be opted in to via the following code in `ModuleWeaver`:
 
 <!-- snippet: ShouldCleanReference -->
-<a id='snippet-shouldcleanreference'></a>
+<a id='snippet-ShouldCleanReference'></a>
 ```cs
 public override bool ShouldCleanReference => true;
 ```
-<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L115-L117' title='Snippet source file'>snippet source</a> | <a href='#snippet-shouldcleanreference' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/BasicFodyAddin.Fody/ModuleWeaver.cs#L115-L117' title='Snippet source file'>snippet source</a> | <a href='#snippet-ShouldCleanReference' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -472,7 +472,15 @@ A target assembly to process and then validate with unit tests.
 
 Contains all tests for the weaver.
 
-The project has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/).
+The project uses [TUnit](https://tunit.dev/) and has a NuGet dependency on [FodyHelpers](https://www.nuget.org/packages/FodyHelpers/). Package versions are managed centrally in [Directory.Packages.props](/BasicFodyAddin/Directory.Packages.props).
+
+Notes on the TUnit setup:
+
+ * Test projects must be `OutputType` `Exe`. Run them with `dotnet run` (once per target framework) since `dotnet test` does not discover TUnit tests in this configuration.
+ * Reference `TUnit.Core`, `TUnit.Assertions` and `TUnit.Engine` rather than the `TUnit` metapackage. The metapackage brings in a code-coverage dependency that bundles a conflicting `Mono.Cecil`.
+ * TUnit runs tests in parallel by default. Mark tests that weave into a shared folder with `[NotInParallel]`.
+ * `Fody.TestResult` can be ambiguous with a TUnit type, so alias it with `using TestResult = Fody.TestResult;`.
+ * When targeting .NET Framework, add an internal polyfill for `System.Runtime.CompilerServices.ModuleInitializerAttribute` to the test project (see [ModuleInitializerAttribute.cs](/BasicFodyAddin/Tests/ModuleInitializerAttribute.cs)).
 
 It has a reference to the `AssemblyToProcess` project, so that `AssemblyToProcess.dll` is copied to the bin directory of the test project.
 
@@ -481,8 +489,10 @@ FodyHelpers contains a utility [WeaverTestHelper](https://github.com/Fody/Fody/b
 A test can then be run as follows:
 
 <!-- snippet: WeaverTests -->
-<a id='snippet-weavertests'></a>
+<a id='snippet-WeaverTests'></a>
 ```cs
+// tests that weave into a shared folder must not run in parallel
+[NotInParallel]
 public class WeaverTests
 {
     static TestResult testResult;
@@ -493,17 +503,17 @@ public class WeaverTests
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
     }
 
-    [Fact]
-    public void ValidateHelloWorldIsInjected()
+    [Test]
+    public async Task ValidateHelloWorldIsInjected()
     {
         var type = testResult.Assembly.GetType("TheNamespace.Hello");
         var instance = (dynamic)Activator.CreateInstance(type);
 
-        Assert.Equal("Hello World", instance.World());
+        await Assert.That((string)instance.World()).IsEqualTo("Hello World");
     }
 }
 ```
-<sup><a href='/BasicFodyAddin/Tests/WeaverTests.cs#L5-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-weavertests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/Tests/WeaverTests.cs#L5-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-WeaverTests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com/en-us/dotnet/framework/tools/peverify-exe-peverify-tool) on the resultant assembly.
@@ -514,22 +524,25 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;netcoreapp2.2</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net9.0</TargetFrameworks>
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.6.4" />
-    <PackageReference Include="Xunit" Version="2.4.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FodyHelpers" />
+    <PackageReference Include="TUnit.Core" />
+    <PackageReference Include="TUnit.Assertions" />
+    <PackageReference Include="TUnit.Engine" />
     <ProjectReference Include="..\BasicFodyAddin.Fody\BasicFodyAddin.Fody.csproj" />
     <ProjectReference Include="..\BasicFodyAddin\BasicFodyAddin.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 </Project>
 ```
-<sup><a href='/BasicFodyAddin/Tests/Tests.csproj#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.csproj' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/Tests/Tests.csproj#L1-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.csproj' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -549,8 +562,8 @@ skip_commits:
 build_script:
 - ps: >-
     dotnet build BasicFodyAddin --configuration Release
-
-    dotnet test BasicFodyAddin --configuration Release --no-build --no-restore
+test_script:
+- pwsh: ./runTests.ps1
 test: off
 artifacts:
 - path: nugets\*.nupkg
