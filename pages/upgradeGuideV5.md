@@ -33,11 +33,6 @@ MinimumVisualStudioVersion = 16.0.28721.148
 To use MSBuild install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#vstool-2019). To use dotnet build install the current [dotnet core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2).
 
 
-#### AppVeyor
-
-At this time AppVeyor does not support the RTM of Visual Studio 2019. However the [Visual Studio 2019 preview image](https://www.appveyor.com/docs/build-environment/#visual-studio-preview-images) can be used via `image: Visual Studio 2019 Preview` in `appveyor.yml`.
-
-
 #### TravisCI
 
 MSBuild16 can be used on TravisCI using the [xenial distro](https://docs.travis-ci.com/user/reference/xenial/) and [dotnet 2.2.202](https://docs.travis-ci.com/user/languages/csharp/#net-core). An example `.travis.yml` config:

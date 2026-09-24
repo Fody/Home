@@ -549,26 +549,82 @@ By default `ExecuteTestRun` will perform a [PeVerify](https://docs.microsoft.com
 ## Build Server
 
 
-### AppVeyor
+### GitHub Actions
 
-To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use the following `appveyor.yml`:
+To build an addin with [GitHub Actions](https://docs.github.com/actions), and publish it to NuGet when a version tag is pushed using [trusted publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing), add the following as `.github/workflows/build.yml`:
 
-<!-- snippet: appveyor.yml -->
-<a id='snippet-appveyor.yml'></a>
+<!-- snippet: build.yml -->
+<a id='snippet-build.yml'></a>
 ```yml
-image: Visual Studio 2022
-skip_commits:
-  message: /docs|Merge pull request.*/
-build_script:
-- ps: >-
-    dotnet build BasicFodyAddin --configuration Release
-test_script:
-- pwsh: ./runTests.ps1
-test: off
-artifacts:
-- path: nugets\*.nupkg
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ['*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      # The tag is the version: tag 1.2.3 builds 1.2.3.
+      - name: Resolve the version from the tag
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: echo "VERSION_ARGUMENT=-p:Version=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - name: Build
+        run: dotnet build BasicFodyAddin --configuration Release ${{ env.VERSION_ARGUMENT }}
+
+      - name: Test
+        shell: pwsh
+        run: ./runTests.ps1
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: nupkgs
+          path: nugets/*.nupkg
+
+  # Trusted publishing: nuget.org exchanges GitHub's OIDC token for a short lived API key.
+  # Requires a trusted publishing policy on nuget.org naming this repository and build.yml.
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: nupkgs
+          path: packages
+
+      - name: NuGet login
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: YourNuGetUser
+
+      - name: Push to nuget.org
+        run: >
+          dotnet nuget push "packages/*.nupkg"
+          --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate
 ```
-<sup><a href='/BasicFodyAddin/appveyor.yml#L1-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-appveyor.yml' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/BasicFodyAddin/build.yml#L1-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-build.yml' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

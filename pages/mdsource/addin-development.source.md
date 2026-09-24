@@ -207,11 +207,11 @@ snippet: Tests.csproj
 ## Build Server
 
 
-### AppVeyor
+### GitHub Actions
 
-To configure an adding to build using [AppVeyor](https://www.appveyor.com/) use the following `appveyor.yml`:
+To build an addin with [GitHub Actions](https://docs.github.com/actions), and publish it to NuGet when a version tag is pushed using [trusted publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing), add the following as `.github/workflows/build.yml`:
 
-snippet: appveyor.yml
+snippet: build.yml
 
 
 ## Usage
