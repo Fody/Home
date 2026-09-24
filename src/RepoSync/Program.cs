@@ -21,7 +21,6 @@ class Program
             repository: "Home",
             branch: "master");
 
-        //sync.AddSourceItem(TreeEntryTargetType.Blob, "RepoSync/appveyor.yml", "appveyor.yml");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/.editorconfig", ".editorconfig");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/FUNDING.yml", ".github/FUNDING.yml");
         sync.AddSourceItem(TreeEntryTargetType.Blob, "src/RepoSync/Source/workflows/on-push-do-doco.yml", ".github/workflows/on-push-do-doco.yml");
